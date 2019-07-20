@@ -1,0 +1,3 @@
+Plan: State with store various challenge conditions that will allow users to quickly
+update through a google sheel design, the changed conditions will be interpolated through
+a read format: ie, "Your ironman ${will be restricted to x}. etc etc etc. 
