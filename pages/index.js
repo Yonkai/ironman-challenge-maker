@@ -8,6 +8,13 @@ class IronmanChallengeRoot extends Component {
       isCombatType: null,
       isAreaRestrictedTo: null
     }
+
+    this.newChallenge = this.newChallenge.bind(this)
+  }
+
+  newChallenge () {
+    console.log('test')
+    console.log(c)
   }
 
   render () {
@@ -15,7 +22,7 @@ class IronmanChallengeRoot extends Component {
       <div>
         <h1>Welcome to ironman Challenge Generator!</h1>
         <div><p>You currently have no challenge generated</p></div>
-        <button>generate new challenge</button>
+        <button onClick={this.newChallenge}>generate new challenge</button>
         <style jsx global>
           {`
                 body,html{
