@@ -4,4 +4,5 @@ Makes ironman account challenges programmatically.
 
 # Technologies Used
 
-React
+* React 
+* Data scraping
