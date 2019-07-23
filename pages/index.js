@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import c from '../challenges.js'
+import challenges from '../challenges.js'
 
 class IronmanChallengeRoot extends Component {
   constructor (props) {
@@ -9,28 +9,46 @@ class IronmanChallengeRoot extends Component {
       isAreaRestrictedTo: null
     }
 
-    this.newChallenge = this.newChallenge.bind(this)
+    this.GenereatedChallenge = this.GenereatedChallenge.bind(this)
   }
 
-  newChallenge () {
-    console.log('test')
-    console.log(c)
+  getRandomInt (max) {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+
+  GenereatedChallenge () {
+    for (var key in challenges) {
+      console.log(`You can use only ${challenges[key][this.getRandomInt(challenges[key].length)]}`)
+    }
   }
 
   render () {
     return (
       <div>
-        <h1>Welcome to ironman Challenge Generator!</h1>
-        <div><p>You currently have no challenge generated</p></div>
-        <button onClick={this.newChallenge}>generate new challenge</button>
+        <h1>OSRS-Ironman-Challenge-Generator</h1>
+        <div>
+          <p>You currently have no challenge generated</p>
+        </div>
+        <section>
+          <p>
+          How many restrictions would you like?
+          </p>
+
+        </section>
+        <button onClick={this.GenereatedChallenge}>generate random challenge</button>
         <style jsx global>
           {`
                 body,html{
                     margin:0;
+                    background:black;
+                    color:#FFE;
                 }
                 h1{
-                    color:darkblue;
                     text-decoration:underline;
+                }
+                section{
+                  border:2px solid #FFB;
+                }
           `}
         </style>
       </div>
