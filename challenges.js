@@ -4,7 +4,30 @@ const challenges = {
   // Think about the "minimum set" of course
   combat: ['melee', 'ranged', 'magic'],
   areas: ['varrock', 'lumbridge', 'wilderness'],
-  skills: ['firemaking', 'runecrafting', 'slayer']
+  skills: [
+    'Attack',
+    'Strength',
+    'Defence',
+    'Ranged',
+    'Prayer',
+    'Magic',
+    'Runecraft',
+    'Hitpoints',
+    'Crafting',
+    'Mining',
+    'Smithing',
+    'Fishing',
+    'Cooking',
+    'Firemaking',
+    'Woodcutting',
+    'Agility',
+    'Herblore',
+    'Thieving',
+    'Fletching',
+    'Slayer',
+    'Farming',
+    'Construction',
+    'Hunter']
 }
 
 export default challenges

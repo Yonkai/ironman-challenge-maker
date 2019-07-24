@@ -6,7 +6,8 @@ class IronmanChallengeRoot extends Component {
     super(props)
     this.state = {
       isCombatType: null,
-      isAreaRestrictedTo: null
+      isAreaRestrictedTo: null,
+      finishedChallengeText: null
     }
 
     this.GenereatedChallenge = this.GenereatedChallenge.bind(this)
@@ -27,7 +28,8 @@ class IronmanChallengeRoot extends Component {
       <div>
         <h1>OSRS-Ironman-Challenge-Generator</h1>
         <div>
-          <p>You currently have no challenge generated</p>
+          <p>Your challenge is to:</p>
+          <p>{this.state.finishedChallengeText}</p>
         </div>
         <section>
           <p>
