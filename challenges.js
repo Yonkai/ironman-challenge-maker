@@ -277,7 +277,8 @@ const challenges = {
     'Duel Arena',
     'Last Man Standing',
     'TzHaar Fight Pit'
-  ]
+  ],
+  quests: []
 }
 
 export default challenges
