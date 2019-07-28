@@ -278,7 +278,7 @@ const challenges = {
     'Last Man Standing',
     'TzHaar Fight Pit'
   ],
-  quests: []
+  quests: ['Black Knights Fortress']
 }
 
 export default challenges
