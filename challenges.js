@@ -430,7 +430,10 @@ const challenges = {
     'Shield of Arrav',
     'Vampire Slayer',
     "Witch's Potion"
-  ]
+  ],
+  items:[],
+  beasts:[],
+  mapTiles:[]
 }
 
 export default challenges
