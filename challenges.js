@@ -433,7 +433,8 @@ const challenges = {
   ],
   items:[],
   beasts:[],
-  mapTiles:[]
+  mapTiles:[],
+  type:['ironman','hardcore ironman','ultimate ironman']
 }
 
 export default challenges
