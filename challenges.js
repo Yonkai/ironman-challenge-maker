@@ -434,7 +434,8 @@ const challenges = {
   items:[],
   beasts:[],
   mapTiles:[],
-  type:['ironman','hardcore ironman','ultimate ironman']
+  type:['ironman','hardcore ironman','ultimate ironman'],
+  slots:[]
 }
 
 export default challenges
