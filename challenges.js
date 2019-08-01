@@ -431,11 +431,22 @@ const challenges = {
     'Vampire Slayer',
     "Witch's Potion"
   ],
-  items:[],
-  beasts:[],
-  mapTiles:[],
-  type:['ironman','hardcore ironman','ultimate ironman'],
-  slots:[]
+  items: ['iron dagger'],
+  beasts: ['goblin'],
+  mapTiles: [],
+  type: ['ironman', 'hardcore ironman', 'ultimate ironman'],
+  slots: [
+    'head',
+    'chest',
+    'legs',
+    'feet',
+    'ammo',
+    'neckace',
+    'weapon',
+    'shield',
+    'ring',
+    'gloves',
+    'cape']
 }
 
 export default challenges
