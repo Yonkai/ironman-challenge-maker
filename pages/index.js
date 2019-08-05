@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import challenges from '../challenges.js'
+import ChallengeCondition from '../components/ChallengeCondition.js'
 
 class IronmanChallengeRoot extends Component {
   constructor (props) {
