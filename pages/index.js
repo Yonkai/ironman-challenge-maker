@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import challenges from '../challenges.js'
-import ChallengeCondition from '../components/ChallengeCondition.js'
+import IronmanChallenges from '../components/IronmanChallenges.js'
+import IronmanSettings from '../components/IronmanSettings.js'
 
 class IronmanChallengeRoot extends Component {
   constructor (props) {
@@ -10,48 +11,32 @@ class IronmanChallengeRoot extends Component {
       isAreaRestrictedTo: null,
       finishedChallengeText: null
     }
-
-    this.GenereatedChallenge = this.GenereatedChallenge.bind(this)
   }
 
   getRandomInt (max) {
     return Math.floor(Math.random() * Math.floor(max))
   }
 
-  GenereatedChallenge () {
-    for (var key in challenges) {
-      console.log(`You can use only ${challenges[key][this.getRandomInt(challenges[key].length)]}`)
-    }
-  }
-
   render () {
     return (
       <div>
-        <h1>OSRS-Ironman-Challenge-Generator</h1>
+        <h1>Snowflake Ironman Generator</h1>
         <div>
-          <p>Your challenge is to:</p>
-          <p>{this.state.finishedChallengeText}</p>
+          <IronmanChallenges />
+          <IronmanSettings />
         </div>
-        <section>
-          <p>
-          How many restrictions would you like?
-          </p>
+        <section />
 
-        </section>
-        <button onClick={this.GenereatedChallenge}>generate random challenge</button>
         <style jsx global>
           {`
                 body,html{
                     margin:0;
-                    background:black;
-                    color:#FFE;
                 }
+
                 h1{
-                    text-decoration:underline;
+                  text-align:center;
                 }
-                section{
-                  border:2px solid #FFB;
-                }
+
           `}
         </style>
       </div>
