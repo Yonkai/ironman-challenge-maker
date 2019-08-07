@@ -60,6 +60,14 @@ class IronmanSettings extends Component {
             <h3>Item challenges</h3>
             <h3>Beast challenges</h3>
             <h3>Slot restrictions</h3>
+            <h3>Map tile restrictions</h3>
+            <h3>Relativity challenges</h3>
+            <h3>Food challenges</h3>
+            <h3>Max Framerate</h3>
+            <h3>Useable clients</h3>
+            <h3>Zoom restrictions</h3>
+            <h3>Compass restrictions</h3>
+            <h3>Time restrictions</h3>
             <div />
           </form>
 
