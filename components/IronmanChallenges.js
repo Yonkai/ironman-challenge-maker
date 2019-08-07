@@ -11,11 +11,16 @@ class IronmanChallenges extends Component {
       {/* Ironman challenge condition: */}
       <h2> Your snowflake ironman</h2>
       <div>
-        <p>Combat challenge: You can only use melee and ranged combat</p>
-        <p>Quest challenge: You cannot do Black Knights Fortress</p>
-        <p>Skill challenge: You cannnot use Hunter</p>
-        <p>NPC challenge: You cannot kill goblins</p>
-        <p>Item Challenge: You cannot use needles or buckets</p>
+        {/* TODO: Make them removeable once generate to manually weed out conflicts */}
+        <p>❌Combat challenge: You can only use melee and ranged combat</p>
+        <p>❌Quest challenge: You cannot do Black Knights Fortress</p>
+        <p>❌Skill challenge: You cannnot use Hunter</p>
+        <p>❌NPC challenge: You cannot kill goblins</p>
+        <p>❌Item Challenge: You cannot use needles or buckets</p>
+      </div>
+      <div>
+        <p>Manual challenge:</p>
+        <input type='text' />
       </div>
 
       <style jsx>

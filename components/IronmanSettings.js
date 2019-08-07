@@ -11,6 +11,10 @@ class IronmanSettings extends Component {
       <div className='settings-main'>
         <h2>Snowflake ironman settings</h2>
         <button onClick={this.GenSet}>GEN. NEW IRONMAN</button>
+        <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
+        <button onClick={this.GenSet}>SAVE IRONMAN</button>
+        <button onClick={this.GenSet}>RESET APP</button>
+
         <div className='area-restrictions'>
           {/* Generates object through class based on input */}
           <form action='' method='get' className='form-example'>
@@ -37,7 +41,7 @@ class IronmanSettings extends Component {
               </div>
               <div>
                 <input type='radio' id='random' name='drone' value='random' />
-                <label htmlFor='ransdom'>Random</label>
+                <label htmlFor='random'>Random</label>
               </div>
             </div>
             <h3>Area challenges🔺</h3>
@@ -51,6 +55,10 @@ class IronmanSettings extends Component {
                 <label htmlFor='areas'>Restrict me from USING to X random areas (0 - 222):</label>
                 <input type='number' name='areas'
                   min='0' max='222' />
+              </div>
+              <div>
+                <label htmlFor='search-areas'>Search:</label>
+                <input type='text' name='search-areas' />
               </div>
             </div>
             <h3>Combat challenges</h3>
@@ -83,11 +91,12 @@ class IronmanSettings extends Component {
                 }
 
                 div button{
-                  margin:0 auto;
+                  margin:5px;
                   font-size:20px;
                   display:block;
                   background:white;
                   border:3px solid red;
+                  display:inline;
                 }
 
                 .area-restrictions{
