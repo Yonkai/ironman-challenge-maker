@@ -11,7 +11,17 @@ class IronmanSettings extends Component {
         <h2>Snowflake ironman settings</h2>
         <div className='area-restrictions'>
           {/* Generates object through class based on input */}
-          <h3>Area challenges</h3>
+          <h3>Random challenges:</h3>
+          <form action='' method='get' class='form-example'>
+
+            <div>
+              <label for='areas'>Add X random challenges:</label>
+              <input type='number' name='areas'
+                min='0' max='222' />
+            </div>
+          </form>
+
+          <h3>Area challenges:</h3>
           <form action='' method='get' class='form-example'>
 
             <div>
@@ -25,12 +35,12 @@ class IronmanSettings extends Component {
               <input type='number' name='areas'
                 min='0' max='222' />
             </div>
+            <button onClick={this.GenereatedChallenge}>GEN. NEW IRONMAN</button>
           </form>
 
           {/* "Restrict me from using X areas", "Allow me to go to X areas" basically the same thing. */}
         </div>
 
-        <button onClick={this.GenereatedChallenge}>GEN. NEW IRONMAN</button>
         <style jsx>
           {`
                 .settings-main{
