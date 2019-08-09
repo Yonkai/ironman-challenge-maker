@@ -2,6 +2,7 @@
 const challenges = {
   // Add toggles for can/cannot use instead of writing both out, saves time/space.
   // Think about the "minimum set" of course
+  type: ['ironman', 'hardcore ironman', 'ultimate ironman'],
   combat: ['melee', 'ranged', 'magic'],
   areas: [
     'Burthorpe',
@@ -434,7 +435,6 @@ const challenges = {
   items: ['iron dagger'],
   beasts: ['goblin'],
   mapTiles: [],
-  type: ['ironman', 'hardcore ironman', 'ultimate ironman'],
   slots: [
     'head',
     'chest',
@@ -446,7 +446,14 @@ const challenges = {
     'shield',
     'ring',
     'gloves',
-    'cape']
+    'cape'],
+  relativity: [],
+  food: [],
+  framerate: [],
+  clients: [],
+  zoom: [],
+  compass: [],
+  time: [],
+  biomes: []
 }
-
 export default challenges

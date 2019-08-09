@@ -76,6 +76,8 @@ class IronmanSettings extends Component {
             <h3>Zoom restrictions</h3>
             <h3>Compass restrictions</h3>
             <h3>Time restrictions</h3>
+            <h3>Useable biomes</h3>
+
             <div />
           </form>
 
