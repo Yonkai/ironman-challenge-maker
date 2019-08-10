@@ -433,7 +433,7 @@ const challenges = {
     "Witch's Potion"
   ],
   items: ['iron dagger'],
-  beasts: ['goblin'],
+  beasts: ['goblins'],
   mapTiles: [],
   slots: [
     'head',
@@ -447,13 +447,13 @@ const challenges = {
     'ring',
     'gloves',
     'cape'],
-  relativity: [],
+  relativity: ['...x tiles from y icon'],
   food: [],
-  framerate: [],
-  clients: [],
-  zoom: [],
-  compass: [],
-  time: [],
-  biomes: []
+  framerate: ['...generate random number between 1 and 30'],
+  clients: ['runelite', 'vanilla', 'osbuddy'],
+  zoom: ['full-out', 'close-up'],
+  compass: ['north', 'east', 'south', 'west'],
+  time: ['...generate random time per day/ per month/per year etc'],
+  biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground']
 }
 export default challenges
