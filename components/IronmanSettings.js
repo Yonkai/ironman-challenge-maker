@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Area from './form-comps/Area.js'
 class IronmanSettings extends Component {
   constructor (props) {
     super(props)
@@ -10,10 +11,11 @@ class IronmanSettings extends Component {
     return (
       <div className='settings-main'>
         <h2>Snowflake ironman settings</h2>
-        <button onClick={this.GenSet}>GEN. NEW IRONMAN</button>
         <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
         <button onClick={this.GenSet}>SAVE IRONMAN</button>
-        <button onClick={this.GenSet}>RESET APP</button>
+        <button onClick={this.GenSet}>RESET FORMS</button>
+        {/* TEST */}
+        <Area area={this.props.area} handleChange={this.props.handleChange} />
 
         <div className='area-restrictions'>
           {/* Generates object through class based on input */}
