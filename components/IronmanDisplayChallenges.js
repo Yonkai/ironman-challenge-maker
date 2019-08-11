@@ -17,6 +17,8 @@ class IronmanDisplayChallenges extends Component {
         <p>❌Skill challenge: You cannnot use Hunter</p>
         <p>❌NPC challenge: You cannot kill goblins</p>
         <p>❌Item Challenge: You cannot use needles or buckets</p>
+        <p>{`❌AREA-TEST: Display data here: ${this.props.modifiedArea} after running it through function from previous test in design diagram!!TEST!!`}</p>
+
       </div>
       <div>
         <p>Manual challenge:</p>

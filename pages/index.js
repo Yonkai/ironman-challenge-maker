@@ -7,7 +7,8 @@ class IronmanChallengeRoot extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      area: ''
+      area: '',
+      modarea: ''
     }
     // See design PSD for where this sits in reference to rest of applications
     this.handleChange = this.handleChange.bind(this)
@@ -17,13 +18,18 @@ class IronmanChallengeRoot extends Component {
     return Math.floor(Math.random() * Math.floor(max))
   }
 
-  handleChange (event) {
-    const target = event.target
-    const name = target.name
-    const value = target.value
+  // "Modifiers" are specific to each challenge field
+  handleChange (modName, challengeModifier, event) {
+    const { target } = event
+    const { name, value } = target
+    const valueChallengeDisplayModified = challengeModifier(value)
 
     this.setState({
       [name]: value
+    })
+
+    this.setState({
+      [modName]: valueChallengeDisplayModified
     })
   }
 
@@ -32,7 +38,10 @@ class IronmanChallengeRoot extends Component {
       <div>
         <h1>Snowflake Ironman Generator</h1>
         <div>
-          <IronmanDisplayChallenges />
+          <IronmanDisplayChallenges
+            modifiedArea={this.state.modarea}
+          />
+
           <IronmanSettings
             area={this.state.area}
             handleChange={this.handleChange} />
