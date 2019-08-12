@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// Displayers
+import AreaDisplay from './displayers/AreaDisplay'
+
 class IronmanDisplayChallenges extends Component {
   constructor (props) {
     super(props)
@@ -17,7 +20,9 @@ class IronmanDisplayChallenges extends Component {
         <p>❌Skill challenge: You cannnot use Hunter</p>
         <p>❌NPC challenge: You cannot kill goblins</p>
         <p>❌Item Challenge: You cannot use needles or buckets</p>
-        <p>{`❌AREA-TEST: Display data here: ${this.props.modifiedArea} after running it through function from previous test in design diagram!!TEST!!`}</p>
+        <AreaDisplay
+          rootState={this.props.rootState}
+        />
 
       </div>
       <div>

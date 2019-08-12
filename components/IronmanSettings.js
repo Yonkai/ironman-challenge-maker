@@ -15,7 +15,6 @@ class IronmanSettings extends Component {
         <button onClick={this.GenSet}>SAVE IRONMAN</button>
         <button onClick={this.GenSet}>RESET FORMS</button>
         {/* TEST */}
-        <Area area={this.props.area} handleChange={this.props.handleChange} />
 
         <div className='area-restrictions'>
           {/* Generates object through class based on input */}
@@ -46,23 +45,8 @@ class IronmanSettings extends Component {
                 <label htmlFor='random'>Random</label>
               </div>
             </div>
-            <h3>Area challenges🔺</h3>
-            <div className='area-challenges'>
-              <div>
-                <label htmlFor='areas'>Restrict me from GOING to X random areas (0 - 222):</label>
-                <input type='number' name='areas'
-                  min='0' max='222' />
-              </div>
-              <div>
-                <label htmlFor='areas'>Restrict me from USING to X random areas (0 - 222):</label>
-                <input type='number' name='areas'
-                  min='0' max='222' />
-              </div>
-              <div>
-                <label htmlFor='search-areas'>Search:</label>
-                <input type='text' name='search-areas' />
-              </div>
-            </div>
+            <Area handleChange={this.props.handleChange} />
+
             <h3>Combat challenges</h3>
             <h3>Skill challenges</h3>
             <h3>Minigame challenges</h3>
@@ -86,7 +70,7 @@ class IronmanSettings extends Component {
           {/* "Restrict me from using X areas", "Allow me to go to X areas" basically the same thing. */}
         </div>
 
-        <style jsx>
+        <style global jsx>
           {`
                 .settings-main{
                   border:3px solid black;
