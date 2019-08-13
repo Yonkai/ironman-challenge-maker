@@ -13,3 +13,4 @@ const STATE_KEYS = {
 }
 
 export default STATE_KEYS
+// Might make sense to add a useReducer() function to handle the amount of state orrr redux?

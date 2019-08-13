@@ -1,4 +1,5 @@
-// Probably a lot of text here, and some API queries and generation code eventually, doing it manually would take way too fucking long.
+// Probably a lot of text here, and some API queries and generation code eventually, doing it manually would take way too long.
+// Turn into REST API???
 const challenges = {
   // Add toggles for can/cannot use instead of writing both out, saves time/space.
   // Think about the "minimum set" of course
@@ -454,6 +455,9 @@ const challenges = {
   zoom: ['full-out', 'close-up'],
   compass: ['north', 'east', 'south', 'west'],
   time: ['...generate random time per day/ per month/per year etc'],
-  biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground']
+  biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground'],
+  randomInt: function getRandomInt (max) {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
 }
 export default challenges
