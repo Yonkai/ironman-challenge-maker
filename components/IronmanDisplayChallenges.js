@@ -13,13 +13,13 @@ class IronmanDisplayChallenges extends Component {
     return (<div>
       {/* Ironman challenge condition: */}
       <h2> Your snowflake ironman</h2>
-      <div>
+      <div className='challenge-list'>
         {/* TODO: Make them removeable once generate to manually weed out conflicts */}
-        <p>❌Combat challenge: You can only use melee and ranged combat</p>
-        <p>❌Quest challenge: You cannot do Black Knights Fortress</p>
-        <p>❌Skill challenge: You cannnot use Hunter</p>
-        <p>❌NPC challenge: You cannot kill goblins</p>
-        <p>❌Item Challenge: You cannot use needles or buckets</p>
+        <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
+        <p>🔒🔓🔄❌Quest challenge: You cannot do Black Knights Fortress</p>
+        <p>🔒🔓🔄❌Skill challenge: You cannnot use Hunter</p>
+        <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
+        <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p>
         <AreaDisplay
           rootState={this.props.rootState}
         />
@@ -29,7 +29,7 @@ class IronmanDisplayChallenges extends Component {
         <p>Manual challenge:</p>
         <input type='text' />
       </div>
-
+      {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}
       <style jsx>
         {`
             p{
@@ -44,6 +44,12 @@ class IronmanDisplayChallenges extends Component {
               border:3px solid black;
               width:80%;
               margin:5px auto;
+            }
+
+            .challenge-list{
+              overflow-y: scroll;
+              height:690px;
+
             }
             div div{
               background:black;

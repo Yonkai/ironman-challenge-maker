@@ -18,7 +18,7 @@ const AreaDisplay = (props) => {
     <div>
 
       <ul>
-        {`❌Area Challenge: You are restricted from going to these
+        {`🔒🔓🔄❌Area Challenges: You are restricted from going to these
       ${props.rootState[STATE_KEYS.AREA.GOING_AREA] ? props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0}  areas:`}
         {goingSelected.map((area, index) =>
           <li key={index}>{area}</li>
@@ -26,7 +26,7 @@ const AreaDisplay = (props) => {
       </ul>
       {/* Use this?props.rootState[STATE_KEYS.AREA.GOING_AREA] || 0 */}
       <ul>
-        {`❌Area Challenge: You are restricted from using these
+        {`🔒🔓🔄❌Area Challenges: You are restricted from using these
       ${props.rootState[STATE_KEYS.AREA.USING_AREA] ? props.rootState[STATE_KEYS.AREA.USING_AREA] : 0}  areas:`}
         {usingSelected.map((area, index) =>
           <li key={index + 1000}>{area}</li>
