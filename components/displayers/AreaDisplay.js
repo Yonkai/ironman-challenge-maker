@@ -2,6 +2,7 @@ import STATE_KEYS from '../../STATE_KEYS.js'
 import challenges from '../../challenges.js'
 
 const AreaDisplay = (props) => {
+  // TODO:Make stateful, storing in this comp., so you can compare previous state
   // Shuffle array
   const shuffled = challenges.areas.sort(() => 0.5 - Math.random())
 
@@ -21,7 +22,7 @@ const AreaDisplay = (props) => {
         {`🔒🔓🔄❌Area Challenges: You are restricted from going to these
       ${props.rootState[STATE_KEYS.AREA.GOING_AREA] ? props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0}  areas:`}
         {goingSelected.map((area, index) =>
-          <li key={index}>{area}</li>
+          <li key={index}>{`🔒🔓🔄❌ ${area}`}</li>
         )}
       </ul>
       {/* Use this?props.rootState[STATE_KEYS.AREA.GOING_AREA] || 0 */}
@@ -29,7 +30,7 @@ const AreaDisplay = (props) => {
         {`🔒🔓🔄❌Area Challenges: You are restricted from using these
       ${props.rootState[STATE_KEYS.AREA.USING_AREA] ? props.rootState[STATE_KEYS.AREA.USING_AREA] : 0}  areas:`}
         {usingSelected.map((area, index) =>
-          <li key={index + 1000}>{area}</li>
+          <li key={index + 1000}>{`🔒🔓🔄❌ ${area}`}</li>
         )}
       </ul>
 
@@ -45,7 +46,7 @@ const AreaDisplay = (props) => {
               margin-left:40px;
             }
             ul{
-              color:white;
+              color:lightgreen;
               font-size:20px;
               margin:0;
               padding:0;

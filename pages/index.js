@@ -32,7 +32,7 @@ class IronmanChallengeRoot extends Component {
   render () {
     return (
       <div>
-        <h1>Snowflake Ironman Generator</h1>
+        <h1>Fantasy Ironman Creator</h1>
         <div>
           <IronmanDisplayChallenges
             rootState={this.state}

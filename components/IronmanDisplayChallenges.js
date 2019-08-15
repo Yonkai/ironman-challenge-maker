@@ -12,14 +12,14 @@ class IronmanDisplayChallenges extends Component {
   render () {
     return (<div>
       {/* Ironman challenge condition: */}
-      <h2> Your snowflake ironman</h2>
+      <h2> Your btw</h2>
       <div className='challenge-list'>
         {/* TODO: Make them removeable once generate to manually weed out conflicts */}
-        <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
+        {/* <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
         <p>🔒🔓🔄❌Quest challenge: You cannot do Black Knights Fortress</p>
         <p>🔒🔓🔄❌Skill challenge: You cannnot use Hunter</p>
         <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
-        <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p>
+        <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
         <AreaDisplay
           rootState={this.props.rootState}
         />
@@ -48,7 +48,7 @@ class IronmanDisplayChallenges extends Component {
 
             .challenge-list{
               overflow-y: scroll;
-              height:690px;
+              height:500px;
 
             }
             div div{
