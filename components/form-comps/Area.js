@@ -9,7 +9,7 @@ const Area = (props) => {
         <input type='text' name='area' value={props.area} onChange={(event) => props.handleChange('modArea', areaModifier, event)} />
       </label> */}
       <h3>Area challenges🔺</h3>
-      <div className='area-challenges'>
+      <div className='challenges'>
         <div>
           <label htmlFor={STATE_KEYS.AREA.GOING_AREA}>Restrict me from GOING to X random areas (0 - 222):</label>
           <input type='number' name={STATE_KEYS.AREA.GOING_AREA}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Area from './form-comps/Area.js'
+import IronmanType from './form-comps/IronmanType.js'
 class IronmanSettings extends Component {
   constructor (props) {
     super(props)
@@ -16,35 +17,17 @@ class IronmanSettings extends Component {
         <button onClick={this.GenSet}>RESET FORMS</button>
         {/* TEST */}
 
-        <div className='area-restrictions'>
+        <div className='restrictions'>
           {/* Generates object through class based on input */}
           <form action='' method='get' className='form-example'>
             <h3>Random challenges🔺</h3>
-            <div className='area-challenges'>
+            <div className='challenges'>
               <label htmlFor='areas'>Add X random challenges:</label>
               <input type='number' name='areas'
                 min='0' max='222' />
             </div>
-            <h3>Ironman type🔺</h3>
-            <div className='area-challenges'>
-              <div>
-                <input type='radio' id='huey' name='drone' value='Ironman' />
-                <label htmlFor='huey'>Ironman</label>
-              </div>
-              <div>
-                <input type='radio' id='dewey' name='drone' value='Hardcore Ironman' />
-                <label htmlFor='dewey'>Hardcore Ironman</label>
-              </div>
 
-              <div>
-                <input type='radio' id='louie' name='drone' value='Ultimate Ironman' />
-                <label htmlFor='louie'>Ultimate Ironman</label>
-              </div>
-              <div>
-                <input type='radio' id='random' name='drone' value='random' />
-                <label htmlFor='random'>Random</label>
-              </div>
-            </div>
+            <IronmanType />
             <Area handleChange={this.props.handleChange} />
 
             <h3>Combat challenges</h3>
@@ -87,14 +70,12 @@ class IronmanSettings extends Component {
                   display:inline;
                 }
 
-                .area-restrictions{
+                .restrictions{
                   margin:5px;
                   border:3px solid black;
                 }
-                form div{
-                  margin:5px;
-                }
-                .area-challenges{
+
+                .challenges{
                   border:3px solid black;
                   margin:5px;
                   padding:10px;
