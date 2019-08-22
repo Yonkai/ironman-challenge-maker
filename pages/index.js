@@ -33,7 +33,7 @@ class IronmanChallengeRoot extends Component {
     return (
       <div>
         <h1>Fantasy Ironman Creator</h1>
-        <div>
+        <div className='containerMain'>
           <IronmanDisplayChallenges
             rootState={this.state}
           />
@@ -49,11 +49,29 @@ class IronmanChallengeRoot extends Component {
                 body,html{
                     margin:0;
                 }
+                body{
+                  height:100%;
+                }
 
                 h1{
                   text-align:center;
                 }
 
+                .containerMain{
+                  display:grid;
+                  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+                  align-items:start;
+                  justify-items:start;
+                  grid-template-areas:"forms display";
+                }
+
+                @media only screen and (max-width: 660px) {
+                  .containerMain{
+                  grid-template-areas:
+                              "forms"
+                              "display";
+                  }
+                }
           `}
         </style>
       </div>

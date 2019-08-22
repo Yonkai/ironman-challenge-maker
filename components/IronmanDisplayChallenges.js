@@ -6,11 +6,11 @@ import AreaDisplay from './displayers/AreaDisplay'
 class IronmanDisplayChallenges extends Component {
   constructor (props) {
     super(props)
-    this.state = { challengeCount: null }
+    this.state = {}
   }
 
   render () {
-    return (<div>
+    return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
       <h2> Your btw</h2>
       <div className='challenge-list'>
@@ -42,17 +42,23 @@ class IronmanDisplayChallenges extends Component {
             }
             div{
               border:3px solid black;
-              width:80%;
               margin:5px auto;
             }
 
             .challenge-list{
               overflow-y: scroll;
-              height:500px;
+              height:700px;
 
             }
             div div{
               background:black;
+            }
+
+            .challengeDisplay{
+              width:95%;
+              border:3px solid black;
+              margin:5px auto;
+              grid-area:display;
             }
           `}
       </style>

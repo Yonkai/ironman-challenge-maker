@@ -8,6 +8,7 @@ class IronmanSettings extends Component {
   }
 
   // TODO:control these forms in react
+  // TODO: Add a pull out menu in shell design from google for the forms on mobile?
   render () {
     return (
       <div className='settings-main'>
@@ -57,8 +58,11 @@ class IronmanSettings extends Component {
           {`
                 .settings-main{
                   border:3px solid black;
-                  width:80%;
                   margin:5px auto;
+                  height:700px;
+                  width:95%;
+                  overflow-y:scroll;
+                  grid-area:forms;
                 }
 
                 div button{
@@ -73,6 +77,7 @@ class IronmanSettings extends Component {
                 .restrictions{
                   margin:5px;
                   border:3px solid black;
+
                 }
 
                 .challenges{

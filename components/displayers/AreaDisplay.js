@@ -4,7 +4,7 @@ import challenges from '../../challenges.js'
 const AreaDisplay = (props) => {
   // TODO:Make stateful, storing in this comp., so you can compare previous state
   // in order to implete add lock/remove lock/refresh challenge/delete challenge
-  // and abstract that functionallity for the rest of the challenge forms.
+  // and abstract that functionallity for the rest of the challenge forms with a HOC/render prop.
   // Also TODO, add reducer to manage state???
 
   // Shuffle array
