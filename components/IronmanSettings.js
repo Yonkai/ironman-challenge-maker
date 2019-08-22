@@ -12,7 +12,7 @@ class IronmanSettings extends Component {
   render () {
     return (
       <div className='settings-main'>
-        <h2>Snowflake ironman settings</h2>
+        <h2>Fantasy Ironman Controls</h2>
         <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
         <button onClick={this.GenSet}>SAVE IRONMAN</button>
         <button onClick={this.GenSet}>RESET FORMS</button>
@@ -60,9 +60,10 @@ class IronmanSettings extends Component {
                   border:3px solid black;
                   margin:5px auto;
                   height:700px;
-                  width:95%;
+                  width:100%;
                   overflow-y:scroll;
                   grid-area:forms;
+                  box-sizing:border-box;
                 }
 
                 div button{

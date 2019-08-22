@@ -12,7 +12,7 @@ class IronmanDisplayChallenges extends Component {
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
-      <h2> Your btw</h2>
+      <h2>Your Ironman</h2>
       <div className='challenge-list'>
         {/* TODO: Make them removeable once generate to manually weed out conflicts */}
         {/* <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
@@ -55,10 +55,11 @@ class IronmanDisplayChallenges extends Component {
             }
 
             .challengeDisplay{
-              width:95%;
+              width:100%;
               border:3px solid black;
               margin:5px auto;
               grid-area:display;
+              box-sizing:border-box;
             }
           `}
       </style>
