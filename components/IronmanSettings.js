@@ -12,10 +12,10 @@ class IronmanSettings extends Component {
   render () {
     return (
       <div className='settings-main'>
-        <h2>Fantasy Ironman Controls</h2>
-        <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
+        {/* Add to side bar: */}
+        {/* <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
         <button onClick={this.GenSet}>SAVE IRONMAN</button>
-        <button onClick={this.GenSet}>RESET FORMS</button>
+        <button onClick={this.GenSet}>RESET FORMS</button> */}
         {/* TEST */}
 
         <div className='restrictions'>
@@ -57,13 +57,11 @@ class IronmanSettings extends Component {
         <style global jsx>
           {`
                 .settings-main{
-                  border:3px solid black;
-                  margin:5px auto;
-                  height:700px;
+                  border:1px solid black;
+                  height:100vh;
                   overflow-y:scroll;
                   grid-area:forms;
                   box-sizing:border-box;
-                  width:100%;
                 }
 
                 div button{
@@ -85,6 +83,38 @@ class IronmanSettings extends Component {
                   border:3px solid black;
                   margin:5px;
                   padding:10px;
+                }
+
+                .settings-main::-webkit-scrollbar {
+                  width: 1em;
+              }
+                .settings-main::-webkit-scrollbar-track {
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                }
+                .settings-main::-webkit-scrollbar-thumb {
+                  background-color: darkblue;
+                  outline: 1px solid darkblue;
+                }
+
+                //tablet
+                @media only screen and (max-width: 850px) {
+                  .settings-main{
+                    border:1px solid black;
+                    height:50vh;
+                    overflow-y:scroll;
+                    grid-area:forms;
+                    box-sizing:border-box;
+                  }
+                }
+
+                @media only screen and (max-width: 475px) {
+                  .settings-main{
+                    border:1px solid black;
+                    height:50vh;
+                    overflow-y:scroll;
+                    grid-area:forms;
+                    box-sizing:border-box;
+                  }
                 }
           `}
         </style>

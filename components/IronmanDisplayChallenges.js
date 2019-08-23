@@ -12,7 +12,6 @@ class IronmanDisplayChallenges extends Component {
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
-      <h2>Your Ironman</h2>
       <div className='challenge-list'>
         {/* TODO: Make them removeable once generate to manually weed out conflicts */}
         {/* <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
@@ -24,10 +23,6 @@ class IronmanDisplayChallenges extends Component {
           rootState={this.props.rootState}
         />
 
-      </div>
-      <div>
-        <p>Manual challenge:</p>
-        <input type='text' />
       </div>
       {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}
       <style jsx>
@@ -44,22 +39,43 @@ class IronmanDisplayChallenges extends Component {
               border:3px solid black;
               margin:5px auto;
             }
-
+            
             .challenge-list{
-              overflow-y: scroll;
-              height:700px;
-
+              height:100vh;
             }
-            div div{
-              background:black;
-            }
-
+            
             .challengeDisplay{
-              border:3px solid black;
-              margin:5px auto;
+              border:1px solid black;
+              margin:0;
               box-sizing:border-box;
-              width:100%;
+              overflow-y: scroll;
               grid-area:display;
+              background:black; 
+            }
+            
+            //tablet
+            @media only screen and (max-width: 850px) {
+              .challengeDisplay{
+                border:1px solid black;
+                margin:0;
+                box-sizing:border-box;
+                grid-area:display;
+              }
+
+              .challenge-list{
+                min-height:320px;
+              }
+            }
+            
+            //mobile
+            @media only screen and (max-width: 475px) {
+              .challengeDisplay{
+                border:1px solid black;
+                margin:0;
+                box-sizing:border-box;
+                grid-area:display;
+                overflow-y: scroll;
+              }
             }
           `}
       </style>

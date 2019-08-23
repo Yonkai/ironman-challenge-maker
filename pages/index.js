@@ -32,7 +32,9 @@ class IronmanChallengeRoot extends Component {
   render () {
     return (
       <div className='containerMain'>
-        <div className='navMenu' />
+        <nav className='navMenu'>
+          <p>words</p>
+        </nav>
         <IronmanDisplayChallenges
           rootState={this.state}
         />
@@ -46,31 +48,43 @@ class IronmanChallengeRoot extends Component {
                 body,html{
                     margin:0;
                 }
-                body{
-                  height:100%;
-                }
 
                 .containerMain{
                   display:grid;
-                  grid-template-columns: 200px 1fr 400px;
-                  align-items:start;
-                  justify-items:start;
+                  grid-template-columns: 150px 3fr 5fr;
                   grid-template-areas:" nav forms display";
+                  grid-gap:5px;
+                  height:100vh;
                 }
                 .navMenu{
                   background:red;
                   grid-area:nav;
-                  width:100%;
-                  height:1000px;
+                  height:100vh;
                 }
 
-                @media only screen and (max-width: 800px) {
+                //tablet
+                @media only screen and (max-width: 850px) {
                   .containerMain{
-                  grid-template-areas:
-                              "forms"
-                              "display";
+                    grid-template-columns: 150px 1fr;
+                    grid-template-rows:1fr 1fr;
+                    grid-template-areas:
+                              "nav display"
+                              "nav forms";
                   }
                 }
+                //mobile add pull-out menu?
+                @media only screen and (max-width: 475px) {
+                  .containerMain{
+                    grid-template-columns: 1fr;
+                  grid-template-areas:
+                              "display"
+                              "forms";
+                  }
+                  .navMenu{
+                    display:none;
+                  }
+                }
+
           `}
         </style>
       </div>
