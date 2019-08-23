@@ -33,7 +33,14 @@ class IronmanChallengeRoot extends Component {
     return (
       <div className='containerMain'>
         <nav className='navMenu'>
-          <p>words</p>
+          <p>What's This?</p>
+          <p>Create</p>
+          <p>See Map</p>
+          <p>Save/Load Ironmen</p>
+          <p>See Github</p>
+          <p>Find Cool Links</p>
+          <p>Play RuneScape</p>
+          <p>Other's creations</p>
         </nav>
         <IronmanDisplayChallenges
           rootState={this.state}
