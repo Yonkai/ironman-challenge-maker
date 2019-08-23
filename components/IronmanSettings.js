@@ -60,10 +60,10 @@ class IronmanSettings extends Component {
                   border:3px solid black;
                   margin:5px auto;
                   height:700px;
-                  width:100%;
                   overflow-y:scroll;
                   grid-area:forms;
                   box-sizing:border-box;
+                  width:100%;
                 }
 
                 div button{

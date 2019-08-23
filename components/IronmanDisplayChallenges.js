@@ -55,11 +55,11 @@ class IronmanDisplayChallenges extends Component {
             }
 
             .challengeDisplay{
-              width:100%;
               border:3px solid black;
               margin:5px auto;
-              grid-area:display;
               box-sizing:border-box;
+              width:100%;
+              grid-area:display;
             }
           `}
       </style>

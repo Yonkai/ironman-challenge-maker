@@ -31,18 +31,15 @@ class IronmanChallengeRoot extends Component {
 
   render () {
     return (
-      <div>
-        <h1>Fantasy Ironman Creator</h1>
-        <div className='containerMain'>
-          <IronmanDisplayChallenges
-            rootState={this.state}
-          />
+      <div className='containerMain'>
+        <div className='navMenu' />
+        <IronmanDisplayChallenges
+          rootState={this.state}
+        />
 
-          <IronmanSettings
-            handleChange={this.handleChange}
-          />
-        </div>
-        <section />
+        <IronmanSettings
+          handleChange={this.handleChange}
+        />
 
         <style jsx global>
           {`
@@ -53,19 +50,21 @@ class IronmanChallengeRoot extends Component {
                   height:100%;
                 }
 
-                h1{
-                  text-align:center;
-                }
-
                 .containerMain{
                   display:grid;
-                  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+                  grid-template-columns: 200px 1fr 400px;
                   align-items:start;
                   justify-items:start;
-                  grid-template-areas:"forms display";
+                  grid-template-areas:" nav forms display";
+                }
+                .navMenu{
+                  background:red;
+                  grid-area:nav;
+                  width:100%;
+                  height:1000px;
                 }
 
-                @media only screen and (max-width: 660px) {
+                @media only screen and (max-width: 800px) {
                   .containerMain{
                   grid-template-areas:
                               "forms"
