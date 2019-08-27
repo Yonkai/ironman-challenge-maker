@@ -4,5 +4,7 @@ Makes ironman account challenges programmatically.
 
 # Technologies Used
 
-* React 
+* React/NextJS
 * Data scraping
+* CSS Grid
+* CSS-In-JS
