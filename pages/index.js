@@ -35,12 +35,12 @@ class IronmanChallengeRoot extends Component {
         <nav className='navMenu'>
           <p>What's This?</p>
           <p>Create</p>
-          <p>See Map</p>
+          <p>See Map Visuals</p>
           <p>Save/Load Ironmen</p>
-          <p>See Github</p>
-          <p>Find Cool Links</p>
-          <p>Play RuneScape</p>
           <p>Other's creations</p>
+          <p>Github</p>
+          <p>Cool Links+Sources</p>
+          <p>Play OSRS</p>
         </nav>
         <IronmanDisplayChallenges
           rootState={this.state}
