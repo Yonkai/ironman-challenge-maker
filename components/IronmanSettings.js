@@ -48,6 +48,7 @@ class IronmanSettings extends Component {
             <h3>Time restrictions</h3>
             <h3>Useable biomes</h3>
             <h3>Spell types</h3>
+            <h3>Updates to this date only</h3>
 
             <div />
           </form>
