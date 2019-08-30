@@ -28,7 +28,7 @@ class IronmanSettings extends Component {
                 min='0' max='222' />
             </div>
 
-            <IronmanType />
+            <IronmanType handleChange={this.props.handleChange} />
             <Area handleChange={this.props.handleChange} />
 
             <h3>Combat challenges</h3>
@@ -65,7 +65,9 @@ class IronmanSettings extends Component {
                   grid-area:forms;
                   box-sizing:border-box;
                 }
-
+                h3{
+                  font-size:24px;
+                }
                 div button{
                   margin:5px;
                   font-size:20px;

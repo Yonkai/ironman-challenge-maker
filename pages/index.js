@@ -6,13 +6,15 @@ import IronmanSettings from '../components/IronmanSettings.js'
 // using Area as an example:
 // 1. Make form component (Area.js)
 // 2. Have form component push data though bound function to root state stored in this (index.js) component
-//    threading data between a modifier function (areaModifier.js) before setting new final state.
+//    threading data between a modifier function (areaModifier.js) if it exists before setting new final state.
 // 3. Make displayer component (AreaDisplay.js) and render inside of (IronmanDisplayChallenges.js)
 // 4. (TODO) Each displayer component keeps its own state and imports abstracted functions (mutations/<function>)
 //    that allow that displayers state to be modified by either locking, unlocking, rerolling, or removing data
 //    by threading through said functions. The data structure will more than likely just be simple objects but there may be more
 //    advance structures in the future added, which may have different data/design flows.
-
+// 5. (TODO) Add "random challenges" form last because it will use all other form challenges.
+// 6. (TODO) Add search with downshift later which goes through the challenges data file, asssuming I don't change that
+//    to an API instead.
 class IronmanChallengeRoot extends Component {
   constructor (props) {
     super(props)
@@ -30,13 +32,13 @@ class IronmanChallengeRoot extends Component {
     const { target } = event
     const { name, value } = target
     const valueChallengeDisplayModified = challengeModifier(value)
-
+    if (name !== modName) {
+      this.setState({
+        [modName]: valueChallengeDisplayModified
+      })
+    }
     this.setState({
       [name]: value
-    })
-
-    this.setState({
-      [modName]: valueChallengeDisplayModified
     })
   }
 

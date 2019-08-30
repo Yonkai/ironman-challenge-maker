@@ -433,8 +433,8 @@ const challenges = {
     'Vampire Slayer',
     "Witch's Potion"
   ],
-  items: ['iron dagger'],
-  beasts: ['goblins'],
+  items: ['bronze dagger', 'iron dagger', 'steel dagger'],
+  beasts: ['goblins', 'blue dragons', 'hill giants'],
   mapTiles: [],
   slots: [
     'head',

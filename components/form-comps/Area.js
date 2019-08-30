@@ -11,12 +11,12 @@ const Area = (props) => {
       <h3>Area challenges🔺</h3>
       <div className='challenges'>
         <div>
-          <label htmlFor={STATE_KEYS.AREA.GOING_AREA}>Restrict me from GOING to X random areas (0 - 222):</label>
+          <label htmlFor={STATE_KEYS.AREA.GOING_AREA}>Restrict me from GOING to X random areas:</label>
           <input type='number' name={STATE_KEYS.AREA.GOING_AREA}
             min='0' max='222' onChange={(event) => props.handleChange(STATE_KEYS.AREA.GOING_AREA_MOD, areaModifier, event)} />
         </div>
         <div>
-          <label htmlFor={STATE_KEYS.AREA.USING_AREA}>Restrict me from USING to X random areas (0 - 222):</label>
+          <label htmlFor={STATE_KEYS.AREA.USING_AREA}>Restrict me from USING to X random areas:</label>
           <input type='number' name={STATE_KEYS.AREA.USING_AREA}
             min='0' max='222' onChange={(event) => props.handleChange(STATE_KEYS.AREA.USING_AREA_MOD, areaModifier, event)} />
         </div>

@@ -46,12 +46,12 @@ const AreaDisplay = (props) => {
             }
             li{
               color:white;
-              font-size:20px;
+              font-size:22px;
               margin-left:40px;
             }
             ul{
               color:lightgreen;
-              font-size:20px;
+              font-size:24px;
               margin:0;
               padding:0;
             }
