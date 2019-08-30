@@ -52,6 +52,17 @@ class IronmanDisplayChallenges extends Component {
               grid-area:display;
               background:black; 
             }
+
+            .challengeDisplay::-webkit-scrollbar {
+              width: 1em;
+          }
+            .challengeDisplay::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            }
+            .challengeDisplay::-webkit-scrollbar-thumb {
+              background-color: darkblue;
+              outline: 1px solid darkblue;
+            }
             
             //tablet
             @media only screen and (max-width: 850px) {

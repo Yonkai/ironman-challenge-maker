@@ -1,4 +1,4 @@
-import areaModifier from '../modifiers/areaModifier.js'
+import areaModifier from '../preModifiers/areaModifier.js'
 import STATE_KEYS from '../../STATE_KEYS.js'
 
 const Area = (props) => {

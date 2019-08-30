@@ -1,4 +1,3 @@
-import areaModifier from '../modifiers/areaModifier.js'
 import STATE_KEYS from '../../STATE_KEYS.js'
 
 const IronmanType = (props) => {
@@ -7,22 +6,22 @@ const IronmanType = (props) => {
       <h3>Ironman type🔺</h3>
       <div className='challenges'>
         <div>
-          <input type='radio' id='huey' name='drone' value='Ironman' />
-          <label htmlFor='huey'>Ironman</label>
+          <input type='radio' id='ironman' name='btw' value='Ironman' />
+          <label htmlFor='ironman'>Ironman</label>
         </div>
 
         <div>
-          <input type='radio' id='dewey' name='drone' value='Hardcore Ironman' />
-          <label htmlFor='dewey'>Hardcore Ironman</label>
+          <input type='radio' id='hardcoreIronman' name='btw' value='Hardcore Ironman' />
+          <label htmlFor='hardcoreIronman'>Hardcore Ironman</label>
         </div>
 
         <div>
-          <input type='radio' id='louie' name='drone' value='Ultimate Ironman' />
-          <label htmlFor='louie'>Ultimate Ironman</label>
+          <input type='radio' id='ultimateIronman' name='btw' value='Ultimate Ironman' />
+          <label htmlFor='ultimateIronman'>Ultimate Ironman</label>
         </div>
 
         <div>
-          <input type='radio' id='random' name='drone' value='random' />
+          <input type='radio' id='random' name='btw' value='random' />
           <label htmlFor='random'>Random</label>
         </div>
       </div>

@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import IronmanDisplayChallenges from '../components/IronmanDisplayChallenges.js'
 import IronmanSettings from '../components/IronmanSettings.js'
 
+// Notes: Process to add a new challenge/field to the display component
+// using Area as an example:
+// 1. Make form component (Area.js)
+// 2. Have form component push data though bound function to root state stored in this (index.js) component
+//    threading data between a modifier function (areaModifier.js) before setting new final state.
+// 3. Make displayer component (AreaDisplay.js) and render inside of (IronmanDisplayChallenges.js)
+// 4. (TODO) Each displayer component keeps its own state and imports abstracted functions (mutations/<function>)
+//    that allow that displayers state to be modified by either locking, unlocking, recalculating, or removing data
+//    by threading through said functions. The data structure will more than likely just be simple objects but there may be more
+//    advance structures in the future added, which may have different data/design flows.
+
 class IronmanChallengeRoot extends Component {
   constructor (props) {
     super(props)
@@ -33,15 +44,18 @@ class IronmanChallengeRoot extends Component {
     return (
       <div className='containerMain'>
         <nav className='navMenu'>
-          <p>What's This?</p>
           <p>Create</p>
           <p>See Map Visuals</p>
           <p>Save/Load Ironmen</p>
-          <p>Other's creations</p>
+          <p>Other's Creations</p>
           <p>Github</p>
-          <p>Cool Links+Sources</p>
+          <p>Cool Links</p>
+          <p>Sources</p>
           <p>Play OSRS</p>
+          <p>How to Use</p>
+          <p>How to Contribute</p>
         </nav>
+
         <IronmanDisplayChallenges
           rootState={this.state}
         />
@@ -64,7 +78,8 @@ class IronmanChallengeRoot extends Component {
                   height:100vh;
                 }
                 .navMenu{
-                  background:red;
+                  background-color:black;
+                  color:white;
                   grid-area:nav;
                   height:100vh;
                 }
