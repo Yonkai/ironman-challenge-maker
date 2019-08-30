@@ -9,7 +9,7 @@ import IronmanSettings from '../components/IronmanSettings.js'
 //    threading data between a modifier function (areaModifier.js) before setting new final state.
 // 3. Make displayer component (AreaDisplay.js) and render inside of (IronmanDisplayChallenges.js)
 // 4. (TODO) Each displayer component keeps its own state and imports abstracted functions (mutations/<function>)
-//    that allow that displayers state to be modified by either locking, unlocking, recalculating, or removing data
+//    that allow that displayers state to be modified by either locking, unlocking, rerolling, or removing data
 //    by threading through said functions. The data structure will more than likely just be simple objects but there may be more
 //    advance structures in the future added, which may have different data/design flows.
 
