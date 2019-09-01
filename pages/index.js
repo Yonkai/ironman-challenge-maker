@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import IronmanDisplayChallenges from '../components/IronmanDisplayChallenges.js'
 import IronmanSettings from '../components/IronmanSettings.js'
+import Link from 'next/link'
 
 // Notes: Process to add a new challenge/field to the display component
 // using Area as an example:
@@ -46,16 +47,16 @@ class IronmanChallengeRoot extends Component {
     return (
       <div className='containerMain'>
         <nav className='navMenu'>
-          <p>Create</p>
-          <p>See Map Visuals</p>
-          <p>Save/Load Ironmen</p>
-          <p>Other's Creations</p>
-          <p>Github</p>
-          <p>Cool Links</p>
-          <p>Sources</p>
-          <p>Play OSRS</p>
-          <p>How to Use</p>
-          <p>How to Contribute</p>
+          <Link href='#'><a>Create</a></Link>
+          <Link href='#'><a>See Map Visuals</a></Link>
+          <Link href='#'><a>Save/Load Ironmen</a></Link>
+          <Link href='#'><a>Other's Creations</a></Link>
+          <Link href='#'><a>Github</a></Link>
+          <Link href='#'><a>Cool Links</a></Link>
+          <Link href='#'><a>Sources</a></Link>
+          <Link href='#'><a>Play OSRS</a></Link>
+          <Link href='#'><a>How to Use</a></Link>
+          <Link href='#'><a>How to Contribute</a></Link>
         </nav>
 
         <IronmanDisplayChallenges
@@ -84,7 +85,17 @@ class IronmanChallengeRoot extends Component {
                   color:white;
                   grid-area:nav;
                   height:100vh;
+                  display:inline-block;
                 }
+
+                .navMenu a{
+                  display:block;
+                  margin-top:20px;
+                  color:white;
+                  font-size:18px;
+                  text-decoration:n
+                }
+
 
                 //tablet
                 @media only screen and (max-width: 850px) {
