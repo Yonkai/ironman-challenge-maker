@@ -24,11 +24,11 @@ const IronmanType = (props) => {
           <label htmlFor='ultimateIronman'>Ultimate Ironman</label>
         </div>
 
-        <div>
-          <input type='radio' id='random' name={STATE_KEYS.IRONMAN_TYPE} value='random'
+        {/* <div>
+          <input type='radio' id='random' name={STATE_KEYS.IRONMAN_TYPE} value='Random'
             onChange={(event) => props.handleChange(STATE_KEYS.IRONMAN_TYPE, doNothingModifier, event)} />
           <label htmlFor='random'>Random</label>
-        </div>
+        </div> */}
       </div>
       <style jsx>
         {``}

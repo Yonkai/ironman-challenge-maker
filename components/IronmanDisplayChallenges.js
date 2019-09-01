@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 // Displayers
 import AreaDisplay from './displayers/AreaDisplay'
+import IronmanTypeDisplay from './displayers/IronmanTypeDisplay'
 
 class IronmanDisplayChallenges extends Component {
   constructor (props) {
@@ -20,6 +21,9 @@ class IronmanDisplayChallenges extends Component {
         <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
         <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
         <AreaDisplay
+          rootState={this.props.rootState}
+        />
+        <IronmanTypeDisplay
           rootState={this.props.rootState}
         />
 
