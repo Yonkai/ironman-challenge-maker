@@ -5,7 +5,15 @@ const AreaDisplay = (props) => {
   // TODO:Make stateful, storing in this comp., so you can compare previous state
   // in order to implete add lock/remove lock/refresh challenge/delete challenge
   // and abstract that functionallity for the rest of the challenge forms with a HOC/render prop.
+
   // Also TODO, add reducer to manage state???
+
+  // Managing state notes: 'Control' these components'
+  // state through pushing/popping from an array, and upon generation,
+  // add to the jsx a function for each mutation type that takes that id as an argument
+  // so that those functions can mutate state in this component after being bound to the component
+  // implement custom logic on top of that for each component when needed, like handling the 'ul' section
+  // and when to reject a mutation function call. Might to use .call/.apply/.bind to rebound this?
 
   // Shuffle array
   const shuffled = challenges.areas.sort(() => 0.5 - Math.random())

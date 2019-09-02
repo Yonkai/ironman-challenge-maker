@@ -20,10 +20,10 @@ class IronmanDisplayChallenges extends Component {
         <p>🔒🔓🔄❌Skill challenge: You cannnot use Hunter</p>
         <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
         <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
-        <AreaDisplay
+        <IronmanTypeDisplay
           rootState={this.props.rootState}
         />
-        <IronmanTypeDisplay
+        <AreaDisplay
           rootState={this.props.rootState}
         />
 
