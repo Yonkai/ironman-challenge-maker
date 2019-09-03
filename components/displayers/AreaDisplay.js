@@ -12,11 +12,45 @@ class AreaDisplay extends Component {
     this.getAreaFromChallenges = this.getAreaFromChallenges.bind(this)
   }
 
-  getAreaFromChallenges (isThisGoOrUse) {
-    if (isThisGoOrUse === 'Go') {
+  getAreaFromChallenges (goingOrUsing, action) {
+    if (goingOrUsing === 'Go') {
 
     } else {
 
+    }
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (this.props.rootState[STATE_KEYS.AREA.GOING_AREA] !== prevProps.rootState[STATE_KEYS.AREA.GOING_AREA]) {
+      // Shuffle array
+
+      // find shift + or -
+      const shift = this.props.rootState[STATE_KEYS.AREA.GOING_AREA] - prevProps.rootState[STATE_KEYS.AREA.GOING_AREA]
+
+      // TODO:given shift, pop from state X elements or push X randomly selected elements
+
+      const shuffled = challenges.areas.sort(() => 0.5 - Math.random())
+
+      // Get sub-array of first n elements after shuffled
+      const goingSelected = shuffled.slice(0, this.props.rootState[STATE_KEYS.AREA.GOING_AREA] ? this.props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0)
+
+      console.log('goingSelected', goingSelected)
+
+      this.setState((state, props) => ({
+        areaGo: [...this.state.areaGo, (goingSelected[0])]
+      }))
+    }
+
+    if (this.props.rootState[STATE_KEYS.AREA.USING_AREA] !== prevProps.rootState[STATE_KEYS.AREA.USING_AREA]) {
+      // Shuffle array
+      const reshuffled = challenges.areas.sort(() => 0.5 - Math.random())
+
+      // Get sub-array of first n elements after reshuffle
+      const usingSelected = reshuffled.slice(0, this.props.rootState[STATE_KEYS.AREA.USING_AREA] ? this.props.rootState[STATE_KEYS.AREA.USING_AREA] : 0)
+
+      this.setState((state, props) => ({
+        areaUse: [...this.state.areaUse, usingSelected[0]]
+      }))
     }
   }
   //   // TODO:Make stateful, storing in this comp., so you can compare previous state
@@ -46,21 +80,22 @@ class AreaDisplay extends Component {
   //   const usingSelected = reshuffled.slice(0, props.rootState[STATE_KEYS.AREA.USING_AREA] ? props.rootState[STATE_KEYS.AREA.USING_AREA] : 0)
 
   render () {
+    console.log(this.state.areaGo, this.state.areaUse)
     return (
       <div>
 
         <ul>
           {`🔒🔓🔄❌Area Challenges: You are restricted from going to these
-        ${props.rootState[STATE_KEYS.AREA.GOING_AREA] ? props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0}  areas:`}
-          {goingSelected.map((area, index) =>
+        ${this.props.rootState[STATE_KEYS.AREA.GOING_AREA] ? this.props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0}  areas:`}
+          {this.state.areaGo.map((area, index) =>
             <li key={index}>{`🔒🔓🔄❌ ${area}`}</li>
           )}
         </ul>
         {/* Use this?props.rootState[STATE_KEYS.AREA.GOING_AREA] || 0 */}
         <ul>
           {`🔒🔓🔄❌Area Challenges: You are restricted from using these
-        ${props.rootState[STATE_KEYS.AREA.USING_AREA] ? props.rootState[STATE_KEYS.AREA.USING_AREA] : 0}  areas:`}
-          {usingSelected.map((area, index) =>
+        ${this.props.rootState[STATE_KEYS.AREA.USING_AREA] ? this.props.rootState[STATE_KEYS.AREA.USING_AREA] : 0}  areas:`}
+          {this.state.areaUse.map((area, index) =>
             <li key={index + 1000}>{`🔒🔓🔄❌ ${area}`}</li>
           )}
         </ul>
