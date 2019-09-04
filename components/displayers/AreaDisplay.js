@@ -22,35 +22,50 @@ class AreaDisplay extends Component {
 
   componentDidUpdate (prevProps, prevState) {
     if (this.props.rootState[STATE_KEYS.AREA.GOING_AREA] !== prevProps.rootState[STATE_KEYS.AREA.GOING_AREA]) {
-      // Shuffle array
-
-      // find shift + or -
-      const shift = this.props.rootState[STATE_KEYS.AREA.GOING_AREA] - prevProps.rootState[STATE_KEYS.AREA.GOING_AREA]
-
-      // TODO:given shift, pop from state X elements or push X randomly selected elements
-
+      // Shuffle array of areas
       const shuffled = challenges.areas.sort(() => 0.5 - Math.random())
 
-      // Get sub-array of first n elements after shuffled
-      const goingSelected = shuffled.slice(0, this.props.rootState[STATE_KEYS.AREA.GOING_AREA] ? this.props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0)
+      // figure out how much to add or remove from state array
+      const shift = this.props.rootState[STATE_KEYS.AREA.GOING_AREA] - prevProps.rootState[STATE_KEYS.AREA.GOING_AREA]
 
-      console.log('goingSelected', goingSelected)
+      // Select item from shuffled array
+      const usedSelected = shuffled.slice(0, 1)
 
-      this.setState((state, props) => ({
-        areaGo: [...this.state.areaGo, (goingSelected[0])]
-      }))
+      if (shift > 0) {
+        // Add shuffled item to end of state, not very efficient
+        this.setState((state, props) => ({
+          areaGo: [...this.state.areaGo, (usedSelected[0])]
+        }))
+      } else if (shift < 0) {
+        var poppedState = this.state.areaGo
+        poppedState.pop()
+        this.setState((state, props) => ({
+          areaGo: [...poppedState]
+        }))
+      }
     }
 
     if (this.props.rootState[STATE_KEYS.AREA.USING_AREA] !== prevProps.rootState[STATE_KEYS.AREA.USING_AREA]) {
-      // Shuffle array
+      // Shuffle array of areas
       const reshuffled = challenges.areas.sort(() => 0.5 - Math.random())
 
-      // Get sub-array of first n elements after reshuffle
-      const usingSelected = reshuffled.slice(0, this.props.rootState[STATE_KEYS.AREA.USING_AREA] ? this.props.rootState[STATE_KEYS.AREA.USING_AREA] : 0)
+      // figure out how much to add or remove from state array
+      const shift = this.props.rootState[STATE_KEYS.AREA.USING_AREA] - prevProps.rootState[STATE_KEYS.AREA.USING_AREA]
 
-      this.setState((state, props) => ({
-        areaUse: [...this.state.areaUse, usingSelected[0]]
-      }))
+      // Select item from shuffled array
+      const usingSelected = reshuffled.slice(0, 1)
+      if (shift > 0) {
+        // Add shuffled item to end of state, not very efficient
+        this.setState((state, props) => ({
+          areaUse: [...this.state.areaUse, (usingSelected[0])]
+        }))
+      } else if (shift < 0) {
+        var repoppedState = this.state.areaUse
+        repoppedState.pop()
+        this.setState((state, props) => ({
+          areaUse: [...repoppedState]
+        }))
+      }
     }
   }
   //   // TODO:Make stateful, storing in this comp., so you can compare previous state
