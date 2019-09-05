@@ -1,4 +1,4 @@
-function areaModifier (data) {
+const areaModifier = (data) => {
   return data + ', YOU\'VE BEEN MODIFIED.'
 }
 

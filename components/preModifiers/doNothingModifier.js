@@ -1,4 +1,4 @@
-function doNothingModifier (data) {
+const doNothingModifier = (data) => {
   return data
 }
 
