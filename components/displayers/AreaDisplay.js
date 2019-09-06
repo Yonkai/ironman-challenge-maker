@@ -65,7 +65,7 @@ class AreaDisplay extends Component {
           {`🔒🔓🔄❌Area Challenges: You are restricted from using these
         ${this.props.rootState[STATE_KEYS.AREA.USING_AREA] ? this.props.rootState[STATE_KEYS.AREA.USING_AREA] : 0}  areas:`}
           {this.state.areaUse.map((area, index) =>
-            <li key={index + 1000}>{`🔒🔓🔄❌ ${area}`}</li>
+            <li key={index + 2}>{`🔒🔓🔄❌ ${area}`}</li>
           )}
         </ul>
 
