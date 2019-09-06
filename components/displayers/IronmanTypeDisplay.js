@@ -1,8 +1,10 @@
 import STATE_KEYS from '../../STATE_KEYS.js'
+import DisplayerLayoutHeader from '../../DisplayerLayoutHeader.js'
 
 const IronmanTypeDisplay = (props) => {
   return (
     <div>
+      <DisplayerLayoutHeader />
 
       <ul>
         {`🔒🔓🔄❌Ironman Type: `}
@@ -11,27 +13,8 @@ const IronmanTypeDisplay = (props) => {
         </span>
       </ul>
 
-      <style jsx>{`
-            p{
-              color:white;
-              font-size:20px;
-              margin:5px;
-            }
-            li{
-              color:white;
-              font-size:22px;
-              margin-left:40px;
-            }
-            ul{
-              color:lightgreen;
-              font-size:24px;
-              margin:0;
-              padding:0;
-            }
-            span{
-                color:white
-            }
-            `}
+      {/* For additions on top of global styles in imported DisplayerLayoutHeader component: */}
+      <style jsx>{``}
       </style>
     </div>
   )
