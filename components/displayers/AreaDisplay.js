@@ -1,6 +1,7 @@
 import STATE_KEYS from '../../STATE_KEYS.js'
 import challenges from '../../challenges.js'
 import DisplayerLayoutHeader from '../../DisplayerLayoutHeader.js'
+import pushpop from '../../pushpop.js'
 import React, { Component } from 'react'
 
 class AreaDisplay extends Component {
@@ -13,11 +14,8 @@ class AreaDisplay extends Component {
     this.areapushpop = this.areapushpop.bind(this)
   }
 
-  // Export to higher component?
+  // Export to higher component or utility function?
   areapushpop (prevProps, KEY, stateToChange) {
-    // Sanity test
-    console.log(this, 'areapushpop')
-
     // Shuffle array of areas
     const reshuffled = challenges.areas.sort(() => 0.5 - Math.random())
 
