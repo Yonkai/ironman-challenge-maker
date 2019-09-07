@@ -32,10 +32,6 @@ class IronmanChallengeRoot extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  getRandomInt (max) {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
-
   // "Modifiers" are specific to each challenge field
   handleChange (modName, challengeModifier, event) {
     const { target } = event
