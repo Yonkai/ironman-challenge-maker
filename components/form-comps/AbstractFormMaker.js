@@ -6,7 +6,13 @@ class AbstractFormMaker extends Component {
   render () {
     let generatedForm
     if (this.props.abstractFormType === 'radio') {
-      generatedForm = <RadioForm />
+      generatedForm = <RadioForm
+        name={this.props.name}
+        handleChange={this.props.handleChange}
+        dataset={this.props.dataset}
+        keys={this.props.keys}
+        search={this.props.search}
+      />
     } else if (this.props.abstractFormType === 'number') {
       generatedForm = <NumberForm />
     } else {

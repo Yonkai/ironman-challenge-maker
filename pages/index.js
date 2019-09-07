@@ -25,15 +25,10 @@ class IronmanChallengeRoot extends Component {
   }
 
   // "Modifiers" are specific to each challenge field
-  handleChange (modName, challengeModifier, event) {
+  handleChange (event) {
     const { target } = event
     const { name, value } = target
-    const valueChallengeDisplayModified = challengeModifier(value)
-    if (name !== modName) {
-      this.setState({
-        [modName]: valueChallengeDisplayModified
-      })
-    }
+
     this.setState({
       [name]: value
     })
@@ -47,10 +42,10 @@ class IronmanChallengeRoot extends Component {
           <Link href='#'><a>Map Visuals</a></Link>
           <Link href='#'><a>Save Ironman</a></Link>
           <Link href='#'><a>Load Ironman</a></Link>
-          <Link href='#'><a>Play OSRS</a></Link>
+          <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <Link href='#'><a>How to Use</a></Link>
           <Link href='#'><a>Want to Contribute?</a></Link>
-          <Link href='#'><a>Github</a></Link>
+          <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
         </nav>
 
         <IronmanDisplayChallenges

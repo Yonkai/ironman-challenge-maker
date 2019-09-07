@@ -6,11 +6,6 @@ import challenges from '../data/challenges'
 import STATE_KEYS from '../data/STATE_KEYS'
 
 class IronmanSettings extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { settings: null }
-  }
-
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
   render () {
     return (
@@ -22,6 +17,7 @@ class IronmanSettings extends Component {
 
         <div className='restrictions'>
           <AbstractFormMaker
+            name={'Ironman Type'}
             handleChange={this.props.handleChange}
             abstractFormType={'radio'}
             dataset={challenges.type}
@@ -30,6 +26,7 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
+            name={'Area Challenges'}
             handleChange={this.props.handleChange}
             abstractFormType={'number'}
             dataset={challenges.areas}

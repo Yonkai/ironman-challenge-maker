@@ -3,7 +3,7 @@
 const challenges = {
   // Add toggles for can/cannot use instead of writing both out, saves time/space.
   // Think about the "minimum set" of course
-  type: { ...['ironman', 'hardcore ironman', 'ultimate ironman'] },
+  type: { ...['Ironman', 'Hardcore Ironman', 'Ultimate Ironman'] },
   combat: { ...['melee', 'ranged', 'magic'] },
   areas: { ...[
     'Burthorpe',
