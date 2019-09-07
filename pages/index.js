@@ -14,7 +14,6 @@ class IronmanChallengeRoot extends Component {
   constructor (props) {
     super(props)
     this.state = {}
-    // See design PSD for where this sits in reference to rest of applications
     this.handleChange = this.handleChange.bind(this)
   }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Area from './form-comps/Area.js'
 import IronmanType from './form-comps/IronmanType.js'
+import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
 
 class IronmanSettings extends Component {
   constructor (props) {
@@ -18,6 +19,7 @@ class IronmanSettings extends Component {
         <button onClick={this.GenSet}>RESET FORMS</button> */}
 
         <div className='restrictions'>
+          <AbstractFormMaker handleChange={this.props.handleChange} abstractFormType={'radio'} />
           <form action='' method='get' className='form-example'>
             <h3>Random challenges🔺</h3>
             <div className='challenges'>
