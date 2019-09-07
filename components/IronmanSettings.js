@@ -8,19 +8,16 @@ class IronmanSettings extends Component {
     this.state = { settings: null }
   }
 
-  // TODO:control these forms in react
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
   render () {
     return (
       <div className='settings-main'>
-        {/* Add to side bar: */}
+        {/* TODO: Add to side bar: */}
         {/* <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
         <button onClick={this.GenSet}>SAVE IRONMAN</button>
         <button onClick={this.GenSet}>RESET FORMS</button> */}
-        {/* TEST */}
 
         <div className='restrictions'>
-          {/* Generates object through class based on input */}
           <form action='' method='get' className='form-example'>
             <h3>Random challenges🔺</h3>
             <div className='challenges'>
@@ -54,7 +51,6 @@ class IronmanSettings extends Component {
             <div />
           </form>
 
-          {/* "Restrict me from using X areas", "Allow me to go to X areas" basically the same thing. */}
         </div>
 
         <style global jsx>
