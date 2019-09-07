@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 // import Area from './form-comps/Area.js'
 // import IronmanType from './form-comps/IronmanType.js'
 import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
-import challenges from '../data/challenges'
-import STATE_KEYS from '../data/STATE_KEYS'
 
 class IronmanSettings extends Component {
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
@@ -20,8 +18,8 @@ class IronmanSettings extends Component {
             name={'Ironman Type'}
             handleChange={this.props.handleChange}
             abstractFormType={'radio'}
-            dataset={challenges.type}
-            keys={STATE_KEYS.IRONMAN_TYPE}
+            dataset={this.props.challenges.type}
+            keys={this.props.STATE_KEYS.IRONMAN_TYPE}
             search={false}
           />
 
@@ -29,8 +27,8 @@ class IronmanSettings extends Component {
             name={'Area Challenges'}
             handleChange={this.props.handleChange}
             abstractFormType={'number'}
-            dataset={challenges.areas}
-            keys={STATE_KEYS.AREA}
+            dataset={this.props.challenges.areas}
+            keys={this.props.STATE_KEYS.AREA}
             search
           />
 

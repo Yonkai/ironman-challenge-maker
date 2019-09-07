@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import IronmanDisplayChallenges from '../components/IronmanDisplayChallenges.js'
+import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
 import Link from 'next/link'
+import challenges from '../data/challenges'
+import STATE_KEYS from '../data/STATE_KEYS'
 
 // New idea (Logic-and-State-Dedupping): Wipe out form-comps and displayer comps completely and replace them with
 // a generic form comp. compoenent that takes in a config object to render out the two types
@@ -48,12 +50,14 @@ class IronmanChallengeRoot extends Component {
           <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
         </nav>
 
-        <IronmanDisplayChallenges
+        <IronmanDisplay
           rootState={this.state}
         />
 
         <IronmanSettings
           handleChange={this.handleChange}
+          challenges={challenges}
+          STATE_KEYS={STATE_KEYS}
         />
 
         <style jsx global>

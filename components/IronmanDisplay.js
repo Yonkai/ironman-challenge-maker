@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
-// Displayers
+// Abstract Displayer
+import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
+
+// Old Displayers
 import AreaDisplay from './displayers/AreaDisplay'
 import IronmanTypeDisplay from './displayers/IronmanTypeDisplay'
 
@@ -15,6 +18,11 @@ class IronmanDisplayChallenges extends Component {
         <p>🔒🔓🔄❌Skill challenge: You cannnot use Hunter</p>
         <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
         <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
+
+        <AbstractDisplayMaker
+          displayType={'radio'}
+          rootState={this.props.rootState}
+        />
         <IronmanTypeDisplay
           rootState={this.props.rootState}
         />
