@@ -215,11 +215,8 @@ const challenges = {
     'Ungael',
     'Zanaris',
     'Puro-Puro'
-  ],
-  formQuestion0: 'You are prevetented from using: ',
-  formQuestion1: 'You are prevented from going to: '
-  },
-  skills: [
+  ] },
+  skills: { ...[
     'Attack',
     'Strength',
     'Defence',
@@ -242,8 +239,9 @@ const challenges = {
     'Slayer',
     'Farming',
     'Construction',
-    'Hunter'],
-  minigames: [
+    'Hunter'
+  ] },
+  minigames: { ...[
     'Barbarian Assault',
     'Blast Furnace',
     'Burthorpe Games Room',
@@ -282,8 +280,8 @@ const challenges = {
     'Duel Arena',
     'Last Man Standing',
     'TzHaar Fight Pit'
-  ],
-  quests: [
+  ] },
+  quests: { ...[
     'Animal Magnetism',
     'Another Slice of H.A.M.',
     'Between a Rock...',
@@ -435,11 +433,11 @@ const challenges = {
     'Shield of Arrav',
     'Vampire Slayer',
     "Witch's Potion"
-  ],
-  items: ['bronze dagger', 'iron dagger', 'steel dagger'],
-  beasts: ['goblins', 'blue dragons', 'hill giants'],
-  mapTiles: [],
-  slots: [
+  ] },
+  items: ['osrs-box api'],
+  beasts: ['osrs-box api'],
+  mapTiles: ['generate'],
+  slots: { ...[
     'head',
     'chest',
     'legs',
@@ -450,17 +448,16 @@ const challenges = {
     'shield',
     'ring',
     'gloves',
-    'cape'],
-  relativity: ['...x tiles from y icon'],
-  food: [],
+    'cape'] },
+  relativity: ['x tiles from y icon, add all icon types'],
+  food: ['All food types'],
   framerate: ['...generate random number between 1 and 30'],
   clients: ['runelite', 'vanilla', 'osbuddy'],
-  zoom: ['full-out', 'close-up'],
-  compass: ['north', 'east', 'south', 'west'],
+  zoom: ['full', 'close-up'],
+  compass: { ...['north', 'east', 'south', 'west'] },
   time: ['...generate random time per day/ per month/per year etc'],
   biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground'],
-  randomInt: function getRandomInt (max) {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
+  phrases: ['You are prevented from using:', 'You are prevented from going to'],
+  spells: ['All spells']
 }
 export default challenges

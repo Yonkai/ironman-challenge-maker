@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Area from './form-comps/Area.js'
-import IronmanType from './form-comps/IronmanType.js'
+// import Area from './form-comps/Area.js'
+// import IronmanType from './form-comps/IronmanType.js'
 import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
 import challenges from '../data/challenges'
 import STATE_KEYS from '../data/STATE_KEYS'
@@ -23,12 +23,10 @@ class IronmanSettings extends Component {
         <div className='restrictions'>
           <AbstractFormMaker
             handleChange={this.props.handleChange}
-            abstractFormType={'number'}
-          />
-
-          <AbstractFormMaker
-            handleChange={this.props.handleChange}
             abstractFormType={'radio'}
+            dataset={challenges.type}
+            keys={STATE_KEYS.IRONMAN_TYPE}
+            search={false}
           />
 
           <AbstractFormMaker
@@ -69,7 +67,7 @@ class IronmanSettings extends Component {
           <h3>Time restrictions</h3>
           <h3>Useable biomes</h3>
           <h3>Spell types</h3>
-          <h3>Updates to this date only</h3>
+          <h3>Updates between date range</h3>
         </div>
 
         <style global jsx>
