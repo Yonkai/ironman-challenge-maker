@@ -21,7 +21,8 @@ import Link from 'next/link'
 // a generic form comp. compoenent that takes in a config object to render out the two types
 // of forms im working with right now, and then have another generic displayer comp that
 // takes that user input from the generic forms generated and renders them out in the
-// IronmanDisplayChallenges area.
+// IronmanDisplayChallenges area. Business logic, view logic, and display logic are all then
+// dedupped which is the goal for this branch, which should speed up development tremendously.
 
 class IronmanChallengeRoot extends Component {
   constructor (props) {
