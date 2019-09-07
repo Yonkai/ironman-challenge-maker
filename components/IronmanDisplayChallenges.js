@@ -5,11 +5,6 @@ import AreaDisplay from './displayers/AreaDisplay'
 import IronmanTypeDisplay from './displayers/IronmanTypeDisplay'
 
 class IronmanDisplayChallenges extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {}
-  }
-
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
