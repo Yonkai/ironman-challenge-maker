@@ -16,6 +16,13 @@ import Link from 'next/link'
 // 5. (TODO) Add "random challenges" form last because it will use all other form challenges.
 // 6. (TODO) Add search with downshift later which goes through the challenges data file, asssuming I don't change that
 //    to an API instead.
+
+// New idea (Logic-and-State-Dedupping): Wipe out form-comps and displayer comps completely and replace them with
+// a generic form comp. compoenent that takes in a config object to render out the two types
+// of forms im working with right now, and then have another generic displayer comp that
+// takes that user input from the generic forms generated and renders them out in the
+// IronmanDisplayChallenges area.
+
 class IronmanChallengeRoot extends Component {
   constructor (props) {
     super(props)

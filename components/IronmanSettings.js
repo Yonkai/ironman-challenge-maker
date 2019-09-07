@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Area from './form-comps/Area.js'
 import IronmanType from './form-comps/IronmanType.js'
+
 class IronmanSettings extends Component {
   constructor (props) {
     super(props)
