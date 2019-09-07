@@ -50,24 +50,24 @@ class IronmanSettings extends Component {
           <Area handleChange={this.props.handleChange} /> */}
 
           {/* Options<6, using radio, over that using number select with search */}
-          <h3>Combat challenges</h3>
-          <h3>Skill challenges</h3>
-          <h3>Minigame challenges</h3>
-          <h3>Quest challenges</h3>
-          <h3>Item challenges</h3>
-          <h3>Beast challenges</h3>
-          <h3>Slot restrictions</h3>
-          <h3>Map tile restrictions</h3>
-          <h3>Relativity challenges</h3>
-          <h3>Food challenges</h3>
-          <h3>Max Framerate</h3>
-          <h3>Useable clients</h3>
-          <h3>Zoom restrictions</h3>
-          <h3>Compass restrictions</h3>
-          <h3>Time restrictions</h3>
-          <h3>Useable biomes</h3>
-          <h3>Spell types</h3>
-          <h3>Updates between date range</h3>
+          <h3>Combat challenges - checkbox</h3>
+          <h3>Skill challenges - number/search</h3>
+          <h3>Minigame challenges - number/search</h3>
+          <h3>Quest challenges - num/search</h3>
+          <h3>Item challenges num/search</h3>
+          <h3>Beast challenges num/search</h3>
+          <h3>Slot restrictions - checkbox</h3>
+          <h3>Map tile restrictions - num/search/custom</h3>
+          <h3>Relativity challenges - custom</h3>
+          <h3>Food challenges - num/search</h3>
+          <h3>Max Framerate - num only</h3>
+          <h3>Useable clients - radio</h3>
+          <h3>Zoom restrictions - radio</h3>
+          <h3>Compass restrictions - radio</h3>
+          <h3>Time restrictions - date</h3>
+          <h3>Useable biomes - checkbox</h3>
+          <h3>Spells - num/search</h3>
+          <h3>Updates between date range - date</h3>
         </div>
 
         <style global jsx>

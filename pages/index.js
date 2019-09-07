@@ -43,16 +43,14 @@ class IronmanChallengeRoot extends Component {
     return (
       <div className='containerMain'>
         <nav className='navMenu'>
-          <Link href='#'><a>Create</a></Link>
-          <Link href='#'><a>See Map Visuals</a></Link>
-          <Link href='#'><a>Save/Load Ironmen</a></Link>
-          <Link href='#'><a>Other's Creations</a></Link>
-          <Link href='#'><a>Github</a></Link>
-          <Link href='#'><a>Cool Links</a></Link>
-          <Link href='#'><a>Sources</a></Link>
+          <Link href='#'><a>Creator</a></Link>
+          <Link href='#'><a>Map Visuals</a></Link>
+          <Link href='#'><a>Save Ironman</a></Link>
+          <Link href='#'><a>Load Ironman</a></Link>
           <Link href='#'><a>Play OSRS</a></Link>
           <Link href='#'><a>How to Use</a></Link>
-          <Link href='#'><a>How to Contribute</a></Link>
+          <Link href='#'><a>Want to Contribute?</a></Link>
+          <Link href='#'><a>Github</a></Link>
         </nav>
 
         <IronmanDisplayChallenges
