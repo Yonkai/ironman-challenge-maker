@@ -3,20 +3,6 @@ import IronmanDisplayChallenges from '../components/IronmanDisplayChallenges.js'
 import IronmanSettings from '../components/IronmanSettings.js'
 import Link from 'next/link'
 
-// Notes: Process to add a new challenge/field to the display component
-// using Area as an example:
-// 1. Make form component (Area.js)
-// 2. Have form component push data though bound function to root state stored in this (index.js) component
-//    threading data between a modifier function (areaModifier.js) if it exists before setting new final state.
-// 3. Make displayer component (AreaDisplay.js) and render inside of (IronmanDisplayChallenges.js)
-// 4. (TODO) Each displayer component keeps its own state and imports abstracted functions (mutations/<function>)
-//    that allow that displayers state to be modified by either locking, unlocking, rerolling, or removing data
-//    by threading through said functions. The data structure will more than likely just be simple objects but there may be more
-//    advance structures in the future added, which may have different data/design flows.
-// 5. (TODO) Add "random challenges" form last because it will use all other form challenges.
-// 6. (TODO) Add search with downshift later which goes through the challenges data file, asssuming I don't change that
-//    to an API instead.
-
 // New idea (Logic-and-State-Dedupping): Wipe out form-comps and displayer comps completely and replace them with
 // a generic form comp. compoenent that takes in a config object to render out the two types
 // of forms im working with right now, and then have another generic displayer comp that

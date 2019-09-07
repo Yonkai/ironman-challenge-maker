@@ -1,5 +1,5 @@
-import STATE_KEYS from '../../STATE_KEYS.js'
-import DisplayerLayoutHeader from '../../DisplayerLayoutHeader.js'
+import STATE_KEYS from '../../data/STATE_KEYS.js'
+import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 
 const IronmanTypeDisplay = (props) => {
   return (
@@ -7,7 +7,7 @@ const IronmanTypeDisplay = (props) => {
       <DisplayerLayoutHeader />
 
       <ul>
-        {`🔒🔓🔄❌Ironman Type: `}
+        {`🔒🔄❌👁️Ironman Type: `}
         <span>
           {props.rootState[STATE_KEYS.IRONMAN_TYPE] ? props.rootState[STATE_KEYS.IRONMAN_TYPE] : ''}
         </span>

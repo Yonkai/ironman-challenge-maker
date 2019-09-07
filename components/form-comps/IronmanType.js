@@ -1,5 +1,5 @@
 import doNothingModifier from '../preModifiers/doNothingModifier.js'
-import STATE_KEYS from '../../STATE_KEYS.js'
+import STATE_KEYS from '../../data/STATE_KEYS.js'
 
 const IronmanType = (props) => {
   return (
