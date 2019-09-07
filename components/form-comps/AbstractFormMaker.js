@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import STATE_KEYS from '../../data/STATE_KEYS.js'
-import challenges from '../../data/challenges.js'
 
 class AbstractFormMaker extends Component {
   constructor (props) {

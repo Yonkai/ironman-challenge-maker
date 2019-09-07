@@ -9,6 +9,13 @@ import Link from 'next/link'
 // takes that user input from the generic forms generated and renders them out in the
 // IronmanDisplayChallenges area. Business logic, view logic, and display logic are all then
 // dedupped which is the goal for this branch, which should speed up development tremendously.
+//
+// Also, wipe out Pre-Modifier and replace with Post-Modifier which is a function in root,
+// and again do the same with the mutations functions, put them in here and pass them to
+// the displayer component for the User Actor to interact with. This satisfies the open-closed principle
+// and SRP in SOLID. I don't think the Liskov inversion principle applies here. I don't think Interface segration is large enough of an issue
+// in a relatively small program. For now. The form hiding feature can stay inside the abstract displayers because nothing depends on its state, it will be reset on each
+// visit.
 
 class IronmanChallengeRoot extends Component {
   constructor (props) {

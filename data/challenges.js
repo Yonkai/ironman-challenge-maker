@@ -3,9 +3,9 @@
 const challenges = {
   // Add toggles for can/cannot use instead of writing both out, saves time/space.
   // Think about the "minimum set" of course
-  type: ['ironman', 'hardcore ironman', 'ultimate ironman'],
-  combat: ['melee', 'ranged', 'magic'],
-  areas: [
+  type: { ...['ironman', 'hardcore ironman', 'ultimate ironman'] },
+  combat: { ...['melee', 'ranged', 'magic'] },
+  areas: { ...[
     'Burthorpe',
     'Burthorpe Games Room',
     'Death Plateau',
@@ -216,6 +216,9 @@ const challenges = {
     'Zanaris',
     'Puro-Puro'
   ],
+  formQuestion0: 'You are prevetented from using: ',
+  formQuestion1: 'You are prevented from going to: '
+  },
   skills: [
     'Attack',
     'Strength',
