@@ -24,6 +24,26 @@ class IronmanChallengeRoot extends Component {
     super(props)
     this.state = {}
     this.handleChange = this.handleChange.bind(this)
+    this.locking = this.locking.bind(this)
+    this.rerolling = this.rerolling.bind(this)
+    this.visibility = this.visibility.bind(this)
+    this.removing = this.removing.bind(this)
+  }
+
+  locking () {
+
+  }
+
+  rerolling () {
+
+  }
+
+  visibility () {
+
+  }
+
+  removing () {
+
   }
 
   // "Modifiers" are specific to each challenge field
