@@ -52,6 +52,8 @@ class IronmanChallengeRoot extends Component {
 
         <IronmanDisplay
           rootState={this.state}
+          challenges={challenges}
+          STATE_KEYS={STATE_KEYS}
         />
 
         <IronmanSettings

@@ -7,7 +7,7 @@ export default () => (
     </Head>
     <style jsx global>{`
             p{
-              color:black;
+              color:red;
               font-size:20px;
               margin:5px;
             }

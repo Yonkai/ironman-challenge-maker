@@ -5,7 +5,6 @@ import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
 // Old Displayers
 import AreaDisplay from './displayers/AreaDisplay'
-import IronmanTypeDisplay from './displayers/IronmanTypeDisplay'
 
 class IronmanDisplayChallenges extends Component {
   render () {
@@ -20,11 +19,11 @@ class IronmanDisplayChallenges extends Component {
         <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
 
         <AbstractDisplayMaker
+          name={'Ironman Type'}
           displayType={'radio'}
           rootState={this.props.rootState}
-        />
-        <IronmanTypeDisplay
-          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.type}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.IRONMAN_TYPE}
         />
         <AreaDisplay
           rootState={this.props.rootState}
