@@ -4,7 +4,7 @@ class RadioForm extends Component {
   render () {
     return (
       <div>
-        <h3>{this.props.name}</h3>
+        <h3>{`${this.props.name}🔺`}</h3>
         <div className='challenges'>
           {/* adio maps through dataset because that what it displays in the form
               number maps through keys. */}
@@ -19,7 +19,9 @@ class RadioForm extends Component {
           )}
         </div>
         <style jsx>
-          {``}
+          {`h3{
+              margin:2px;
+          }`}
         </style>
       </div>
     )

@@ -45,24 +45,24 @@ class IronmanSettings extends Component {
           <Area handleChange={this.props.handleChange} /> */}
 
           {/* Options<6, using radio, over that using number select with search */}
-          <h3>Combat challenges - checkbox</h3>
-          <h3>Skill challenges - number/search</h3>
-          <h3>Minigame challenges - number/search</h3>
-          <h3>Quest challenges - num/search</h3>
-          <h3>Item challenges num/search</h3>
-          <h3>Beast challenges num/search</h3>
-          <h3>Slot restrictions - checkbox</h3>
-          <h3>Map tile restrictions - num/search/custom</h3>
-          <h3>Relativity challenges - custom</h3>
-          <h3>Food challenges - num/search</h3>
-          <h3>Max Framerate - num only</h3>
           <h3>Useable clients - radio</h3>
           <h3>Zoom restrictions - radio</h3>
           <h3>Compass restrictions - radio</h3>
-          <h3>Time restrictions - date</h3>
-          <h3>Useable biomes - checkbox</h3>
+          <h3>Skill challenges - num/search</h3>
+          <h3>Minigame challenges - num/search</h3>
+          <h3>Quest challenges - num/search</h3>
+          <h3>Item challenges num/search</h3>
+          <h3>Beast challenges num/search</h3>
+          <h3>Food challenges - num/search</h3>
           <h3>Spells - num/search</h3>
+          <h3>Useable biomes - checkbox</h3>
+          <h3>Combat challenges - checkbox</h3>
+          <h3>Slot restrictions - checkbox</h3>
+          <h3>Time restrictions - date</h3>
           <h3>Updates between date range - date</h3>
+          <h3>Map tile restrictions - num/search/custom</h3>
+          <h3>Relativity challenges - custom</h3>
+          <h3>Max Framerate - num only</h3>
         </div>
 
         <style global jsx>
