@@ -48,6 +48,7 @@ class IronmanChallengeRoot extends Component {
 
   // "Modifiers" are specific to each challenge field
   handleChange (event) {
+    // Add this method to context.
     const { target } = event
     const { name, value } = target
 

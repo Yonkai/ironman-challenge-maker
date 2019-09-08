@@ -72,9 +72,6 @@ class IronmanSettings extends Component {
           <Area handleChange={this.props.handleChange} /> */}
 
           {/* Options<6, using radio, over that using number select with search */}
-          <h3>Useable clients - radio</h3>
-          <h3>Zoom restrictions - radio</h3>
-          <h3>Compass restrictions - radio</h3>
           <h3>Skill challenges - num/search</h3>
           <h3>Minigame challenges - num/search</h3>
           <h3>Quest challenges - num/search</h3>
