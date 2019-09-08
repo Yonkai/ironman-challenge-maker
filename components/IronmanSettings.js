@@ -24,6 +24,33 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
+            name={'Useable Clients'}
+            handleChange={this.props.handleChange}
+            abstractFormType={'radio'}
+            dataset={this.props.challenges.clients}
+            keys={this.props.STATE_KEYS.CLIENT_TYPE}
+            search={false}
+          />
+
+          <AbstractFormMaker
+            name={'Zoom Restrictions'}
+            handleChange={this.props.handleChange}
+            abstractFormType={'radio'}
+            dataset={this.props.challenges.zoom}
+            keys={this.props.STATE_KEYS.ZOOM_TYPE}
+            search={false}
+          />
+
+          <AbstractFormMaker
+            name={'Compass Restrictions'}
+            handleChange={this.props.handleChange}
+            abstractFormType={'radio'}
+            dataset={this.props.challenges.compass}
+            keys={this.props.STATE_KEYS.COMPASS_RESTRICTION}
+            search={false}
+          />
+
+          <AbstractFormMaker
             name={'Area Challenges'}
             handleChange={this.props.handleChange}
             abstractFormType={'number'}

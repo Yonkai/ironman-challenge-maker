@@ -25,6 +25,30 @@ class IronmanDisplayChallenges extends Component {
           isolatedChallenges={this.props.challenges.type}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.IRONMAN_TYPE}
         />
+
+        <AbstractDisplayMaker
+          name={'Useable Clients'}
+          displayType={'radio'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.clients}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.CLIENT_TYPE}
+        />
+
+        <AbstractDisplayMaker
+          name={'Zoom Restrictions'}
+          displayType={'radio'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.zoom}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.ZOOM_TYPE}
+        />
+
+        <AbstractDisplayMaker
+          name={'Compass Restrictions'}
+          displayType={'radio'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.compass}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.COMPASS_RESTRICTION}
+        />
         <AreaDisplay
           rootState={this.props.rootState}
         />
