@@ -8,12 +8,12 @@ class RadioForm extends Component {
         <div className='challenges'>
           {/* adio maps through dataset because that what it displays in the form
               number maps through keys. */}
-          {Object.keys(this.props.dataset).map((key, index) => (
-            <div>
+          {Object.keys(this.props.dataset).map((objKey, index) => (
+            <div key={index}>
               {/* Leave here for debugging: <div>Key: {key}, Value: {this.props.dataset[key]}</div> */}
-              <input type='radio' id={this.props.dataset[key]} name={this.props.keys} value={this.props.dataset[key]}
+              <input type='radio' id={this.props.dataset[objKey]} name={this.props.keys} value={this.props.dataset[objKey]}
                 onChange={(event) => this.props.handleChange(event)} />
-              <label htmlFor={this.props.dataset[key]}>{this.props.dataset[key]}</label>
+              <label htmlFor={this.props.dataset[objKey]}>{this.props.dataset[objKey]}</label>
             </div>
           )
           )}
