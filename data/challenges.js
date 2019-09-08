@@ -457,7 +457,7 @@ const challenges = {
   compass: { ...['North', 'East', 'South', 'West', 'Don\'t care!'] },
   time: ['...generate random time per day/ per month/per year etc'],
   biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground'],
-  phrases: ['You are prevented from using:', 'You are prevented from going to'],
-  spells: ['All spells']
+  spells: ['All spells'],
+  phrases: ['You are prevented from using:', 'You are prevented from going to']
 }
 export default challenges

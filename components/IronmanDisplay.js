@@ -49,9 +49,9 @@ class IronmanDisplayChallenges extends Component {
           isolatedChallenges={this.props.challenges.compass}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.COMPASS_RESTRICTION}
         />
-        <AreaDisplay
+        {/* <AreaDisplay
           rootState={this.props.rootState}
-        />
+        /> */}
 
       </div>
       {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}

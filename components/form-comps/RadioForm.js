@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 class RadioForm extends Component {
   render () {
     return (
+      // Should turn this wrapper into a HOC(h3 title and div):
       <div>
         <h3>{`${this.props.name}🔺`}</h3>
         <div className='challenges'>
-          {/* adio maps through dataset because that what it displays in the form
+          {/* Radio maps through dataset because that what it displays in the form
               number maps through keys. */}
           {Object.keys(this.props.dataset).map((objKey, index) => (
             <div key={index}>

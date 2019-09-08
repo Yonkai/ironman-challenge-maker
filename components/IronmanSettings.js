@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
 // import Area from './form-comps/Area.js'
 // import IronmanType from './form-comps/IronmanType.js'
-import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
 
 class IronmanSettings extends Component {
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
@@ -20,7 +20,6 @@ class IronmanSettings extends Component {
             abstractFormType={'radio'}
             dataset={this.props.challenges.type}
             keys={this.props.STATE_KEYS.IRONMAN_TYPE}
-            search={false}
           />
 
           <AbstractFormMaker
@@ -29,7 +28,6 @@ class IronmanSettings extends Component {
             abstractFormType={'radio'}
             dataset={this.props.challenges.clients}
             keys={this.props.STATE_KEYS.CLIENT_TYPE}
-            search={false}
           />
 
           <AbstractFormMaker
@@ -38,7 +36,6 @@ class IronmanSettings extends Component {
             abstractFormType={'radio'}
             dataset={this.props.challenges.zoom}
             keys={this.props.STATE_KEYS.ZOOM_TYPE}
-            search={false}
           />
 
           <AbstractFormMaker
@@ -47,13 +44,12 @@ class IronmanSettings extends Component {
             abstractFormType={'radio'}
             dataset={this.props.challenges.compass}
             keys={this.props.STATE_KEYS.COMPASS_RESTRICTION}
-            search={false}
           />
 
           <AbstractFormMaker
             name={'Area Challenges'}
             handleChange={this.props.handleChange}
-            abstractFormType={'number'}
+            abstractFormType={'numSearch'}
             dataset={this.props.challenges.areas}
             keys={this.props.STATE_KEYS.AREA}
             search
