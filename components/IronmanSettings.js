@@ -49,7 +49,7 @@ class IronmanSettings extends Component {
           <AbstractFormMaker
             name={'Area Challenges'}
             handleChange={this.props.handleChange}
-            abstractFormType={'numSearch'}
+            abstractFormType={'randomSearch'}
             dataset={this.props.challenges.areas}
             keys={this.props.STATE_KEYS.AREA}
             search
@@ -68,13 +68,13 @@ class IronmanSettings extends Component {
           <Area handleChange={this.props.handleChange} /> */}
 
           {/* Options<6, using radio, over that using number select with search */}
-          <h3>Skill challenges - num/search</h3>
-          <h3>Minigame challenges - num/search</h3>
-          <h3>Quest challenges - num/search</h3>
-          <h3>Item challenges num/search</h3>
-          <h3>Beast challenges num/search</h3>
-          <h3>Food challenges - num/search</h3>
-          <h3>Spells - num/search</h3>
+          <h3>Skill challenges - random/search</h3>
+          <h3>Minigame challenges - random/search</h3>
+          <h3>Quest challenges - random/search</h3>
+          <h3>Item challenges random/search</h3>
+          <h3>Beast challenges random/search</h3>
+          <h3>Food challenges - random/search</h3>
+          <h3>Spells - random/search</h3>
           <h3>Useable biomes - checkbox</h3>
           <h3>Combat challenges - checkbox</h3>
           <h3>Slot restrictions - checkbox</h3>

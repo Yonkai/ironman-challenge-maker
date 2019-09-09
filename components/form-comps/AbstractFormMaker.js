@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import RadioForm from './RadioForm'
-import NumSearchForm from './NumSearchForm'
+import RandomSearchForm from './RandomSearchForm'
 
 class AbstractFormMaker extends Component {
   render () {
@@ -12,8 +12,8 @@ class AbstractFormMaker extends Component {
         dataset={this.props.dataset}
         keys={this.props.keys}
       />
-    } else if (this.props.abstractFormType === 'numSearch') {
-      generatedForm = <NumSearchForm
+    } else if (this.props.abstractFormType === 'randomSearch') {
+      generatedForm = <RandomSearchForm
         name={this.props.name}
         handleChange={this.props.handleChange}
         dataset={this.props.dataset}
