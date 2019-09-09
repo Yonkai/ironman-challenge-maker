@@ -28,8 +28,10 @@ class IronmanChallengeRoot extends Component {
     this.rerolling = this.rerolling.bind(this)
     this.visibility = this.visibility.bind(this)
     this.removing = this.removing.bind(this)
+    this.openCloseForm = this.openCloseForm.bind(this)
   }
 
+  // IronmanDisplay component methods (Interacts with root and display):
   locking () {
 
   }
@@ -45,6 +47,15 @@ class IronmanChallengeRoot extends Component {
   removing () {
 
   }
+
+  // IronmanSettings component methods (Interacts with root and forms):
+  openCloseForm () {
+
+  }
+
+  // IronmanSettings+IronmanDisplay methods
+
+  // Triggers a function call in numSearch
 
   // "Modifiers" are specific to each challenge field
   handleChange (event) {
