@@ -15,10 +15,11 @@ class AbstractFormMaker extends Component {
     } else if (this.props.abstractFormType === 'randomSearch') {
       generatedForm = <RandomSearchForm
         name={this.props.name}
-        handleChange={this.props.handleChange}
+        handleRandomSearchChange={this.props.handleRandomSearchChange}
         dataset={this.props.dataset}
         keys={this.props.keys}
         search={this.props.search}
+        challengesKey={this.props.challengesKey}
       />
     } else {
       generatedForm = <p>Something went wrong</p>

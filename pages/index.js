@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import sample from 'lodash/sample'
+
 import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
 import Link from 'next/link'
@@ -29,9 +31,13 @@ class IronmanChallengeRoot extends Component {
     this.visibility = this.visibility.bind(this)
     this.removing = this.removing.bind(this)
     this.openCloseForm = this.openCloseForm.bind(this)
+    this.nothinging = this.nothinging.bind(this)
+    this.handleRandomSearchChange = this.handleRandomSearchChange.bind(this)
   }
 
   // IronmanDisplay component methods (Interacts with root and display):
+  // locking, rerolling, visbility, removing, and nothinging affect the same state that is built up from
+  // form interaction and that the display components that contain these methods use to display.
   locking () {
 
   }
@@ -48,24 +54,61 @@ class IronmanChallengeRoot extends Component {
 
   }
 
+  nothinging () {
+
+  }
+
   // IronmanSettings component methods (Interacts with root and forms):
   openCloseForm () {
 
   }
 
-  // IronmanSettings+IronmanDisplay methods
-
-  // Triggers a function call in numSearch
-
   // "Modifiers" are specific to each challenge field
   handleChange (event) {
-    // Add this method to context.
     const { target } = event
     const { name, value } = target
 
     this.setState({
       [name]: value
     })
+  }
+
+  handleRandomSearchChange (event, challengesKey) {
+    console.log(challengesKey)
+    const { target } = event
+    const { name, value } = target
+    var parsedValue = parseInt(value)
+    const countName = name + STATE_KEYS.COMPOSITE_KEY_HALFS._COUNT
+    const challengeInventory = name + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY
+    const challengeSampling = sample(challenges[challengesKey])
+    console.log(challengeSampling)
+
+    // Modify to keep track of number of challenges for this RandomSearch
+    this.setState(prevState => {
+      if (prevState[countName] && (prevState[countName] > 0)) {
+        return { [countName]: prevState[countName] + parsedValue }
+      } else {
+        return { [countName]: parsedValue === -1 ? 0 : 1 }
+      }
+    },
+    // TODO:Modify to keep track of challenge inventory
+    this.setState(prevState => {
+      if (prevState[challengeInventory] && (parsedValue === 1)) {
+        var joined = prevState[challengeInventory].concat(challengeSampling)
+        return { [challengeInventory]: joined }
+      } else if (prevState[challengeInventory] && (parsedValue === -1)) {
+        var popped = prevState[challengeInventory].length === 1 ? prevState[challengeInventory].splice() : prevState[challengeInventory].slice(0, -1)
+        return { [challengeInventory]: popped }
+      } else if ((!prevState[challengeInventory]) && (parsedValue === -1)) {
+
+      } else if ((!prevState[challengeInventory]) && (parsedValue === 1)) {
+        return { [challengeInventory]: [challengeSampling] }
+      } else {
+        console.error('Something went wrong with trying to modify the a random/search form!')
+      }
+    }))
+
+    // TODO: ADD Specific value entered from search box
   }
 
   render () {
@@ -75,7 +118,7 @@ class IronmanChallengeRoot extends Component {
           <Link href='#'><a>Creator</a></Link>
           <Link href='#'><a>Map Visuals</a></Link>
           <Link href='#'><a>Save Ironman</a></Link>
-          <Link href='#'><a>Load Ironman</a></Link>
+          <Link href='#'><a>Load Ironmen</a></Link>
           <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <Link href='#'><a>How to Use</a></Link>
           <Link href='#'><a>Want to Contribute?</a></Link>
@@ -90,6 +133,7 @@ class IronmanChallengeRoot extends Component {
 
         <IronmanSettings
           handleChange={this.handleChange}
+          handleRandomSearchChange={this.handleRandomSearchChange}
           challenges={challenges}
           STATE_KEYS={STATE_KEYS}
         />

@@ -16,42 +16,43 @@ class IronmanSettings extends Component {
         <div className='restrictions'>
           <AbstractFormMaker
             name={'Ironman Type'}
-            handleChange={this.props.handleChange}
             abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
             dataset={this.props.challenges.type}
             keys={this.props.STATE_KEYS.IRONMAN_TYPE}
           />
 
           <AbstractFormMaker
             name={'Useable Clients'}
-            handleChange={this.props.handleChange}
             abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
             dataset={this.props.challenges.clients}
             keys={this.props.STATE_KEYS.CLIENT_TYPE}
           />
 
           <AbstractFormMaker
             name={'Zoom Restrictions'}
-            handleChange={this.props.handleChange}
             abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
             dataset={this.props.challenges.zoom}
             keys={this.props.STATE_KEYS.ZOOM_TYPE}
           />
 
           <AbstractFormMaker
             name={'Compass Restrictions'}
-            handleChange={this.props.handleChange}
             abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
             dataset={this.props.challenges.compass}
             keys={this.props.STATE_KEYS.COMPASS_RESTRICTION}
           />
 
           <AbstractFormMaker
             name={'Area Challenges'}
-            handleChange={this.props.handleChange}
+            challengesKey={'areas'}
             abstractFormType={'randomSearch'}
-            dataset={this.props.challenges.areas}
             keys={this.props.STATE_KEYS.AREA}
+            dataset={this.props.challenges.areas}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
             search
           />
 
