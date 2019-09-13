@@ -8,10 +8,7 @@ class IronmanSettings extends Component {
   render () {
     return (
       <div className='settings-main'>
-        {/* TODO: Add to side bar: */}
-        {/* <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
-        <button onClick={this.GenSet}>SAVE IRONMAN</button>
-        <button onClick={this.GenSet}>RESET FORMS</button> */}
+        {/* TODO: Add saving/loading functionally with access to a server that users can see/interact with */}
 
         <div className='restrictions'>
           <AbstractFormMaker
@@ -56,19 +53,8 @@ class IronmanSettings extends Component {
             search
           />
 
-          {/* <form action='' method='get' className='form-example'>
-            <h3>Random challenges🔺</h3>
-            <div className='challenges'>
-            <label htmlFor='areas'>Add X random challenges:</label>
-            <input type='number' name='areas'
-            min='0' max='222' />
-          </div> */}
-          {/* </form> */}
-
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
-
-          {/* Options<6, using radio, over that using number select with search */}
           <h3>Skill challenges - random/search</h3>
           <h3>Minigame challenges - random/search</h3>
           <h3>Quest challenges - random/search</h3>

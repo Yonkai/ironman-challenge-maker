@@ -3,20 +3,11 @@ import React, { Component } from 'react'
 // Abstract Displayer
 import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
-// Old Displayers
-import AreaDisplay from './displayers/AreaDisplay'
-
 class IronmanDisplayChallenges extends Component {
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
       <div className='challenge-list'>
-        {/* TODO: Make them removeable once generate to manually weed out conflicts */}
-        {/* <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
-        <p>🔒🔓🔄❌Quest challenge: You cannot do Black Knights Fortress</p>
-        <p>🔒🔓🔄❌Skill challenge: You cannnot use Hunter</p>
-        <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
-        <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
 
         <AbstractDisplayMaker
           name={'Ironman Type'}
@@ -49,9 +40,14 @@ class IronmanDisplayChallenges extends Component {
           isolatedChallenges={this.props.challenges.compass}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.COMPASS_RESTRICTION}
         />
-        {/* <AreaDisplay
+
+        <AbstractDisplayMaker
+          name={'Using Area Restrictions'}
+          displayType={'randomSearch'}
           rootState={this.props.rootState}
-        /> */}
+          isolatedChallenges={this.props.challenges.areas}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.AREA}
+        />
 
       </div>
       {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}

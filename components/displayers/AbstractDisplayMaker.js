@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 import RadioDisplay from './RadioDisplay'
+import RandomSearchDisplay from './RandomSearchDisplay'
 
 class AbstractDisplayMaker extends Component {
   render () {
@@ -16,7 +17,7 @@ class AbstractDisplayMaker extends Component {
         />
         break
       case 'randomSearch':
-        generatedDisplay = <RadioDisplay
+        generatedDisplay = <RandomSearchDisplay
           name={this.props.name}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.isolatedChallenges}

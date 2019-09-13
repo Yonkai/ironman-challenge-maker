@@ -5,26 +5,30 @@ import RandomSearchForm from './RandomSearchForm'
 class AbstractFormMaker extends Component {
   render () {
     let generatedForm
-    if (this.props.abstractFormType === 'radio') {
-      generatedForm = <RadioForm
-        name={this.props.name}
-        handleChange={this.props.handleChange}
-        dataset={this.props.dataset}
-        keys={this.props.keys}
-      />
-    } else if (this.props.abstractFormType === 'randomSearch') {
-      generatedForm = <RandomSearchForm
-        name={this.props.name}
-        handleRandomSearchChange={this.props.handleRandomSearchChange}
-        dataset={this.props.dataset}
-        keys={this.props.keys}
-        search={this.props.search}
-        challengesKey={this.props.challengesKey}
-      />
-    } else {
-      generatedForm = <p>Something went wrong</p>
-      console.error('An error has occured with rendering the form.')
+
+    switch (this.props.abstractFormType) {
+      case 'radio':
+        generatedForm = <RadioForm
+          name={this.props.name}
+          handleChange={this.props.handleChange}
+          dataset={this.props.dataset}
+          keys={this.props.keys}
+        />
+        break
+      case 'randomSearch':
+        generatedForm = <RandomSearchForm
+          name={this.props.name}
+          handleRandomSearchChange={this.props.handleRandomSearchChange}
+          dataset={this.props.dataset}
+          keys={this.props.keys}
+          search={this.props.search}
+          challengesKey={this.props.challengesKey}
+        />
+        break
+      default:
+        console.error('Something went wrong rendering a form!')
     }
+
     return (
       <div className='abstractForm'>
         {generatedForm}
