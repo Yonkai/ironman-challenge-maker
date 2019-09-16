@@ -11,3 +11,4 @@ Makes ironman account challenges programmatically.
 * CSS Grid
 * CSS-In-JS
 * LoDash
+* Photoshop
