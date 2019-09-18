@@ -42,7 +42,8 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Using Area Restrictions'}
+          intro0={'Your Going Area Restrictions:'}
+          intro1={'Your Using Area Restrictions:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}

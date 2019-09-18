@@ -7,16 +7,27 @@ class RandomSearchDisplay extends Component {
     return (
       <div>
         <DisplayerLayoutHeader />
-        <p>Nothing</p>
         <div>
-
+          {/* Make anything over 3 properties seperate component or nest map otherwise */}
+          <ul>{`🔒🔄❌👁️${this.props.intro0}`}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((area, index) =>
-              <p>{`${area}`}</p>
+              <ul><li>{`${area}`}</li></ul>
+            ) : 0
+          }
+
+          <ul>{`🔒🔄❌👁️${this.props.intro1}`}</ul>
+          {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[1]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
+            ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[1]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((area, index) =>
+              <ul>
+                <li>{`${area}`}</li>
+              </ul>
             ) : 0
           }
         </div>
-        <style jsx>{``}
+        <style jsx>{`h2{
+          color:lightgreen;
+        }`}
         </style>
       </div>
 

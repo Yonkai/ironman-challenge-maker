@@ -18,7 +18,8 @@ class AbstractDisplayMaker extends Component {
         break
       case 'randomSearch':
         generatedDisplay = <RandomSearchDisplay
-          name={this.props.name}
+          intro0={this.props.intro0}
+          intro1={this.props.intro1}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.isolatedChallenges}
           isolatedSTATE_KEYS={this.props.isolatedSTATE_KEYS}
