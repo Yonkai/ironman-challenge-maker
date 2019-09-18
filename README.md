@@ -4,6 +4,8 @@ Makes ironman account challenges programmatically.
 
 # Documentation 
 
+# How To Use 
+
 # Technologies Used
 
 * React/NextJS
