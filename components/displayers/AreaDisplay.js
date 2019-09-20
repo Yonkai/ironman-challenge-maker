@@ -1,7 +1,6 @@
-import STATE_KEYS from '../../STATE_KEYS.js'
-import challenges from '../../challenges.js'
-import DisplayerLayoutHeader from '../../DisplayerLayoutHeader.js'
-import pushpop from '../../pushpop.js'
+import STATE_KEYS from '../../data/STATE_KEYS.js'
+import challenges from '../../data/challenges.js'
+import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 import React, { Component } from 'react'
 
 class AreaDisplay extends Component {
@@ -54,18 +53,18 @@ class AreaDisplay extends Component {
         <DisplayerLayoutHeader />
         {/* DRY? */}
         <ul>
-          {`🔒🔓🔄❌Area Challenges: You are restricted from going to these
+          {`🔒🔄❌👁️Area Challenges: You are restricted from going to these
         ${this.props.rootState[STATE_KEYS.AREA.GOING_AREA] ? this.props.rootState[STATE_KEYS.AREA.GOING_AREA] : 0}  areas:`}
           {this.state.areaGo.map((area, index) =>
-            <li key={index}>{`🔒🔓🔄❌ ${area}`}</li>
+            <li key={index}>{`🔒🔄❌👁️${area}`}</li>
           )}
         </ul>
 
         <ul>
-          {`🔒🔓🔄❌Area Challenges: You are restricted from using these
+          {`🔒🔄❌👁️Area Challenges: You are restricted from using these
         ${this.props.rootState[STATE_KEYS.AREA.USING_AREA] ? this.props.rootState[STATE_KEYS.AREA.USING_AREA] : 0}  areas:`}
           {this.state.areaUse.map((area, index) =>
-            <li key={index + 1000}>{`🔒🔓🔄❌ ${area}`}</li>
+            <li key={index + 2}>{`🔒🔄❌👁️${area}`}</li>
           )}
         </ul>
 

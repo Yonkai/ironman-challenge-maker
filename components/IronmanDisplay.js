@@ -1,30 +1,53 @@
 import React, { Component } from 'react'
 
-// Displayers
-import AreaDisplay from './displayers/AreaDisplay'
-import IronmanTypeDisplay from './displayers/IronmanTypeDisplay'
+// Abstract Displayer
+import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
 class IronmanDisplayChallenges extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {}
-  }
-
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
       <div className='challenge-list'>
-        {/* TODO: Make them removeable once generate to manually weed out conflicts */}
-        {/* <p>🔒🔓🔄❌Combat challenge: You can only use melee and ranged combat</p>
-        <p>🔒🔓🔄❌Quest challenge: You cannot do Black Knights Fortress</p>
-        <p>🔒🔓🔄❌Skill challenge: You cannnot use Hunter</p>
-        <p>🔒🔓🔄❌NPC challenge: You cannot kill goblins</p>
-        <p>🔒🔓🔄❌Item Challenge: You cannot use needles or buckets</p> */}
-        <IronmanTypeDisplay
+
+        <AbstractDisplayMaker
+          name={'Ironman Type'}
+          displayType={'radio'}
           rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.type}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.IRONMAN_TYPE}
         />
-        <AreaDisplay
+
+        <AbstractDisplayMaker
+          name={'Useable Clients'}
+          displayType={'radio'}
           rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.clients}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.CLIENT_TYPE}
+        />
+
+        <AbstractDisplayMaker
+          name={'Zoom Restrictions'}
+          displayType={'radio'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.zoom}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.ZOOM_TYPE}
+        />
+
+        <AbstractDisplayMaker
+          name={'Compass Restrictions'}
+          displayType={'radio'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.compass}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.COMPASS_RESTRICTION}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Your Going Area Restrictions:'}
+          intro1={'Your Using Area Restrictions:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.areas}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.AREA}
         />
 
       </div>

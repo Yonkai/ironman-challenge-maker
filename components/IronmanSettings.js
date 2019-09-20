@@ -1,59 +1,85 @@
 import React, { Component } from 'react'
-import Area from './form-comps/Area.js'
-import IronmanType from './form-comps/IronmanType.js'
-class IronmanSettings extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { settings: null }
-  }
+import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
+// import Area from './form-comps/Area.js'
+// import IronmanType from './form-comps/IronmanType.js'
 
-  // TODO:control these forms in react
+class IronmanSettings extends Component {
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
   render () {
     return (
       <div className='settings-main'>
-        {/* Add to side bar: */}
-        {/* <button onClick={this.GenSet}>GEN. RANDOM IRONMAN</button>
-        <button onClick={this.GenSet}>SAVE IRONMAN</button>
-        <button onClick={this.GenSet}>RESET FORMS</button> */}
-        {/* TEST */}
+        {/* TODO: Add saving/loading functionally with access to a server that users can see/interact with */}
 
         <div className='restrictions'>
-          {/* Generates object through class based on input */}
-          <form action='' method='get' className='form-example'>
-            <h3>Random challenges🔺</h3>
-            <div className='challenges'>
-              <label htmlFor='areas'>Add X random challenges:</label>
-              <input type='number' name='areas'
-                min='0' max='222' />
-            </div>
+          <AbstractFormMaker
+            name={'Ironman Type'}
+            abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.type}
+            keys={this.props.STATE_KEYS.IRONMAN_TYPE}
+          />
 
-            <IronmanType handleChange={this.props.handleChange} />
-            <Area handleChange={this.props.handleChange} />
+          <AbstractFormMaker
+            name={'Useable Clients'}
+            abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.clients}
+            keys={this.props.STATE_KEYS.CLIENT_TYPE}
+          />
 
-            <h3>Combat challenges</h3>
-            <h3>Skill challenges</h3>
-            <h3>Minigame challenges</h3>
-            <h3>Quest challenges</h3>
-            <h3>Item challenges</h3>
-            <h3>Beast challenges</h3>
-            <h3>Slot restrictions</h3>
-            <h3>Map tile restrictions</h3>
-            <h3>Relativity challenges</h3>
-            <h3>Food challenges</h3>
-            <h3>Max Framerate</h3>
-            <h3>Useable clients</h3>
-            <h3>Zoom restrictions</h3>
-            <h3>Compass restrictions</h3>
-            <h3>Time restrictions</h3>
-            <h3>Useable biomes</h3>
-            <h3>Spell types</h3>
-            <h3>Updates to this date only</h3>
+          <AbstractFormMaker
+            name={'Zoom Restrictions'}
+            abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.zoom}
+            keys={this.props.STATE_KEYS.ZOOM_TYPE}
+          />
 
-            <div />
-          </form>
+          <AbstractFormMaker
+            name={'Compass Restrictions'}
+            abstractFormType={'radio'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.compass}
+            keys={this.props.STATE_KEYS.COMPASS_RESTRICTION}
+          />
 
-          {/* "Restrict me from using X areas", "Allow me to go to X areas" basically the same thing. */}
+          <AbstractFormMaker
+            name={'Area Challenges'}
+            challengesKey={'areas'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.AREA}
+            dataset={this.props.challenges.areas}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+            search
+          />
+
+          <AbstractFormMaker
+            name={'Skill Challenges'}
+            challengesKey={'skills'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.SKILLS}
+            dataset={this.props.challenges.skills}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+            search
+          />
+
+          {/* <IronmanType handleChange={this.props.handleChange} />
+          <Area handleChange={this.props.handleChange} /> */}
+          <h3>Skill challenges - random/search</h3>
+          <h3>Minigame challenges - random/search</h3>
+          <h3>Quest challenges - random/search</h3>
+          <h3>Item challenges random/search</h3>
+          <h3>Beast challenges random/search</h3>
+          <h3>Food challenges - random/search</h3>
+          <h3>Spells - random/search</h3>
+          <h3>Useable biomes - checkbox</h3>
+          <h3>Combat challenges - checkbox</h3>
+          <h3>Slot restrictions - checkbox</h3>
+          <h3>Time restrictions - date</h3>
+          <h3>Updates between date range - date</h3>
+          <h3>Map tile restrictions - num/search/custom</h3>
+          <h3>Relativity challenges - custom</h3>
+          <h3>Max Framerate - num only</h3>
         </div>
 
         <style global jsx>

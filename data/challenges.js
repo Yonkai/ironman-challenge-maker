@@ -3,9 +3,9 @@
 const challenges = {
   // Add toggles for can/cannot use instead of writing both out, saves time/space.
   // Think about the "minimum set" of course
-  type: ['ironman', 'hardcore ironman', 'ultimate ironman'],
-  combat: ['melee', 'ranged', 'magic'],
-  areas: [
+  type: { ...['Ironman', 'Hardcore Ironman', 'Ultimate Ironman', 'Whatever'] },
+  combat: { ...['melee', 'ranged', 'magic'] },
+  areas: { ...[
     'Burthorpe',
     'Burthorpe Games Room',
     'Death Plateau',
@@ -215,8 +215,8 @@ const challenges = {
     'Ungael',
     'Zanaris',
     'Puro-Puro'
-  ],
-  skills: [
+  ] },
+  skills: { ...[
     'Attack',
     'Strength',
     'Defence',
@@ -239,8 +239,9 @@ const challenges = {
     'Slayer',
     'Farming',
     'Construction',
-    'Hunter'],
-  minigames: [
+    'Hunter'
+  ] },
+  minigames: { ...[
     'Barbarian Assault',
     'Blast Furnace',
     'Burthorpe Games Room',
@@ -279,8 +280,8 @@ const challenges = {
     'Duel Arena',
     'Last Man Standing',
     'TzHaar Fight Pit'
-  ],
-  quests: [
+  ] },
+  quests: { ...[
     'Animal Magnetism',
     'Another Slice of H.A.M.',
     'Between a Rock...',
@@ -432,11 +433,11 @@ const challenges = {
     'Shield of Arrav',
     'Vampire Slayer',
     "Witch's Potion"
-  ],
-  items: ['bronze dagger', 'iron dagger', 'steel dagger'],
-  beasts: ['goblins', 'blue dragons', 'hill giants'],
-  mapTiles: [],
-  slots: [
+  ] },
+  items: ['osrs-box api'],
+  beasts: ['osrs-box api'],
+  mapTiles: ['generate'],
+  slots: { ...[
     'head',
     'chest',
     'legs',
@@ -447,17 +448,16 @@ const challenges = {
     'shield',
     'ring',
     'gloves',
-    'cape'],
-  relativity: ['...x tiles from y icon'],
-  food: [],
-  framerate: ['...generate random number between 1 and 30'],
-  clients: ['runelite', 'vanilla', 'osbuddy'],
-  zoom: ['full-out', 'close-up'],
-  compass: ['north', 'east', 'south', 'west'],
+    'cape'] },
+  relativity: ['x tiles from y icon, add all icon types'],
+  food: ['All food types'],
+  framerate: ['...Number between 1 and 30'],
+  clients: { ...['Runelite', 'Vanilla', 'OSbuddy', 'Whatever!'] },
+  zoom: { ...['Zoomed In', 'Zoomed Out', 'Doesn\'t Matter'] },
+  compass: { ...['North', 'East', 'South', 'West', 'Don\'t care!'] },
   time: ['...generate random time per day/ per month/per year etc'],
   biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground'],
-  randomInt: function getRandomInt (max) {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
+  spells: ['All spells'],
+  phrases: ['You are prevented from using:', 'You are prevented from going to']
 }
 export default challenges

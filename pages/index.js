@@ -1,70 +1,146 @@
 import React, { Component } from 'react'
-import IronmanDisplayChallenges from '../components/IronmanDisplayChallenges.js'
+import sample from 'lodash/sample'
+
+import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
 import Link from 'next/link'
+import challenges from '../data/challenges'
+import STATE_KEYS from '../data/STATE_KEYS'
 
-// Notes: Process to add a new challenge/field to the display component
-// using Area as an example:
-// 1. Make form component (Area.js)
-// 2. Have form component push data though bound function to root state stored in this (index.js) component
-//    threading data between a modifier function (areaModifier.js) if it exists before setting new final state.
-// 3. Make displayer component (AreaDisplay.js) and render inside of (IronmanDisplayChallenges.js)
-// 4. (TODO) Each displayer component keeps its own state and imports abstracted functions (mutations/<function>)
-//    that allow that displayers state to be modified by either locking, unlocking, rerolling, or removing data
-//    by threading through said functions. The data structure will more than likely just be simple objects but there may be more
-//    advance structures in the future added, which may have different data/design flows.
-// 5. (TODO) Add "random challenges" form last because it will use all other form challenges.
-// 6. (TODO) Add search with downshift later which goes through the challenges data file, asssuming I don't change that
-//    to an API instead.
+// New idea (Logic-and-State-Dedupping): Wipe out form-comps and displayer comps completely and replace them with
+// a generic form comp. compoenent that takes in a config object to render out the two types
+// of forms im working with right now, and then have another generic displayer comp that
+// takes that user input from the generic forms generated and renders them out in the
+// IronmanDisplayChallenges area. Business logic, view logic, and display logic are all then
+// dedupped which is the goal for this branch, which should speed up development tremendously.
+//
+// Also, wipe out Pre-Modifier and replace with Post-Modifier which is a function in root,
+// and again do the same with the mutations functions, put them in here and pass them to
+// the displayer component for the User Actor to interact with. This satisfies the open-closed principle
+// and SRP in SOLID. I don't think the Liskov inversion principle applies here. I don't think Interface segration is large enough of an issue
+// in a relatively small program. For now. The form hiding feature can stay inside the abstract displayers because nothing depends on its state, it will be reset on each
+// visit.
+
 class IronmanChallengeRoot extends Component {
   constructor (props) {
     super(props)
     this.state = {}
-    // See design PSD for where this sits in reference to rest of applications
     this.handleChange = this.handleChange.bind(this)
+    this.locking = this.locking.bind(this)
+    this.rerolling = this.rerolling.bind(this)
+    this.visibility = this.visibility.bind(this)
+    this.removing = this.removing.bind(this)
+    this.openCloseForm = this.openCloseForm.bind(this)
+    this.nothinging = this.nothinging.bind(this)
+    this.handleRandomSearchChange = this.handleRandomSearchChange.bind(this)
   }
 
-  getRandomInt (max) {
-    return Math.floor(Math.random() * Math.floor(max))
+  // IronmanDisplay component methods (Interacts with root and display):
+  // locking, rerolling, visbility, removing, and nothinging affect the same state that is built up from
+  // form interaction and that the display components that contain these methods use to display.
+  locking () {
+
+  }
+
+  rerolling () {
+
+  }
+
+  visibility () {
+
+  }
+
+  removing () {
+
+  }
+
+  nothinging () {
+
+  }
+
+  redudancyCheck () {
+
+  }
+
+  // IronmanSettings component methods (Interacts with root and forms):
+  openCloseForm () {
+
   }
 
   // "Modifiers" are specific to each challenge field
-  handleChange (modName, challengeModifier, event) {
+  handleChange (event) {
     const { target } = event
     const { name, value } = target
-    const valueChallengeDisplayModified = challengeModifier(value)
-    if (name !== modName) {
-      this.setState({
-        [modName]: valueChallengeDisplayModified
-      })
-    }
+
     this.setState({
       [name]: value
     })
+  }
+
+  handleRandomSearchChange (event, challengesKey) {
+    console.log(challengesKey)
+    const { target } = event
+    const { name, value } = target
+    var parsedValue = parseInt(value)
+    const countName = name + STATE_KEYS.COMPOSITE_KEY_HALFS._COUNT
+    const challengeInventory = name + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY
+    const challengeSampling = sample(challenges[challengesKey])
+    console.log(challengeSampling)
+
+    // Modify to keep track of number of challenges for this RandomSearch
+    this.setState(prevState => {
+      if (prevState[countName] && (prevState[countName] > 0)) {
+        return { [countName]: prevState[countName] + parsedValue }
+      } else {
+        return { [countName]: parsedValue === -1 ? 0 : 1 }
+      }
+    },
+    // TODO:Modify to keep track of challenge inventory
+    this.setState(prevState => {
+      if (prevState[challengeInventory] && (parsedValue === 1)) {
+        var joined = prevState[challengeInventory].concat(challengeSampling)
+        return { [challengeInventory]: joined }
+      } else if (prevState[challengeInventory] && (parsedValue === -1)) {
+        var popped = prevState[challengeInventory].length === 1 ? prevState[challengeInventory].splice() : prevState[challengeInventory].slice(0, -1)
+        return { [challengeInventory]: popped }
+      } else if ((!prevState[challengeInventory]) && (parsedValue === -1)) {
+
+      } else if ((!prevState[challengeInventory]) && (parsedValue === 1)) {
+        return { [challengeInventory]: [challengeSampling] }
+      } else {
+        console.error('Something went wrong with trying to modify the a random/search form!')
+      }
+    }))
+
+    // TODO: ADD Specific value entered from search box
   }
 
   render () {
     return (
       <div className='containerMain'>
         <nav className='navMenu'>
-          <Link href='#'><a>Create</a></Link>
-          <Link href='#'><a>See Map Visuals</a></Link>
-          <Link href='#'><a>Save/Load Ironmen</a></Link>
-          <Link href='#'><a>Other's Creations</a></Link>
-          <Link href='#'><a>Github</a></Link>
-          <Link href='#'><a>Cool Links</a></Link>
-          <Link href='#'><a>Sources</a></Link>
-          <Link href='#'><a>Play OSRS</a></Link>
+          <Link href='#'><a>Creator</a></Link>
+          <Link href='#'><a>Map Visuals</a></Link>
+          <Link href='#'><a>Save Ironman</a></Link>
+          <Link href='#'><a>Load Ironmen</a></Link>
+          <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <Link href='#'><a>How to Use</a></Link>
-          <Link href='#'><a>How to Contribute</a></Link>
+          <Link href='#'><a>Want to Contribute?</a></Link>
+          <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
+          <Link href='#'><a>RuneLite Plugin</a></Link>
         </nav>
 
-        <IronmanDisplayChallenges
+        <IronmanDisplay
           rootState={this.state}
+          challenges={challenges}
+          STATE_KEYS={STATE_KEYS}
         />
 
         <IronmanSettings
           handleChange={this.handleChange}
+          handleRandomSearchChange={this.handleRandomSearchChange}
+          challenges={challenges}
+          STATE_KEYS={STATE_KEYS}
         />
 
         <style jsx global>
