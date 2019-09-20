@@ -58,6 +58,10 @@ class IronmanChallengeRoot extends Component {
 
   }
 
+  redudancyCheck () {
+
+  }
+
   // IronmanSettings component methods (Interacts with root and forms):
   openCloseForm () {
 

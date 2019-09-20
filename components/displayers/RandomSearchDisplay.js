@@ -3,7 +3,6 @@ import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 import STATE_KEYS from '../../data/STATE_KEYS.js'
 class RandomSearchDisplay extends Component {
   render () {
-    console.log(`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`)
     return (
       <div>
         <DisplayerLayoutHeader />
@@ -12,22 +11,24 @@ class RandomSearchDisplay extends Component {
           <ul>{`🔒🔄❌👁️${this.props.intro0}`}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((area, index) =>
-              <ul><li>{`${area}`}</li></ul>
-            ) : 0
+              <ul><li>{`🔒🔄❌👁️${area}`}</li></ul>
+            ) : ''
           }
 
           <ul>{`🔒🔄❌👁️${this.props.intro1}`}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[1]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[1]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((area, index) =>
               <ul>
-                <li>{`${area}`}</li>
+                <li>{`🔒🔄❌👁️${area}`}</li>
               </ul>
-            ) : 0
+            ) : ''
           }
         </div>
-        <style jsx>{`h2{
-          color:lightgreen;
-        }`}
+        <style jsx>{`
+          li{
+            list-style:none;
+          }
+        `}
         </style>
       </div>
 

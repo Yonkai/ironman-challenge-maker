@@ -53,6 +53,16 @@ class IronmanSettings extends Component {
             search
           />
 
+          <AbstractFormMaker
+            name={'Skill Challenges'}
+            challengesKey={'skills'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.SKILLS}
+            dataset={this.props.challenges.skills}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+            search
+          />
+
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
           <h3>Skill challenges - random/search</h3>
