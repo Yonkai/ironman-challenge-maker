@@ -50,6 +50,15 @@ class IronmanDisplayChallenges extends Component {
           isolatedSTATE_KEYS={this.props.STATE_KEYS.AREA}
         />
 
+        <AbstractDisplayMaker
+          intro0={'Your Skill Restrictions:'}
+          intro1={''}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.skills}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.SKILLS}
+        />
+
       </div>
       {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}
       <style jsx>

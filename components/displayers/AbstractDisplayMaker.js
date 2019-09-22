@@ -26,7 +26,8 @@ class AbstractDisplayMaker extends Component {
         />
         break
       default:
-        console.error('Something went wrong')
+        // TODO:Convert to try...catch...finally exception handling
+        console.log('Something went wrong')
     }
     return (
       <div className='abstractDisplay'>
