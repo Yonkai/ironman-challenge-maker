@@ -63,9 +63,29 @@ class IronmanSettings extends Component {
             search
           />
 
+          <AbstractFormMaker
+            name={'Minigame Challenges'}
+            challengesKey={'minigames'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.MINIGAMES}
+            dataset={this.props.challenges.minigames}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+            search
+          />
+
+          <AbstractFormMaker
+            name={'Quest Challenges'}
+            challengesKey={'quests'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.QUESTS}
+            dataset={this.props.challenges.quests}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+            search
+          />
+
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
-          <h3>Skill challenges - random/search</h3>
+          {/* <h3>Skill challenges - random/search</h3> */}
           <h3>Minigame challenges - random/search</h3>
           <h3>Quest challenges - random/search</h3>
           <h3>Item challenges random/search</h3>

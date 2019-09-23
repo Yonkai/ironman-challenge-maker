@@ -52,11 +52,29 @@ class IronmanDisplayChallenges extends Component {
 
         <AbstractDisplayMaker
           intro0={'Your Skill Restrictions:'}
-          intro1={''}
+          intro1={'-'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.skills}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.SKILLS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Your Minigame Restrictions:'}
+          intro1={'-'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.minigames}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.MINIGAMES}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Your Quest Restrictions:'}
+          intro1={'-'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.quests}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.QUESTS}
         />
 
       </div>
