@@ -3,6 +3,7 @@ import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 import RadioDisplay from './RadioDisplay'
 import RandomSearchDisplay from './RandomSearchDisplay'
 
+// verncular abstract
 class AbstractDisplayMaker extends Component {
   render () {
     let generatedDisplay

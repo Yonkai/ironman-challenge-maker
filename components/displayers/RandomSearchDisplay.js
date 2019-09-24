@@ -8,14 +8,14 @@ class RandomSearchDisplay extends Component {
         <DisplayerLayoutHeader />
         <div>
           {/* Make anything over 3 properties seperate component or nest map otherwise */}
-          <ul>{`🔒🔄❌👁️${this.props.intro0}`}</ul>
+          <ul>{`🔺🔒🔄❌👁️${this.props.intro0}`}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((item, index) =>
               <ul><li>{`🔒🔄❌👁️${item}`}</li></ul>
             ) : ''
           }
 
-          <ul>{`🔒🔄❌👁️${this.props.intro1}`}</ul>
+          <ul>{`🔺🔒🔄❌👁️${this.props.intro1}`}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[1]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[1]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((item, index) =>
               <ul>

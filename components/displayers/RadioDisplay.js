@@ -5,7 +5,7 @@ class RadioDisplay extends Component {
     return (
       <div>
         <ul>
-          {`🔒🔄❌👁️${this.props.name}: `}
+          {`🔺🔒🔄❌👁️${this.props.name}: `}
           <span>
             {this.props.rootState[this.props.isolatedSTATE_KEYS] ? this.props.rootState[this.props.isolatedSTATE_KEYS] : ''}
           </span>

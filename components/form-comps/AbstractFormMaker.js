@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RadioForm from './RadioForm'
 import RandomSearchForm from './RandomSearchForm'
 
+// verncular abstract
 class AbstractFormMaker extends Component {
   render () {
     let generatedForm
