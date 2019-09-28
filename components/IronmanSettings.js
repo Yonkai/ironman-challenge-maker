@@ -86,8 +86,6 @@ class IronmanSettings extends Component {
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
           {/* <h3>Skill challenges - random/search</h3> */}
-          <h3>Minigame challenges - random/search</h3>
-          <h3>Quest challenges - random/search</h3>
           <h3>Item challenges random/search</h3>
           <h3>Beast challenges random/search</h3>
           <h3>Food challenges - random/search</h3>

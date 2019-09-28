@@ -81,21 +81,23 @@ class IronmanChallengeRoot extends Component {
     console.log(challengesKey)
     const { target } = event
     const { name, value } = target
-    var parsedValue = parseInt(value)
+    const parsedValue = parseInt(value)
     const countName = name + STATE_KEYS.COMPOSITE_KEY_HALFS._COUNT
     const challengeInventory = name + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY
+    // TODO: Compare previous state so you don't get duplicates before pulling a sample
     const challengeSampling = sample(challenges[challengesKey])
     console.log(challengeSampling)
 
     // Modify to keep track of number of challenges for this RandomSearch
     this.setState(prevState => {
+      // set count states
       if (prevState[countName] && (prevState[countName] > 0)) {
         return { [countName]: prevState[countName] + parsedValue }
       } else {
         return { [countName]: parsedValue === -1 ? 0 : 1 }
       }
     },
-    // TODO:Modify to keep track of challenge inventory
+    // Set state data pulled from data folder
     this.setState(prevState => {
       if (prevState[challengeInventory] && (parsedValue === 1)) {
         var joined = prevState[challengeInventory].concat(challengeSampling)
@@ -104,7 +106,7 @@ class IronmanChallengeRoot extends Component {
         var popped = prevState[challengeInventory].length === 1 ? prevState[challengeInventory].splice() : prevState[challengeInventory].slice(0, -1)
         return { [challengeInventory]: popped }
       } else if ((!prevState[challengeInventory]) && (parsedValue === -1)) {
-
+        // do nothing
       } else if ((!prevState[challengeInventory]) && (parsedValue === 1)) {
         return { [challengeInventory]: [challengeSampling] }
       } else {
