@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import sample from 'lodash/sample'
 import difference from 'lodash/difference'
+import Link from 'next/link'
 
 import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
-import Link from 'next/link'
 import challenges from '../data/challenges'
 import STATE_KEYS from '../data/STATE_KEYS'
 
@@ -89,20 +89,22 @@ class IronmanChallengeRoot extends Component {
 
     // Modify to keep track of number of challenges for this RandomSearch
     this.setState(prevState => {
-      // set count states
+      // setState for counts
+      // TODO: remove all breaks this but refactor if you actually end using this.
       if (prevState[countName] && (prevState[countName] > 0)) {
         return { [countName]: prevState[countName] + parsedValue }
       } else {
         return { [countName]: parsedValue === -1 ? 0 : 1 }
       }
     },
-    // Set state data pulled from data folder
+    // setState data pulled from data folder
     this.setState(prevState => {
       // Check for duplicates from previous random selects
       const restructuredChallenges = Object.keys(challenges[challengesKey]).map((key) => challenges[challengesKey][key])
       const differencedChallengesFromPrevState = difference(restructuredChallenges, prevState[challengeInventory])
       const challengeSampling = sample(differencedChallengesFromPrevState)
 
+      // parsedValue is like a really sketchy ENUM, refactor that
       if (prevState[challengeInventory] && (parsedValue === 1)) {
         var joined = prevState[challengeInventory].concat(challengeSampling)
         return { [challengeInventory]: joined }
@@ -113,6 +115,7 @@ class IronmanChallengeRoot extends Component {
         // do nothing
       } else if ((!prevState[challengeInventory]) && (parsedValue === 1)) {
         return { [challengeInventory]: [challengeSampling] }
+        // Remove all functionallity
       } else if ((prevState[challengeInventory]) && (parsedValue === 2)) {
         return { [challengeInventory]: [] }
       } else {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 import STATE_KEYS from '../../data/STATE_KEYS.js'
+
 class RandomSearchDisplay extends Component {
   render () {
     return (
