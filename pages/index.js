@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import sample from 'lodash/sample'
+import difference from 'lodash/difference'
 
 import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
@@ -85,8 +86,6 @@ class IronmanChallengeRoot extends Component {
     const countName = name + STATE_KEYS.COMPOSITE_KEY_HALFS._COUNT
     const challengeInventory = name + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY
     // TODO: Compare previous state so you don't get duplicates before pulling a sample
-    const challengeSampling = sample(challenges[challengesKey])
-    console.log(challengeSampling)
 
     // Modify to keep track of number of challenges for this RandomSearch
     this.setState(prevState => {
@@ -99,6 +98,11 @@ class IronmanChallengeRoot extends Component {
     },
     // Set state data pulled from data folder
     this.setState(prevState => {
+      // Check for duplicates from previous random selects
+      const restructuredChallenges = Object.keys(challenges[challengesKey]).map((key) => challenges[challengesKey][key])
+      const differencedChallengesFromPrevState = difference(restructuredChallenges, prevState[challengeInventory])
+      const challengeSampling = sample(differencedChallengesFromPrevState)
+
       if (prevState[challengeInventory] && (parsedValue === 1)) {
         var joined = prevState[challengeInventory].concat(challengeSampling)
         return { [challengeInventory]: joined }
