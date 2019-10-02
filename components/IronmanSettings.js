@@ -44,13 +44,21 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
-            name={'Area Challenges'}
+            name={'Going Area Challenges'}
             challengesKey={'areas'}
             abstractFormType={'randomSearch'}
-            keys={this.props.STATE_KEYS.AREA}
+            keys={this.props.STATE_KEYS.GOING_AREA}
             dataset={this.props.challenges.areas}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
-            search
+          />
+
+          <AbstractFormMaker
+            name={'Using Area Challenges'}
+            challengesKey={'areas'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.USING_AREA}
+            dataset={this.props.challenges.areas}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
           />
 
           <AbstractFormMaker
@@ -60,7 +68,7 @@ class IronmanSettings extends Component {
             keys={this.props.STATE_KEYS.SKILLS}
             dataset={this.props.challenges.skills}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
-            search
+
           />
 
           <AbstractFormMaker
@@ -70,7 +78,6 @@ class IronmanSettings extends Component {
             keys={this.props.STATE_KEYS.MINIGAMES}
             dataset={this.props.challenges.minigames}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
-            search
           />
 
           <AbstractFormMaker
@@ -80,7 +87,7 @@ class IronmanSettings extends Component {
             keys={this.props.STATE_KEYS.QUESTS}
             dataset={this.props.challenges.quests}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
-            search
+
           />
 
           {/* <IronmanType handleChange={this.props.handleChange} />
