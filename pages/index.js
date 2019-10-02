@@ -113,6 +113,8 @@ class IronmanChallengeRoot extends Component {
         // do nothing
       } else if ((!prevState[challengeInventory]) && (parsedValue === 1)) {
         return { [challengeInventory]: [challengeSampling] }
+      } else if ((prevState[challengeInventory]) && (parsedValue === 2)) {
+        return { [challengeInventory]: [] }
       } else {
         console.error('Something went wrong with trying to modify the a random/search form!')
       }
