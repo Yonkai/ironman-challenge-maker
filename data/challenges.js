@@ -272,7 +272,6 @@ const challenges = {
     'Treasure Trails',
     'TzHaar Fight Cave',
     'Bounty Hunter',
-    'Castle Wars',
     'Clan Wars',
     'Duel Arena',
     'Last Man Standing',
@@ -454,7 +453,6 @@ const challenges = {
   compass: { ...['North', 'East', 'South', 'West', 'Don\'t care!'] },
   time: ['...generate random time per day/ per month/per year etc'],
   biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground'],
-  spells: ['All spells'],
-  phrases: ['You are prevented from using:', 'You are prevented from going to']
+  spells: ['All spells']
 }
 export default challenges
