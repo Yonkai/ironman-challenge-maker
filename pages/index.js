@@ -77,8 +77,14 @@ class IronmanChallengeRoot extends Component {
     switch (type) {
       case 'checkbox':
         this.setState(prevState => {
-          console.log(prevState)
-          return { [name]: value }
+          // because Object.entries(new Date()).length === 0;
+          // we have to do some additional check
+          if (Object.entries(prevState).length === 0 && prevState.constructor === Object) {
+            return { [name]: [value] }
+          }
+          console.log([prevState])
+
+          return { [name]: [...prevState[name], value] }
         })
         break
       case 'radio':
