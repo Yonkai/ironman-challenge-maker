@@ -70,12 +70,25 @@ class IronmanChallengeRoot extends Component {
 
   // "Modifiers" are specific to each challenge field
   handleChange (event) {
+    console.log(event)
     const { target } = event
-    const { name, value } = target
-
-    this.setState({
-      [name]: value
-    })
+    const { name, value, type } = target
+    console.log(name, value)
+    switch (type) {
+      case 'checkbox':
+        this.setState(prevState => {
+          console.log(prevState)
+          return { [name]: value }
+        })
+        break
+      case 'radio':
+        this.setState({
+          [name]: value
+        })
+        break
+      default:
+        console.error('Something went wrong rendering a form!')
+    }
   }
 
   handleRandomSearchChange (event, challengesKey) {

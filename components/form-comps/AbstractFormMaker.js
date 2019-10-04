@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RadioForm from './RadioForm'
 import RandomSearchForm from './RandomSearchForm'
+import CheckboxForm from './CheckboxForm'
 
 // verncular abstract
 class AbstractFormMaker extends Component {
@@ -24,6 +25,14 @@ class AbstractFormMaker extends Component {
           keys={this.props.keys}
           search={this.props.search}
           challengesKey={this.props.challengesKey}
+        />
+        break
+      case 'checkbox':
+        generatedForm = <CheckboxForm
+          name={this.props.name}
+          handleChange={this.props.handleChange}
+          dataset={this.props.dataset}
+          keys={this.props.keys}
         />
         break
       default:

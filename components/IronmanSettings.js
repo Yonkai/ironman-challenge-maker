@@ -87,7 +87,14 @@ class IronmanSettings extends Component {
             keys={this.props.STATE_KEYS.QUESTS}
             dataset={this.props.challenges.quests}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
 
+          <AbstractFormMaker
+            name={'Biome Type'}
+            abstractFormType={'checkbox'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.biomes}
+            keys={this.props.STATE_KEYS.BIOMES}
           />
 
           {/* <IronmanType handleChange={this.props.handleChange} />

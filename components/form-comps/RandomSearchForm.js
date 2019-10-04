@@ -9,7 +9,7 @@ class RandomSearchForm extends Component {
     // var formatB = [{value:'a'},{value:'b'},{value:'c'},{value:'d'}]
     // (solution) Object.values(formatA).map(value => ({value}))
     const restructuredDataSetForDownshift = Object.values(this.props.dataset).map(value => ({ value }))
-    console.log(restructuredDataSetForDownshift)
+
     return (
       <div>
         <h3>{`${this.props.name}`}<span>🔺</span></h3>
