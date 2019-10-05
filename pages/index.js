@@ -82,9 +82,15 @@ class IronmanChallengeRoot extends Component {
           if (Object.entries(prevState).length === 0 && prevState.constructor === Object) {
             return { [name]: [value] }
           }
-          console.log([prevState])
-
-          return { [name]: [...prevState[name], value] }
+          console.log(prevState)
+          // doing prevState[name].includes caused a problem precedence
+          if ((prevState[name]).includes(value)) {
+            // allows to keep a replica of the checkbox state
+            const differencedCheckbox = difference(prevState[name], [value])
+            return { [name]: [...differencedCheckbox] }
+          } else {
+            return { [name]: [...prevState[name], value] }
+          }
         })
         break
       case 'radio':
