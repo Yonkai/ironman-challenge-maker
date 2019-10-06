@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import DisplayerLayoutHeader from '../../styles/DisplayerLayoutHeader.js'
 import RadioDisplay from './RadioDisplay'
 import RandomSearchDisplay from './RandomSearchDisplay'
+import CheckboxDisplay from './CheckboxDisplay'
 
-// verncular abstract
+// verncular use of the word 'abstract'
 class AbstractDisplayMaker extends Component {
   render () {
     let generatedDisplay
@@ -20,7 +21,14 @@ class AbstractDisplayMaker extends Component {
       case 'randomSearch':
         generatedDisplay = <RandomSearchDisplay
           intro0={this.props.intro0}
-          intro1={this.props.intro1}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.isolatedChallenges}
+          isolatedSTATE_KEYS={this.props.isolatedSTATE_KEYS}
+        />
+        break
+      case 'checkbox':
+        generatedDisplay = <CheckboxDisplay
+          name={this.props.name}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.isolatedChallenges}
           isolatedSTATE_KEYS={this.props.isolatedSTATE_KEYS}

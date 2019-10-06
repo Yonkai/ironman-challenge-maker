@@ -43,7 +43,6 @@ class IronmanDisplayChallenges extends Component {
 
         <AbstractDisplayMaker
           intro0={'Your Going Area Restrictions:'}
-          intro1={'-'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
@@ -52,7 +51,6 @@ class IronmanDisplayChallenges extends Component {
 
         <AbstractDisplayMaker
           intro0={'Your Using Area Restrictions:'}
-          intro1={'-'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
@@ -61,7 +59,6 @@ class IronmanDisplayChallenges extends Component {
 
         <AbstractDisplayMaker
           intro0={'Your Skill Restrictions:'}
-          intro1={'-'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.skills}
@@ -70,7 +67,6 @@ class IronmanDisplayChallenges extends Component {
 
         <AbstractDisplayMaker
           intro0={'Your Minigame Restrictions:'}
-          intro1={'-'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.minigames}
@@ -79,11 +75,18 @@ class IronmanDisplayChallenges extends Component {
 
         <AbstractDisplayMaker
           intro0={'Your Quest Restrictions:'}
-          intro1={'-'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.quests}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.QUESTS}
+        />
+
+        <AbstractDisplayMaker
+          name={'Your Biomes Restrictions'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.biomes}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.BIOMES}
         />
 
       </div>
