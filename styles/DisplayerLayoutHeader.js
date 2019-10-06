@@ -15,6 +15,7 @@ export default () => (
               color:white;
               font-size:22px;
               margin-left:40px;
+              list-style:none;
             }
             ul{
               color:lightgreen;

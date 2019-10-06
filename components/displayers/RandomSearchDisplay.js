@@ -16,11 +16,7 @@ class RandomSearchDisplay extends Component {
             ) : ''
           }
         </div>
-        <style jsx>{`
-          li{
-            list-style:none;
-          }
-        `}
+        <style jsx>{``}
         </style>
       </div>
 
