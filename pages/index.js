@@ -93,6 +93,10 @@ class IronmanChallengeRoot extends Component {
           }
         })
         break
+        // TODO:ADD special case for handling group ironmen:
+        // Add seperated iframes? Duplicate display and add tabs to the top
+        // as a seperate display component? Save files for each? Possibilities
+        // are endless make sure it follows clean architecture
       case 'radio':
         this.setState({
           [name]: value
