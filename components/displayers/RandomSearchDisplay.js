@@ -12,7 +12,7 @@ class RandomSearchDisplay extends Component {
           <ul>{`🔺🔒🔄❌👁️${this.props.intro0}`}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS[Object.keys(this.props.isolatedSTATE_KEYS)[0]] + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY}`].map((item, index) =>
-              <ul><li>{`🔒🔄❌👁️${item}`}</li></ul>
+              <ul key={index}><li>{`🔒🔄❌👁️${item}`}</li></ul>
             ) : ''
           }
         </div>

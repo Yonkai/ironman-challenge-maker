@@ -79,7 +79,7 @@ class IronmanChallengeRoot extends Component {
         this.setState(prevState => {
           // because Object.entries(new Date()).length === 0;
           // we have to do some additional check
-          if (Object.entries(prevState).length === 0 && prevState.constructor === Object) {
+          if (prevState[name] === undefined) {
             return { [name]: [value] }
           }
           console.log(prevState)
@@ -174,6 +174,7 @@ class IronmanChallengeRoot extends Component {
           rootState={this.state}
           challenges={challenges}
           STATE_KEYS={STATE_KEYS}
+          groupTab={this.state.groupTab}
         />
 
         <IronmanSettings

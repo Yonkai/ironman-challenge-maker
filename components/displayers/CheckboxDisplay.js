@@ -13,7 +13,7 @@ class CheckboxDisplay extends Component {
           <ul>{`🔺🔒🔄❌👁️${this.props.name}: `}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS}`].map((item, index) =>
-              <ul><li>{`🔒🔄❌👁️${item}`}</li></ul>
+              <ul key={index}><li>{`🔒🔄❌👁️${item}`}</li></ul>
             ) : ''
           }
         </div>

@@ -97,6 +97,14 @@ class IronmanSettings extends Component {
             keys={this.props.STATE_KEYS.BIOMES}
           />
 
+          <AbstractFormMaker
+            name={'Slot Restrictions'}
+            abstractFormType={'checkbox'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.slots}
+            keys={this.props.STATE_KEYS.SLOTS}
+          />
+
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
           {/* <h3>Skill challenges - random/search</h3> */}
@@ -105,7 +113,6 @@ class IronmanSettings extends Component {
           <h3>Food challenges - random/search</h3>
           <h3>Potion challenges - random/search</h3>
           <h3>Spells - random/search</h3>
-          <h3>Useable biomes - checkbox</h3>
           <h3>Combat challenges - checkbox</h3>
           <h3>Slot restrictions - checkbox</h3>
           <h3>Time restrictions - date</h3>

@@ -433,7 +433,7 @@ const challenges = {
   items: ['osrs-box api'],
   beasts: ['osrs-box api'],
   mapTiles: ['generate'],
-  slots: { ...[
+  slots: [
     'head',
     'chest',
     'legs',
@@ -444,7 +444,7 @@ const challenges = {
     'shield',
     'ring',
     'gloves',
-    'cape'] },
+    'cape'],
   relativity: ['x tiles from y icon, add all icon types'],
   food: ['All food types'],
   framerate: ['...Number between 1 and 30'],
