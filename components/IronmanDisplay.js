@@ -89,6 +89,14 @@ class IronmanDisplayChallenges extends Component {
           isolatedSTATE_KEYS={this.props.STATE_KEYS.BIOMES}
         />
 
+        <AbstractDisplayMaker
+          name={'Your Slot Restrictions'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.slots}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.SLOTS}
+        />
+
       </div>
       {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}
       <style jsx>

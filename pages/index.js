@@ -167,6 +167,7 @@ class IronmanChallengeRoot extends Component {
           <Link href='#'><a>How to Use</a></Link>
           <Link href='#'><a>Want to Contribute?</a></Link>
           <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
+          <Link href='#'><a>Defitions</a></Link>
           <Link href='#'><a>RuneLite Plugin</a></Link>
         </nav>
 
