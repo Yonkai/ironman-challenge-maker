@@ -42,7 +42,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Going Area Restrictions:'}
+          intro0={'Your Using Area Restrictions:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
@@ -50,7 +50,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Using Area Restrictions:'}
+          intro0={'Your Going Area Restrictions:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
@@ -95,6 +95,14 @@ class IronmanDisplayChallenges extends Component {
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.slots}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.SLOTS}
+        />
+
+        <AbstractDisplayMaker
+          name={'Your Combat Restrictions'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.combat}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.COMBAT}
         />
 
       </div>

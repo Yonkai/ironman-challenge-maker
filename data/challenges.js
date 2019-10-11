@@ -4,7 +4,7 @@ const challenges = {
   // Add toggles for can/cannot use instead of writing both out, saves time/space.
   // Think about the "minimum set" of course
   type: { ...['Ironman', 'Hardcore Ironman', 'Ultimate Ironman', 'Group', 'Whatever'] },
-  combat: { ...['melee', 'ranged', 'magic'] },
+  combat: ['melee', 'ranged', 'magic'],
   areas: { ...[
     'Burthorpe',
     'Burthorpe Games Room',
@@ -451,7 +451,6 @@ const challenges = {
   clients: { ...['Runelite', 'Vanilla', 'OSbuddy', 'Whatever!'] },
   zoom: { ...['Zoomed In', 'Zoomed Out', 'Doesn\'t Matter'] },
   compass: { ...['North', 'East', 'South', 'West', 'Don\'t care!'] },
-  time: ['...generate random time per day/ per month/per year etc'],
   biomes: ['swamp', 'forest', 'river', 'ocean', 'city', 'underground'],
   spells: ['All spells']
 }
