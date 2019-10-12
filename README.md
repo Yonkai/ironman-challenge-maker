@@ -3,6 +3,7 @@
 Makes ironman account challenges programmatically.
 
 # How To Use
+# Challenge definitions
 ## Running In Development Mode:
 1. `git clone` the repo
 2. Run `npm install` in the console
