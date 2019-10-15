@@ -170,6 +170,7 @@ class IronmanChallengeRoot extends Component {
           <Link href='#'><a>Definitions</a></Link>
           <Link href='#'><a>Settings</a></Link>
           <Link href='#'><a>RuneLite Plugin</a></Link>
+          <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameborder='0' scrolling='0' width='170px' height='50px' />
         </nav>
 
         <IronmanDisplay
