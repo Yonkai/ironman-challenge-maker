@@ -105,6 +105,14 @@ class IronmanDisplayChallenges extends Component {
           isolatedSTATE_KEYS={this.props.STATE_KEYS.COMBAT}
         />
 
+        <AbstractDisplayMaker
+          name={'Your Food Restrictions'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.food}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.FOOD}
+        />
+
       </div>
       {/* TODO: Update LAME UI for forms/display... this is a total pain to use. */}
       <style jsx>

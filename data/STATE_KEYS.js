@@ -27,7 +27,8 @@ const STATE_KEYS = {
   COMPOSITE_KEY_HALFS: {
     _COUNT: '_COUNT',
     _CHALLENGE_INVENTORY: '_CHALLENGE_INVENTORY'
-  }
+  },
+  FOOD: 'FOOD'
 }
 
 export default STATE_KEYS
