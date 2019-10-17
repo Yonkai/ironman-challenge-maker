@@ -126,7 +126,6 @@ class IronmanSettings extends Component {
           {/* <h3>Skill challenges - random/search</h3> */}
           <h3>Item challenges random/search</h3>
           <h3>Beast challenges random/search</h3>
-          <h3>Food challenges - random/search</h3>
           <h3>Potion challenges - random/search</h3>
           <h3>Spells - random/search</h3>
           <h3>Updates between date range - date</h3>
