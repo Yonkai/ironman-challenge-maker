@@ -9,6 +9,8 @@ Makes ironman account challenges programmatically.
 
 **Going Area** - You can't access this area at all.
 
+**Food** - You can't eat these in-game foods.
+
 ## Running In Development Mode:
 1. `git clone` the repo
 2. Run `npm install` in the console
