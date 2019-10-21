@@ -110,7 +110,7 @@ class IronmanChallengeRoot extends Component {
   handleRandomSearchChange (event, challengesKey) {
     console.log(challengesKey)
     const { target } = event
-    const { name, value } = target
+    const { name, value, overrideSampling } = target
     const parsedValue = parseInt(value)
     const countName = name + STATE_KEYS.COMPOSITE_KEY_HALFS._COUNT
     const challengeInventory = name + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY
@@ -131,7 +131,7 @@ class IronmanChallengeRoot extends Component {
       // Check for duplicates from previous random selects
       const restructuredChallenges = Object.keys(challenges[challengesKey]).map((key) => challenges[challengesKey][key])
       const differencedChallengesFromPrevState = difference(restructuredChallenges, prevState[challengeInventory])
-      const challengeSampling = sample(differencedChallengesFromPrevState)
+      const challengeSampling = overrideSampling || sample(differencedChallengesFromPrevState)
 
       // parsedValue is like a really sketchy ENUM, refactor that
       if (prevState[challengeInventory] && (parsedValue === 1)) {

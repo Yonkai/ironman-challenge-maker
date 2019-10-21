@@ -17,15 +17,28 @@ class RandomSearchForm extends Component {
           {Object.keys(this.props.keys).map((objKey, index) => (
             <div key={index}>
               {/* WARNING: Code is setup to use 1 and -1 values specifically */}
-              {/* turn these into enum/const states */}
+              {/* turn these into enum/const states
+                -1: remove
+                1: add
+                2: remove all
+              */}
               <button value={1} name={this.props.keys[objKey]} onClick={(event) => this.props.handleRandomSearchChange(event, this.props.challengesKey)}>Add {this.props.keys[objKey]}</button>
               <button value={-1} name={this.props.keys[objKey]} onClick={(event) => this.props.handleRandomSearchChange(event, this.props.challengesKey)} >Remove {this.props.keys[objKey]}</button>
               <button value={2} name={this.props.keys[objKey]} onClick={(event) => this.props.handleRandomSearchChange(event, this.props.challengesKey)} >Remove ALL {this.props.keys[objKey]}</button>
             </div>))}
           <Downshift
-            onChange={selection =>
-              alert(selection ? `You selected ${selection.value}` : 'Selection Cleared')
-            }
+            onChange={(selection) => {
+              console.log(selection)
+              // fake syntax to simulate  click event
+              const fakeClickEvent = {
+                target: {
+                  name: Object.keys(this.props.keys),
+                  overrideSampling: selection['value'],
+                  value: '1'
+                }
+              }
+              this.props.handleRandomSearchChange(fakeClickEvent, this.props.challengesKey)
+            }}
 
             itemToString={item => (item ? item.value : '')}
           >
