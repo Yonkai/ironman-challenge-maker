@@ -11,6 +11,8 @@ Makes ironman account challenges programmatically.
 
 **Food** - You can't eat these in-game foods.
 
+**Client** - Can only use this client
+
 ## Running In Development Mode:
 1. `git clone` the repo
 2. Run `npm install` in the console
