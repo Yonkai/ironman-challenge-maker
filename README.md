@@ -13,6 +13,8 @@ Makes ironman account challenges programmatically.
 
 **Client** - Can only use this client
 
+**Potions** - Can only use these potions
+
 ## Running In Development Mode:
 1. `git clone` the repo
 2. Run `npm install` in the console
