@@ -114,7 +114,7 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
-            name={'Combat Restrictions'}
+            name={'Food Restrictions'}
             abstractFormType={'checkbox'}
             handleChange={this.props.handleChange}
             dataset={this.props.challenges.food}
