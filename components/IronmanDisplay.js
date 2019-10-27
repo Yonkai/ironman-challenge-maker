@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
 class IronmanDisplayChallenges extends Component {
+  // add menu state and function here.. or better yet root I guess because i might store in cookies later :DELETE
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
