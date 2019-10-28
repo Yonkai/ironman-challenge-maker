@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import toggleMenu from './toggleMenuUtil.js'
 
 class CheckboxForm extends Component {
   constructor (props) {
@@ -19,7 +18,7 @@ class CheckboxForm extends Component {
     return (
       // Should turn this wrapper into a HOC(h3 title and div):
       <div>
-        <h3 onClick={toggleMenu}>{`${this.props.name}🔺`}</h3>
+        <h3 onClick={this.toggleMenu}>{`${this.props.name}🔺`}</h3>
         {this.state.isToggleOn
           ? <div className='challenges'>
             {/* checkbox maps through dataset because that what it displays in the form

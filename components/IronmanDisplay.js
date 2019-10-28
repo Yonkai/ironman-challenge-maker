@@ -5,6 +5,7 @@ import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
 class IronmanDisplayChallenges extends Component {
   // add menu state and function here.. or better yet root I guess because i might store in cookies later :DELETE
+  // UPDATE: After further research, hooks are probably better https://github.com/beizhedenglong/react-hooks-lib
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}

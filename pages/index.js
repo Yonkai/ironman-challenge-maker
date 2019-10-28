@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import sample from 'lodash/sample'
 import difference from 'lodash/difference'
-import Link from 'next/link'
-
 import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
 import challenges from '../data/challenges'
@@ -157,22 +155,7 @@ class IronmanChallengeRoot extends Component {
 
   render () {
     return (
-      <div className='containerMain'>
-        <nav className='navMenu'>
-          <Link href='#'><a>Creator</a></Link>
-          <Link href='#'><a>Map Visuals</a></Link>
-          <Link href='#'><a>Save Ironman</a></Link>
-          <Link href='#'><a>Load Ironmen</a></Link>
-          <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
-          <Link href='#'><a>How to Use</a></Link>
-          <Link href='#'><a>Want to Contribute?</a></Link>
-          <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
-          <Link href='#'><a>Definitions</a></Link>
-          <Link href='#'><a>Settings</a></Link>
-          <Link href='#'><a>RuneLite Plugin</a></Link>
-          <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameborder='0' scrolling='0' width='170px' height='50px' />
-        </nav>
-
+      <>
         <IronmanDisplay
           rootState={this.state}
           challenges={challenges}
@@ -196,7 +179,7 @@ class IronmanChallengeRoot extends Component {
                 .containerMain{
                   display:grid;
                   grid-template-columns: 150px 3fr 5fr;
-                  grid-template-areas:" nav forms display";
+                  grid-template-areas:"nav forms display";
                   grid-gap:5px;
                   height:100vh;
                 }
@@ -242,7 +225,7 @@ class IronmanChallengeRoot extends Component {
 
           `}
         </style>
-      </div>
+      </>
     )
   }
 }
