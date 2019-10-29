@@ -7,7 +7,7 @@ class LoadIronman extends Component {
   }
 
   render () {
-    return (<p>hello</p>)
+    return (<p>Load Ironmen</p>)
   }
 }
 
