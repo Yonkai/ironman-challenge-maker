@@ -71,6 +71,15 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
+            name={'Potions'}
+            challengesKey={'potions'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.POTIONS}
+            dataset={this.props.challenges.potions}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
             name={'Skill Challenges'}
             challengesKey={'skills'}
             abstractFormType={'randomSearch'}
@@ -133,14 +142,11 @@ class IronmanSettings extends Component {
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
           {/* <h3>Skill challenges - random/search</h3> */}
-          <h3>Item challenges random/search</h3>
-          <h3>Beast challenges random/search</h3>
-          <h3>Potion challenges - random/search</h3>
-          <h3>Spells - random/search</h3>
-          <h3>Updates between date range - date</h3>
-          <h3>Map tile restrictions - num/search/custom</h3>
-          <h3>Relativity challenges - custom</h3>
-          <h3>Max Framerate - num only</h3>
+          <h3>TODO: Item challenges random/search</h3>
+          <h3>TODO: Beast challenges random/search</h3>
+          <h3>TODO: Updates between date range - date</h3>
+          <h3>TODO: Map tile restrictions - num/search/custom</h3>
+          <h3>TODO: Relativity challenges - custom</h3>
         </div>
 
         <style global jsx>

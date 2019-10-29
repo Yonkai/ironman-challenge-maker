@@ -92,6 +92,13 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
+          intro0={'Your Potions:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.potions}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.POTIONS}
+        />
+        <AbstractDisplayMaker
           name={'Your Biomes Restrictions'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
