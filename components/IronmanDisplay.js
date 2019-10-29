@@ -84,6 +84,14 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
+          intro0={'Your Spells:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.spells}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.SPELLS}
+        />
+
+        <AbstractDisplayMaker
           name={'Your Biomes Restrictions'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
