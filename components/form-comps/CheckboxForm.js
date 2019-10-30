@@ -23,7 +23,12 @@ const CheckboxForm = (props) => {
       <style jsx>
         {`h3{
           margin:2px;
-      }`}
+      }
+        h3:hover{
+          cursor:pointer;
+        }
+      
+      `}
       </style>
     </div>)
 }

@@ -87,6 +87,9 @@ const RandomSearchForm = (props) => {
           li{
             color:black;
           }
+          h3:hover{
+            cursor:pointer;
+          }
           `}
       </style>
     </div>)

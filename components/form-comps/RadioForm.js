@@ -22,8 +22,13 @@ const RadioForm = (props) => {
           )}
         </div> : <p>hidden</p> }
       <style jsx>
-        {`h3{
+        {`
+        h3{
               margin:2px;
+        }
+        h3:hover{
+          cursor:pointer;
+        }
           }`}
       </style>
     </div>
