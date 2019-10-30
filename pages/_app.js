@@ -9,16 +9,15 @@ class Layout extends React.Component {
       <div className='containerMain'>
         <nav className='navMenu'>
           <Link href='/'><a>Creator</a></Link>
-          <Link href='#'><a>Map Visuals</a></Link>
-          <Link href='/save-ironman'><a>Save Ironman</a></Link>
-          <Link href='/load-ironman'><a>Load Ironmen</a></Link>
-          <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
-          <Link href='/how-to-use'><a>How to Use</a></Link>
-          <Link href='/contributing'><a>Want to Contribute?</a></Link>
-          <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
           <Link href='/define'><a>Definitions</a></Link>
-          <Link href='/settings'><a>Settings</a></Link>
+          <Link href='/load-ironman'><a>Ironman Portal</a></Link>
+          <Link href='#'><a>Map Visuals</a></Link>
+          <Link href='/how-to-use'><a>How to Use</a></Link>
+          <Link href='/contributing'><a>Contribute?</a></Link>
+          <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
+          <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <Link href='/runelite'><a>RuneLite Plugin</a></Link>
+          <Link href='/settings'><a>Settings</a></Link>
           <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameborder='0' scrolling='0' width='170px' height='50px' />
         </nav>
         {children}
