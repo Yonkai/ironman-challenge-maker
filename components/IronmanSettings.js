@@ -44,6 +44,24 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
+            name={'Your Items'}
+            challengesKey={'items'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.ITEMS}
+            dataset={this.props.challenges.items}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Your Beasts'}
+            challengesKey={'beasts'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.BEASTS}
+            dataset={this.props.challenges.beasts}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
             name={'Going Area Challenges'}
             challengesKey={'areas'}
             abstractFormType={'randomSearch'}

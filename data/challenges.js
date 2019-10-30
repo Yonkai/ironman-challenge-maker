@@ -430,8 +430,8 @@ const challenges = {
     'Vampire Slayer',
     "Witch's Potion"
   ] },
-  items: ['osrs-box api'],
-  beasts: ['osrs-box api'],
+  items: { ...['item1', 'item2', 'item3'] },
+  beasts: { ...['beast1', 'beast2', 'beast3'] },
   mapTiles: ['generate'],
   slots: [
     'head',
@@ -444,7 +444,8 @@ const challenges = {
     'shield',
     'ring',
     'gloves',
-    'cape'],
+    'cape'
+  ],
   relativity: ['x tiles from y icon, add all icon types'],
   food: [
     'Shrimp',

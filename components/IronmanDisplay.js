@@ -44,6 +44,22 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
+          intro0={'Your Beasts:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.beasts}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.BEASTS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Your Items:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.items}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.ITEMS}
+        />
+
+        <AbstractDisplayMaker
           intro0={'Your Using Area Restrictions:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}

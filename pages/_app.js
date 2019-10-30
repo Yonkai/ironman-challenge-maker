@@ -18,7 +18,7 @@ class Layout extends React.Component {
           <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <Link href='/runelite'><a>RuneLite Plugin</a></Link>
           <Link href='/settings'><a>Settings</a></Link>
-          <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameborder='0' scrolling='0' width='170px' height='50px' />
+          <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameBorder='0' scrolling='0' width='170px' height='50px' />
         </nav>
         {children}
         <style jsx global>

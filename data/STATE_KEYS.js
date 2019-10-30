@@ -27,6 +27,12 @@ const STATE_KEYS = {
   SPELLS: {
     SPELLS: 'SPELLS'
   },
+  ITEMS: {
+    ITEMS: 'ITEMS'
+  },
+  BEASTS: {
+    BEASTS: 'BEASTS'
+  },
   POTIONS: {
     POTIONS: 'POTIONS'
   },
