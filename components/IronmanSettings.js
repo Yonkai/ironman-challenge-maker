@@ -44,13 +44,57 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
-            name={'Area Challenges'}
+            name={'Your Items'}
+            challengesKey={'items'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.ITEMS}
+            dataset={this.props.challenges.items}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Your Beasts'}
+            challengesKey={'beasts'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.BEASTS}
+            dataset={this.props.challenges.beasts}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Going Area Challenges'}
             challengesKey={'areas'}
             abstractFormType={'randomSearch'}
-            keys={this.props.STATE_KEYS.AREA}
+            keys={this.props.STATE_KEYS.GOING_AREA}
             dataset={this.props.challenges.areas}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
-            search
+          />
+
+          <AbstractFormMaker
+            name={'Using Area Challenges'}
+            challengesKey={'areas'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.USING_AREA}
+            dataset={this.props.challenges.areas}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Spells'}
+            challengesKey={'spells'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.SPELLS}
+            dataset={this.props.challenges.spells}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Potions'}
+            challengesKey={'potions'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.POTIONS}
+            dataset={this.props.challenges.potions}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
           />
 
           <AbstractFormMaker
@@ -60,26 +104,65 @@ class IronmanSettings extends Component {
             keys={this.props.STATE_KEYS.SKILLS}
             dataset={this.props.challenges.skills}
             handleRandomSearchChange={this.props.handleRandomSearchChange}
-            search
+
+          />
+
+          <AbstractFormMaker
+            name={'Minigame Challenges'}
+            challengesKey={'minigames'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.MINIGAMES}
+            dataset={this.props.challenges.minigames}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Quest Challenges'}
+            challengesKey={'quests'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.QUESTS}
+            dataset={this.props.challenges.quests}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+
+          <AbstractFormMaker
+            name={'Biome Type'}
+            abstractFormType={'checkbox'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.biomes}
+            keys={this.props.STATE_KEYS.BIOMES}
+          />
+
+          <AbstractFormMaker
+            name={'Slot Restrictions'}
+            abstractFormType={'checkbox'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.slots}
+            keys={this.props.STATE_KEYS.SLOTS}
+          />
+
+          <AbstractFormMaker
+            name={'Combat Restrictions'}
+            abstractFormType={'checkbox'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.combat}
+            keys={this.props.STATE_KEYS.COMBAT}
+          />
+
+          <AbstractFormMaker
+            name={'Food Restrictions'}
+            abstractFormType={'checkbox'}
+            handleChange={this.props.handleChange}
+            dataset={this.props.challenges.food}
+            keys={this.props.STATE_KEYS.FOOD}
           />
 
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
-          <h3>Skill challenges - random/search</h3>
-          <h3>Minigame challenges - random/search</h3>
-          <h3>Quest challenges - random/search</h3>
-          <h3>Item challenges random/search</h3>
-          <h3>Beast challenges random/search</h3>
-          <h3>Food challenges - random/search</h3>
-          <h3>Spells - random/search</h3>
-          <h3>Useable biomes - checkbox</h3>
-          <h3>Combat challenges - checkbox</h3>
-          <h3>Slot restrictions - checkbox</h3>
-          <h3>Time restrictions - date</h3>
-          <h3>Updates between date range - date</h3>
-          <h3>Map tile restrictions - num/search/custom</h3>
-          <h3>Relativity challenges - custom</h3>
-          <h3>Max Framerate - num only</h3>
+          {/* <h3>Skill challenges - random/search</h3> */}
+          <h3>TODO: Map tile restrictions - num/search/custom</h3>
+          <h3>TODO: Relativity challenges - custom</h3>
+          {/* <h3>TODO: Updates between date range - date</h3> */}
         </div>
 
         <style global jsx>

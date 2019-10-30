@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
 class IronmanDisplayChallenges extends Component {
+  // add menu state and function here.. or better yet root I guess because i might store in cookies later :DELETE
+  // UPDATE: After further research, hooks are probably better https://github.com/beizhedenglong/react-hooks-lib
   render () {
     return (<div className='challengeDisplay'>
       {/* Ironman challenge condition: */}
@@ -18,7 +20,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Useable Clients'}
+          name={'Clients'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.clients}
@@ -26,7 +28,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Zoom Restrictions'}
+          name={'Zooming'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.zoom}
@@ -34,7 +36,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Compass Restrictions'}
+          name={'Compass'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.compass}
@@ -42,12 +44,106 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Going Area Restrictions:'}
-          intro1={'Your Using Area Restrictions:'}
+          intro0={'Beasts:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.beasts}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.BEASTS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Items:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.items}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.ITEMS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Useable Areas:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
-          isolatedSTATE_KEYS={this.props.STATE_KEYS.AREA}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.USING_AREA}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Goable Areas:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.areas}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.GOING_AREA}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Skills:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.skills}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.SKILLS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Minigames:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.minigames}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.MINIGAMES}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Quests:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.quests}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.QUESTS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Spells:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.spells}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.SPELLS}
+        />
+
+        <AbstractDisplayMaker
+          intro0={'Potions:'}
+          displayType={'randomSearch'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.potions}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.POTIONS}
+        />
+        <AbstractDisplayMaker
+          name={'Biomes'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.biomes}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.BIOMES}
+        />
+
+        <AbstractDisplayMaker
+          name={'Slots'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.slots}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.SLOTS}
+        />
+
+        <AbstractDisplayMaker
+          name={'Combat'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.combat}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.COMBAT}
+        />
+
+        <AbstractDisplayMaker
+          name={'Food'}
+          displayType={'checkbox'}
+          rootState={this.props.rootState}
+          isolatedChallenges={this.props.challenges.food}
+          isolatedSTATE_KEYS={this.props.STATE_KEYS.FOOD}
         />
 
       </div>

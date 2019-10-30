@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import sample from 'lodash/sample'
-
+import difference from 'lodash/difference'
 import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
-import Link from 'next/link'
 import challenges from '../data/challenges'
 import STATE_KEYS from '../data/STATE_KEYS'
 
@@ -69,34 +68,70 @@ class IronmanChallengeRoot extends Component {
 
   // "Modifiers" are specific to each challenge field
   handleChange (event) {
+    console.log(event)
     const { target } = event
-    const { name, value } = target
-
-    this.setState({
-      [name]: value
-    })
+    const { name, value, type } = target
+    console.log(name, value)
+    switch (type) {
+      case 'checkbox':
+        this.setState(prevState => {
+          // because Object.entries(new Date()).length === 0;
+          // we have to do some additional check
+          if (prevState[name] === undefined) {
+            return { [name]: [value] }
+          }
+          console.log(prevState)
+          // doing prevState[name].includes caused a problem precedence
+          if ((prevState[name]).includes(value)) {
+            // allows to keep a replica of the checkbox state
+            const differencedCheckbox = difference(prevState[name], [value])
+            return { [name]: [...differencedCheckbox] }
+          } else {
+            return { [name]: [...prevState[name], value] }
+          }
+        })
+        break
+        // TODO:ADD special case for handling group ironmen:
+        // Add seperated iframes? Duplicate display and add tabs to the top
+        // as a seperate display component? Save files for each? Possibilities
+        // are endless make sure it follows clean architecture
+      case 'radio':
+        this.setState({
+          [name]: value
+        })
+        break
+      default:
+        console.error('Something went wrong rendering a form!')
+    }
   }
 
   handleRandomSearchChange (event, challengesKey) {
     console.log(challengesKey)
     const { target } = event
-    const { name, value } = target
-    var parsedValue = parseInt(value)
+    const { name, value, overrideSampling } = target
+    const parsedValue = parseInt(value)
     const countName = name + STATE_KEYS.COMPOSITE_KEY_HALFS._COUNT
     const challengeInventory = name + STATE_KEYS.COMPOSITE_KEY_HALFS._CHALLENGE_INVENTORY
-    const challengeSampling = sample(challenges[challengesKey])
-    console.log(challengeSampling)
+    // TODO: Compare previous state so you don't get duplicates before pulling a sample
 
     // Modify to keep track of number of challenges for this RandomSearch
     this.setState(prevState => {
+      // setState for counts
+      // TODO: remove all breaks this but refactor if you actually end using this.
       if (prevState[countName] && (prevState[countName] > 0)) {
         return { [countName]: prevState[countName] + parsedValue }
       } else {
         return { [countName]: parsedValue === -1 ? 0 : 1 }
       }
     },
-    // TODO:Modify to keep track of challenge inventory
+    // setState data pulled from data folder
     this.setState(prevState => {
+      // Check for duplicates from previous random selects
+      const restructuredChallenges = Object.keys(challenges[challengesKey]).map((key) => challenges[challengesKey][key])
+      const differencedChallengesFromPrevState = difference(restructuredChallenges, prevState[challengeInventory])
+      const challengeSampling = overrideSampling || sample(differencedChallengesFromPrevState)
+
+      // parsedValue is like a really sketchy ENUM, refactor that
       if (prevState[challengeInventory] && (parsedValue === 1)) {
         var joined = prevState[challengeInventory].concat(challengeSampling)
         return { [challengeInventory]: joined }
@@ -104,9 +139,12 @@ class IronmanChallengeRoot extends Component {
         var popped = prevState[challengeInventory].length === 1 ? prevState[challengeInventory].splice() : prevState[challengeInventory].slice(0, -1)
         return { [challengeInventory]: popped }
       } else if ((!prevState[challengeInventory]) && (parsedValue === -1)) {
-
+        // do nothing
       } else if ((!prevState[challengeInventory]) && (parsedValue === 1)) {
         return { [challengeInventory]: [challengeSampling] }
+        // Remove all functionallity
+      } else if ((prevState[challengeInventory]) && (parsedValue === 2)) {
+        return { [challengeInventory]: [] }
       } else {
         console.error('Something went wrong with trying to modify the a random/search form!')
       }
@@ -117,23 +155,12 @@ class IronmanChallengeRoot extends Component {
 
   render () {
     return (
-      <div className='containerMain'>
-        <nav className='navMenu'>
-          <Link href='#'><a>Creator</a></Link>
-          <Link href='#'><a>Map Visuals</a></Link>
-          <Link href='#'><a>Save Ironman</a></Link>
-          <Link href='#'><a>Load Ironmen</a></Link>
-          <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
-          <Link href='#'><a>How to Use</a></Link>
-          <Link href='#'><a>Want to Contribute?</a></Link>
-          <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
-          <Link href='#'><a>RuneLite Plugin</a></Link>
-        </nav>
-
+      <>
         <IronmanDisplay
           rootState={this.state}
           challenges={challenges}
           STATE_KEYS={STATE_KEYS}
+          groupTab={this.state.groupTab}
         />
 
         <IronmanSettings
@@ -152,7 +179,7 @@ class IronmanChallengeRoot extends Component {
                 .containerMain{
                   display:grid;
                   grid-template-columns: 150px 3fr 5fr;
-                  grid-template-areas:" nav forms display";
+                  grid-template-areas:"nav forms display";
                   grid-gap:5px;
                   height:100vh;
                 }
@@ -198,7 +225,7 @@ class IronmanChallengeRoot extends Component {
 
           `}
         </style>
-      </div>
+      </>
     )
   }
 }

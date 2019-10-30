@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 export default () => (
   <div>
     <Head>
@@ -15,6 +16,7 @@ export default () => (
               color:white;
               font-size:22px;
               margin-left:40px;
+              list-style:none;
             }
             ul{
               color:lightgreen;

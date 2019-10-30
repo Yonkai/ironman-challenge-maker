@@ -23,6 +23,8 @@ Makes ironman account challenges programmatically.
 
 
 
+# How To Use 
+
 # Technologies Used
 
 * React/NextJS
@@ -31,6 +33,5 @@ Makes ironman account challenges programmatically.
 * CSS-In-JS
 * LoDash
 * Photoshop
-* Forms
 
 # Pull Request Guide
