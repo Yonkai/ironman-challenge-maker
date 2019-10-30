@@ -160,8 +160,6 @@ class IronmanSettings extends Component {
           {/* <IronmanType handleChange={this.props.handleChange} />
           <Area handleChange={this.props.handleChange} /> */}
           {/* <h3>Skill challenges - random/search</h3> */}
-          <h3>TODO: Item challenges random/search</h3>
-          <h3>TODO: Beast challenges random/search</h3>
           <h3>TODO: Map tile restrictions - num/search/custom</h3>
           <h3>TODO: Relativity challenges - custom</h3>
           {/* <h3>TODO: Updates between date range - date</h3> */}

@@ -20,7 +20,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Useable Clients'}
+          name={'Clients'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.clients}
@@ -28,7 +28,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Zoom Restrictions'}
+          name={'Zooming'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.zoom}
@@ -36,7 +36,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Compass Restrictions'}
+          name={'Compass'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.compass}
@@ -44,7 +44,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Beasts:'}
+          intro0={'Beasts:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.beasts}
@@ -52,7 +52,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Items:'}
+          intro0={'Items:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.items}
@@ -60,7 +60,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Using Area Restrictions:'}
+          intro0={'Useable Areas:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
@@ -68,7 +68,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Going Area Restrictions:'}
+          intro0={'Goable Areas:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.areas}
@@ -76,7 +76,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Skill Restrictions:'}
+          intro0={'Skills:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.skills}
@@ -84,7 +84,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Minigame Restrictions:'}
+          intro0={'Minigames:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.minigames}
@@ -92,7 +92,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Quest Restrictions:'}
+          intro0={'Quests:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.quests}
@@ -100,7 +100,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Spells:'}
+          intro0={'Spells:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.spells}
@@ -108,14 +108,14 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          intro0={'Your Potions:'}
+          intro0={'Potions:'}
           displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.potions}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.POTIONS}
         />
         <AbstractDisplayMaker
-          name={'Your Biomes Restrictions'}
+          name={'Biomes'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.biomes}
@@ -123,7 +123,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Your Slot Restrictions'}
+          name={'Slots'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.slots}
@@ -131,7 +131,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Your Combat Restrictions'}
+          name={'Combat'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.combat}
@@ -139,7 +139,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Your Food Restrictions'}
+          name={'Food'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.food}
