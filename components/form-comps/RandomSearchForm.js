@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
 import Downshift from 'downshift'
+import useToggle from './hooks/useToggle.js'
 
-class RandomSearchForm extends Component {
-  render () {
-    // convert structure to fit downshift npm package example structure:
-    // var formatA = {0:'a',1:'b',2:'c',3:'d'};
-    // to this:
-    // var formatB = [{value:'a'},{value:'b'},{value:'c'},{value:'d'}]
-    // (solution) Object.values(formatA).map(value => ({value}))
-    const restructuredDataSetForDownshift = Object.values(this.props.dataset).map(value => ({ value }))
+const RandomSearchForm = (props) => {
+  const restructuredDataSetForDownshift = Object.values(props.dataset).map(value => ({ value }))
+  const [on, toggle] = useToggle(true)
 
-    return (
-      <div>
-        <h3>{`${this.props.name}`}<span>🔺</span></h3>
-        <div className='challenges'>
-          {Object.keys(this.props.keys).map((objKey, index) => (
+  return (
+    <div>
+      <h3 onClick={toggle}>{`${props.name}`}<span>🔺</span></h3>
+      {on
+        ? <div className='challenges'>
+          {Object.keys(props.keys).map((objKey, index) => (
             <div key={index}>
               {/* WARNING: Code is setup to use 1 and -1 values specifically */}
               {/* turn these into enum/const states
@@ -22,9 +19,9 @@ class RandomSearchForm extends Component {
                 1: add
                 2: remove all
               */}
-              <button value={1} name={this.props.keys[objKey]} onClick={(event) => this.props.handleRandomSearchChange(event, this.props.challengesKey)}>Add {this.props.keys[objKey]}</button>
-              <button value={-1} name={this.props.keys[objKey]} onClick={(event) => this.props.handleRandomSearchChange(event, this.props.challengesKey)} >Remove {this.props.keys[objKey]}</button>
-              <button value={2} name={this.props.keys[objKey]} onClick={(event) => this.props.handleRandomSearchChange(event, this.props.challengesKey)} >Remove ALL {this.props.keys[objKey]}</button>
+              <button value={1} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)}>Add { props.keys[objKey]}</button>
+              <button value={-1} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)} >Remove { props.keys[objKey]}</button>
+              <button value={2} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)} >Remove ALL { props.keys[objKey]}</button>
             </div>))}
           <Downshift
             onChange={(selection) => {
@@ -32,12 +29,12 @@ class RandomSearchForm extends Component {
               // fake syntax to simulate  click event
               const fakeClickEvent = {
                 target: {
-                  name: Object.keys(this.props.keys),
+                  name: Object.keys(props.keys),
                   overrideSampling: selection['value'],
                   value: '1'
                 }
               }
-              this.props.handleRandomSearchChange(fakeClickEvent, this.props.challengesKey)
+              props.handleRandomSearchChange(fakeClickEvent, props.challengesKey)
             }}
 
             itemToString={item => (item ? item.value : '')}
@@ -80,9 +77,9 @@ class RandomSearchForm extends Component {
               </div>
             )}
           </Downshift>
-        </div>
-        <style jsx>
-          {`button{
+        </div> : <p>Hidden</p>}
+      <style jsx>
+        {`button{
             margin:5px;
             border:1px solid black;
             background:white;
@@ -91,9 +88,8 @@ class RandomSearchForm extends Component {
             color:black;
           }
           `}
-        </style>
-      </div>)
-  }
+      </style>
+    </div>)
 }
 
 export default RandomSearchForm
