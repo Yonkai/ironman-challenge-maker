@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 class LoadIronman extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { }
-  }
-
   render () {
-    return (<p>Load Ironmen</p>)
+    return (
+      <>
+        <p>Save ironmen</p>
+        <p>Load Ironmen</p>
+      </>
+    )
   }
 }
 
