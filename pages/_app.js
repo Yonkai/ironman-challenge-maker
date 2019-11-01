@@ -24,9 +24,8 @@ class Layout extends React.Component {
         <style jsx global>
           {`
         body,html{
-            margin:0;
+          margin:0;
         }
-
         .containerMain{
           display:grid;
           grid-template-columns: 150px 3fr 5fr;
@@ -34,6 +33,15 @@ class Layout extends React.Component {
           grid-gap:5px;
           height:100vh;
         }
+        ${this.props.overwrittenLayout ? this.props.overwrittenLayout : `.containerMain{
+          display:grid;
+          grid-template-columns: 150px 3fr 5fr;
+          grid-template-areas:"nav forms display";
+          grid-gap:5px;
+          height:100vh;
+          
+        }`}
+
         .navMenu{
           background-color:black;
           color:white;
@@ -41,7 +49,6 @@ class Layout extends React.Component {
           height:100vh;
           display:inline-block;
         }
-
         .navMenu a{
           display:block;
           margin-top:20px;
@@ -49,32 +56,29 @@ class Layout extends React.Component {
           font-size:18px;
           text-decoration:n
         }
-
-
         //tablet
         @media only screen and (max-width: 850px) {
           .containerMain{
             grid-template-columns: 150px 1fr;
             grid-template-rows:1fr 1fr;
             grid-template-areas:
-                      "nav display"
-                      "nav forms";
+            "nav display"
+            "nav forms";
           }
         }
         //mobile add pull-out menu?
         @media only screen and (max-width: 475px) {
           .containerMain{
             grid-template-columns: 1fr;
-          grid-template-areas:
+            grid-template-areas:
                       "display"
                       "forms";
-          }
-          .navMenu{
-            display:none;
-          }
-        }
-
-  `}
+                    }
+                    .navMenu{
+                      display:none;
+                    }
+                  }
+                  `}
         </style>
       </div>
     )
@@ -85,7 +89,7 @@ export default class MyApp extends App {
   render () {
     const { Component, pageProps } = this.props
     return (
-      <Layout>
+      <Layout {...pageProps}>
         <Component {...pageProps} />
       </Layout>
     )
