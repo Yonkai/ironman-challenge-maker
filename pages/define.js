@@ -6,9 +6,6 @@ class Define extends Component {
     return (
       <>
         <div>
-          <h1>Ironman Type</h1>
-          <p>What kind of ironman to use.</p>
-
           <h1>Zoom Restrictions</h1>
           <p>What your zoom must be like when you play.</p>
 
@@ -49,7 +46,20 @@ class Define extends Component {
           <p>Slots you can or cannot use.</p>
 
           <h1>Combat</h1>
-          <p>Combat mode restrictions.</p>
+          <p>Combat mode restrictions. Combat modes you can or cannot use.</p>
+
+          <h1>Map</h1>
+          <p>Allows you to assign conditions on a tile by tile, chunk by chunk, or load area by load area basis</p>
+
+          <h1>Relativity </h1>
+          <p>
+            This one is a little more complex, it means that your account can only use
+            resources form within a specific range of another resource. To illustrate this challenge specific
+            you can see the visual map provided.
+          </p>
+          <p> Example: If you select all tiles within 30 lengths of a church or source of water, you
+            can only use (or in the negative not use) those specific tiles, the map will illustrate this.
+          </p>
 
         </div>
         <style jsx>
@@ -66,7 +76,7 @@ class Define extends Component {
         }
         p{
           background:white;
-          font-size:18px;
+          font-size:16px;
         }
           }
           `}

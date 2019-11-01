@@ -6,7 +6,7 @@ export const definitions = css.global`
 .containerMain{
     display:grid;
     grid-template-columns: 150px 1fr;
-    grid-template-areas:"nav define";
+    grid-template-areas:"nav define define";
     grid-gap:0px;
     height:100vh;
   }`
