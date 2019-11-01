@@ -9556,7 +9556,7 @@ const challenges = {
     'cape'
   ],
   relativity: ['x tiles from y icon, add all icon types'],
-  food: [
+  food: { ...[
     'Shrimp',
     'Cooked chicken',
     'Cooked meat',
@@ -9603,7 +9603,7 @@ const challenges = {
     'Anglerfish',
     'Basket of strawberries',
     'Saradomin brew'
-  ],
+  ] },
   framerate: ['...Number between 1 and 30'],
   clients: { ...['Runelite', 'Vanilla', 'OSbuddy', 'Whatever!'] },
   zoom: { ...['Zoomed In', 'Zoomed Out', 'Doesn\'t Matter'] },

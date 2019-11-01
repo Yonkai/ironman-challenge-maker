@@ -40,7 +40,9 @@ const STATE_KEYS = {
     _COUNT: '_COUNT',
     _CHALLENGE_INVENTORY: '_CHALLENGE_INVENTORY'
   },
-  FOOD: 'FOOD'
+  FOOD: {
+    FOOD: 'FOOD'
+  }
 }
 
 export default STATE_KEYS

@@ -139,8 +139,8 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Food'}
-          displayType={'checkbox'}
+          intro0={'Food:'}
+          displayType={'randomSearch'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.food}
           isolatedSTATE_KEYS={this.props.STATE_KEYS.FOOD}

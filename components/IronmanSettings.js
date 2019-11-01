@@ -126,6 +126,14 @@ class IronmanSettings extends Component {
           />
 
           <AbstractFormMaker
+            name={'Food Challenges'}
+            challengesKey={'food'}
+            abstractFormType={'randomSearch'}
+            keys={this.props.STATE_KEYS.FOOD}
+            dataset={this.props.challenges.food}
+            handleRandomSearchChange={this.props.handleRandomSearchChange}
+          />
+          <AbstractFormMaker
             name={'Biome Type'}
             abstractFormType={'checkbox'}
             handleChange={this.props.handleChange}
@@ -147,14 +155,6 @@ class IronmanSettings extends Component {
             handleChange={this.props.handleChange}
             dataset={this.props.challenges.combat}
             keys={this.props.STATE_KEYS.COMBAT}
-          />
-
-          <AbstractFormMaker
-            name={'Food Restrictions'}
-            abstractFormType={'checkbox'}
-            handleChange={this.props.handleChange}
-            dataset={this.props.challenges.food}
-            keys={this.props.STATE_KEYS.FOOD}
           />
 
           {/* <IronmanType handleChange={this.props.handleChange} />
