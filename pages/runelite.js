@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class RuneLitePlugin extends Component {
   render () {
-    return (<p>RuneLite Plugin Page</p>)
+    return (<p>(WIP) Automated Runelite Plugin Generator (WIP)</p>)
   }
 }
 
