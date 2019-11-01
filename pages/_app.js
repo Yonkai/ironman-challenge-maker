@@ -1,12 +1,18 @@
 import React from 'react'
 import App from 'next/app'
 import Link from 'next/link'
+import Head from 'next/head'
 
 class Layout extends React.Component {
   render () {
     const { children } = this.props
     return (
       <div className='containerMain'>
+        <Head>
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta charSet='utf-8' />
+          <link href='https://fonts.googleapis.com/css?family=Gabriela|Jomolhari&display=swap' rel='stylesheet' />
+        </Head>
         <nav className='navMenu'>
           <Link href='/'><a id='internalPage'>Creator</a></Link>
           <Link href='/load-ironman'><a id='internalPage'>Ironman Portal</a></Link>
@@ -25,6 +31,7 @@ class Layout extends React.Component {
           {`
         body,html{
           margin:0;
+          font-family: 'Gabriela', serif;
         }
         .containerMain{
           display:grid;

@@ -5,7 +5,7 @@ const CheckboxForm = (props) => {
   const [on, toggle] = useToggle(true)
   return (
     <div>
-      <h3 onClick={toggle}>{`${props.name}🔺`}</h3>
+      <h3 onClick={toggle}>{`🔺${props.name}`}</h3>
       <div className='challenges'>
         {/* checkbox maps through dataset because that what it displays in the form
           number maps through keys. */}

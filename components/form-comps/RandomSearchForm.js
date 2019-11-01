@@ -8,7 +8,7 @@ const RandomSearchForm = (props) => {
 
   return (
     <div>
-      <h3 onClick={toggle}>{`${props.name}`}<span>🔺</span></h3>
+      <h3 onClick={toggle}><span>🔺</span>{`${props.name}`}</h3>
       <div className='challenges'>
         {Object.keys(props.keys).map((objKey, index) => (
           <div key={index}>

@@ -6,7 +6,7 @@ const RadioForm = (props) => {
   return (
   // Should turn this wrapper into a HOC(h3 title and div):
     <div>
-      <h3 onClick={toggle}>{`${props.name}🔺`}</h3>
+      <h3 onClick={toggle}>{`🔺${props.name}`}</h3>
       <div className='challenges'>
         {/* Radio maps through dataset because that what it displays in the form
               number maps through keys. */}
