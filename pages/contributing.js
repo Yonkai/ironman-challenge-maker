@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 
 class Contributing extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { }
-  }
-
   render () {
     return (
-      <p>Contributing</p>
+      <div>
+        <p>If you would like to contribute you can submit an <a href='https://github.com/Yonkai/ironman-challenge-maker/issues'>issue on gitub. </a>
+        </p>
+        <p>Feature requests or categorie suggestions are greatly appreciated.</p>
+      </div>
     )
   }
 }
