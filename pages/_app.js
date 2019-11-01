@@ -14,6 +14,11 @@ class Layout extends React.Component {
           <link href='https://fonts.googleapis.com/css?family=Gabriela|Jomolhari&display=swap' rel='stylesheet' />
         </Head>
         <nav className='navMenu'>
+          <figure>
+            <img src='../static/ironman_logo_custom.png' alt='website logo' href='/' width='120px' height='120px' />
+            <figcaption>Fantasy Ironman Creator</figcaption>
+          </figure>
+
           <Link href='/'><a id='internalPage'>Creator</a></Link>
           <Link href='/load-ironman'><a id='internalPage'>Ironman Portal</a></Link>
           <Link href='/cool-map'><a id='internalPage'>Map</a></Link>
@@ -32,6 +37,9 @@ class Layout extends React.Component {
         body,html{
           margin:0;
           font-family: 'Gabriela', serif;
+        }
+        img{
+          margin-left:-20px;
         }
         .containerMain{
           display:grid;
