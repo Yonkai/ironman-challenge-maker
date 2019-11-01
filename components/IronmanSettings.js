@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
+import SignupNotice from './SignupNotice'
 // import Area from './form-comps/Area.js'
 // import IronmanType from './form-comps/IronmanType.js'
 
 class IronmanSettings extends Component {
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
   render () {
+    const signupRequest = true
     return (
       <div className='settings-main'>
         {/* TODO: Add saving/loading functionally with access to a server that users can see/interact with */}
-
+        {signupRequest ? <SignupNotice /> : <></>}
         <div className='restrictions'>
           <AbstractFormMaker
             name={'Ironman Type'}

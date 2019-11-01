@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 // Abstract Displayer
 import AbstractDisplayMaker from './displayers/AbstractDisplayMaker'
 
