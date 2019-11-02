@@ -14,10 +14,14 @@ class Layout extends React.Component {
           <link href='https://fonts.googleapis.com/css?family=Gabriela|Jomolhari&display=swap' rel='stylesheet' />
         </Head>
         <nav className='navMenu'>
-          <figure>
-            <img src='../static/ironman_logo_custom.png' alt='website logo' href='/' width='120px' height='120px' />
-            <figcaption>Fantasy Ironman Creator</figcaption>
-          </figure>
+          <Link href='/'>
+            <a className='siteLogo'>
+              <figure>
+                <img src='../static/ironman_logo_custom.png' alt='website logo' href='/' width='120px' height='120px' />
+                <figcaption>Fantasy Ironman Creator</figcaption>
+              </figure>
+            </a>
+          </Link>
 
           <Link href='/'><a id='internalPage'>Creator</a></Link>
           <Link href='/load-ironman'><a id='internalPage'>Ironman Portal</a></Link>
@@ -26,7 +30,8 @@ class Layout extends React.Component {
           <Link href='/how-to-use'><a id='internalPage'>How to Use</a></Link>
           <Link href='/runelite'><a id='internalPage'>RuneLite Plugin</a></Link>
           <Link href='/settings'><a id='internalPage'>Settings</a></Link>
-          <Link href='/contributing'><a>Contribute?</a></Link>
+          <Link href='/contributing'><a id='internalPage'>Contribute?</a></Link>
+          <Link href='/signup'><a id='internalPageSignUp'>Make Account</a></Link>
           <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
           <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameBorder='0' scrolling='0' width='170px' height='50px' />
@@ -75,6 +80,11 @@ class Layout extends React.Component {
         #internalPage {
           color:yellow;
         }
+
+        #internalPageSignUp {
+          color:skyblue;
+        }
+
         //tablet
         @media only screen and (max-width: 850px) {
           .containerMain{
