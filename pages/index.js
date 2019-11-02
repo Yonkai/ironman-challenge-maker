@@ -72,9 +72,14 @@ class IronmanChallengeRoot extends Component {
     const { target } = event
     const { name, value, type } = target
     console.log(name, value)
+    console.log(type)
     switch (type) {
       case 'checkbox':
+      case 'button':
         this.setState(prevState => {
+          if (value === 'CLEAR_ALL') {
+            return { [name]: [] }
+          }
           // because Object.entries(new Date()).length === 0;
           // we have to do some additional check
           if (prevState[name] === undefined) {

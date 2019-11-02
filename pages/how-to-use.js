@@ -4,10 +4,10 @@ class HowToUse extends Component {
   render () {
     return (
       <div>
-        <p>To use fantasy ironman maker, you first creator your fantasy ironman
+        <p>To use fantasy ironman maker, you first create your fantasy ironman
         in the creator section.</p><p>
         From there you can save your ironman to the portal, where both your ironmen
-        can be viewed and others can be viewed and loaded from the backend.
+        can be viewed and others can be viewed and loaded from a backend database.
         </p>
         <style jsx>{`
         p{

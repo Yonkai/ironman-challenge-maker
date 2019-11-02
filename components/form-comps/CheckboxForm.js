@@ -18,6 +18,11 @@ const CheckboxForm = (props) => {
           </div>
         )
         )}
+        <input
+          type='button'
+          value='CLEAR_ALL'
+          name={props.keys}
+          onClick={(event) => props.handleChange(event)} />
       </div>
       <style jsx>
         {`h3{
@@ -25,6 +30,9 @@ const CheckboxForm = (props) => {
       }
         h3:hover{
           cursor:pointer;
+        }
+        button{
+          border:2px solid grey;
         }
         .challenges{
           display:${on ? 'flex' : 'none'};

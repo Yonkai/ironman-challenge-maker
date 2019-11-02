@@ -5,7 +5,7 @@ class CoolMap extends Component {
   render () {
     return (
       <div>
-        {/* <iframe src='https://explv.github.io' width='95%' height='95%' /> */}
+        <iframe src='https://explv.github.io' width='95%' height='95%' />
         <p>How to use</p>
         <style jsx>{`
         p{
