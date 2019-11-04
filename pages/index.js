@@ -67,6 +67,8 @@ class IronmanChallengeRoot extends Component {
   }
 
   // "Modifiers" are specific to each challenge field
+  // TODO: Deselect all through controlled state passing down that state through checkbox
+  // like in example
   handleChange (event) {
     console.log(event)
     const { target } = event
@@ -76,6 +78,8 @@ class IronmanChallengeRoot extends Component {
     switch (type) {
       case 'checkbox':
       case 'button':
+        // TODO setup controlled checkbox state
+
         this.setState(prevState => {
           if (value === 'CLEAR_ALL') {
             return { [name]: [] }
