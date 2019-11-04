@@ -1,6 +1,7 @@
 import React from 'react'
 import Downshift from 'downshift'
 import capitalize from 'lodash/capitalize'
+import replace from 'lodash/replace'
 import useToggle from './hooks/useToggle.js'
 
 const RandomSearchForm = (props) => {
@@ -19,9 +20,9 @@ const RandomSearchForm = (props) => {
                 1: add
                 2: remove all
               */}
-            <button value={1} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)}>Add {capitalize(props.keys[objKey])}</button>
-            <button value={-1} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)} >Remove {capitalize(props.keys[objKey])}</button>
-            <button value={2} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)} >Remove All {capitalize(props.keys[objKey])}</button>
+            <button value={1} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)}>Add {replace(capitalize(props.keys[objKey]), '_', ' ')}</button>
+            <button value={-1} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)} >Remove {replace(capitalize(props.keys[objKey]), '_', ' ')}</button>
+            <button value={2} name={props.keys[objKey]} onClick={(event) => props.handleRandomSearchChange(event, props.challengesKey)} >Remove All {replace(capitalize(props.keys[objKey]), '_', ' ')}</button>
           </div>))}
         <Downshift
           onChange={(selection) => {
