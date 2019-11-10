@@ -32,6 +32,7 @@ class Layout extends React.Component {
           <Link href='/settings'><a id='internalPage'>Settings</a></Link>
           <Link href='/contributing'><a id='internalPage'>Contribute?</a></Link>
           <Link href='/signup'><a id='internalPageSignUp'>Make Account</a></Link>
+          <Link href='/signup'><a id='internalAccountPage'>Your Account</a></Link>
           <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
           <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameBorder='0' scrolling='0' width='170px' height='50px' />
@@ -83,6 +84,10 @@ class Layout extends React.Component {
 
         #internalPageSignUp {
           color:skyblue;
+        }
+
+        #internalAccountPage{
+          color:aquamarine;
         }
 
         //tablet
