@@ -1,6 +1,8 @@
 import SignIntoYourAccount from './SignIntoYourAccount'
 
 // Unrefined component
+// Obviously need proper security mechanism to make this works
+// like in the graphql course.
 const AccountGate = (props) => {
   return (
     <>
