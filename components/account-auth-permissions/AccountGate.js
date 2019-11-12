@@ -3,7 +3,7 @@ import SignIntoYourAccount from './SignIntoYourAccount'
 // Unrefined component
 // Obviously need proper security mechanism to make this works
 // todo: lock behind secure authorization session cookie/jwt token
-// provided by backend
+// provided and validated by backend
 const AccountGate = (props) => {
   return (
     <>
