@@ -2,7 +2,8 @@ import SignIntoYourAccount from './SignIntoYourAccount'
 
 // Unrefined component
 // Obviously need proper security mechanism to make this works
-// like in the graphql course.
+// todo: lock behind secure authorization session cookie/jwt token
+// provided by backend
 const AccountGate = (props) => {
   return (
     <>
