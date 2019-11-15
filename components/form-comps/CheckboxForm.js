@@ -5,7 +5,7 @@ const CheckboxForm = (props) => {
   const [on, toggle] = useToggle(true)
   return (
     <div>
-      <h3 onClick={toggle}>{`🔺${props.name}`}</h3>
+      <h3 onClick={toggle}>{<div className='selectorArrow'>🔺</div>}{props.name}</h3>
       <div className='challenges'>
         {/* checkbox maps through dataset because that what it displays in the form
           number maps through keys. */}
@@ -38,8 +38,13 @@ const CheckboxForm = (props) => {
           display:${on ? 'flex' : 'none'};
           flex-wrap:wrap;
         }
+        .selectorArrow{
+          transform: rotate(${on ? '59deg' : '90deg'});
+          display:inline-block;
+        }
         label{
-          margin:5px;
+          padding:10px;
+          display:inline-block;
         }
       `}
       </style>

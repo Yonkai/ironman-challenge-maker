@@ -10,7 +10,7 @@ const RandomSearchForm = (props) => {
 
   return (
     <div>
-      <h3 onClick={toggle}><span>🔺</span>{`${props.name}`}</h3>
+      <h3 onClick={toggle}>{<div className='selectorArrow'>🔺</div>}{props.name}</h3>
       <div className='challenges'>
         {Object.keys(props.keys).map((objKey, index) => (
           <div key={index}>
@@ -97,6 +97,11 @@ const RandomSearchForm = (props) => {
 
           .challenges{
             display:${on ? 'inherit' : 'none'}
+          }
+
+          .selectorArrow{
+            transform: rotate(${on ? '59deg' : '90deg'});
+            display:inline-block;
           }
           `}
       </style>

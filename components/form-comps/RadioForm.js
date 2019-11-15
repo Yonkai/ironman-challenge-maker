@@ -6,7 +6,7 @@ const RadioForm = (props) => {
   return (
   // Should turn this wrapper into a HOC(h3 title and div):
     <div>
-      <h3 onClick={toggle}>{`🔺${props.name}`}</h3>
+      <h3 onClick={toggle}>{<div className='selectorArrow'>🔺</div>}{props.name}</h3>
       <div className='challenges'>
         {/* Radio maps through dataset because that what it displays in the form
               number maps through keys. */}
@@ -23,7 +23,7 @@ const RadioForm = (props) => {
       <style jsx>
         {`
         h3{
-              margin:2px;
+           margin:2px;
         }
         h3:hover{
           cursor:pointer;
@@ -31,6 +31,10 @@ const RadioForm = (props) => {
 
         .challenges{
           display:${on ? 'flex' : 'none'}
+        }
+        .selectorArrow{
+          transform: rotate(${on ? '59deg' : '90deg'});
+          display:inline-block;
         }
           }`}
       </style>
