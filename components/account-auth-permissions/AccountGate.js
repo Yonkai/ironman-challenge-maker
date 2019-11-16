@@ -1,6 +1,6 @@
 import SignIntoYourAccount from './SignIntoYourAccount'
 
-// Unrefined component
+// !!Unrefined component!!
 // Obviously need proper security mechanism to make this works
 // todo: lock behind secure authorization session cookie/jwt token
 // provided and validated by backend

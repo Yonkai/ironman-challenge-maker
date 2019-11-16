@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for ironman generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^3.0.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "nodemailer": "^6.3.1",
+    "nodemon": "^1.19.4"
+  }
+}
