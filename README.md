@@ -1,6 +1,6 @@
 # Summary
 
-Makes ironman account challenges programmatically.
+Website that lets you create unique ironmen challenges and share them with others.
 
 # Challenge Definitions
 
