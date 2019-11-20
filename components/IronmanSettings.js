@@ -166,6 +166,7 @@ class IronmanSettings extends Component {
           <h3>TODO: Relativity challenges - custom</h3>
           {signupRequest ? <SignupNotice /> : <></>}
           {/* <h3>TODO: Updates between date range - date</h3> */}
+          {/* TODO: leagues, auto-updating */}
         </div>
 
         <style global jsx>
