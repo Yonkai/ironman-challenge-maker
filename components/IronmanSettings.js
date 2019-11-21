@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
 import SignupNotice from './SignupNotice'
+import AccountGate from '../components/account-auth-permissions/AccountGate'
 // import Area from './form-comps/Area.js'
 // import IronmanType from './form-comps/IronmanType.js'
 
 class IronmanSettings extends Component {
   // TODO: Add a pull out menu in shell design from google for the forms on mobile?
   render () {
-    const signupRequest = true
     return (
       <div className='settings-main'>
         {/* TODO: Add saving/loading functionally with access to a server that users can see/interact with */}
-        {signupRequest ? <SignupNotice /> : <></>}
+        <AccountGate signedUp>
+          <SignupNotice />
+        </AccountGate>
         <div className='restrictions'>
           <AbstractFormMaker
             name={'Ironman Type'}
@@ -164,7 +166,9 @@ class IronmanSettings extends Component {
           {/* <h3>Skill challenges - random/search</h3> */}
           <h3>TODO: Map tile restrictions - num/search/custom</h3>
           <h3>TODO: Relativity challenges - custom</h3>
-          {signupRequest ? <SignupNotice /> : <></>}
+          <AccountGate signedUp>
+            <SignupNotice />
+          </AccountGate>
           {/* <h3>TODO: Updates between date range - date</h3> */}
           {/* TODO: leagues, auto-updating */}
         </div>

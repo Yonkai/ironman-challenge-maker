@@ -71,9 +71,11 @@ class IronmanChallengeRoot extends Component {
   // like in example
   handleChange (event) {
     console.log(event)
+    const checkboxContainer = {}
     const { target } = event
     const { name, value, type } = target
-    console.log(name, value)
+    checkboxContainer[name + value] = target.type === 'checkbox' ? target.checked : target.value
+    console.log(name, value, name + value, checkboxContainer)
     console.log(type)
     switch (type) {
       case 'checkbox':
