@@ -13,7 +13,8 @@ const CheckboxForm = (props) => {
           <div key={index}>
             {/* Leave here for debugging: <div>Key: {key}, Value: {this.props.dataset[key]}</div> */}
             <input type='checkbox' id={props.dataset[objKey]} name={props.keys} value={props.dataset[objKey]}
-              onChange={(event) => { props.handleChange(event) }} />
+              onChange={(event) => { props.handleChange(event) }} checked={props.rootState[props.keys + props.dataset[objKey]]}
+            />
             <label htmlFor={props.dataset[objKey]}>{props.dataset[objKey]}</label>
           </div>
         )

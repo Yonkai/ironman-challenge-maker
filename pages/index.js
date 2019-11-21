@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import sample from 'lodash/sample'
 import difference from 'lodash/difference'
+import pickBy from 'lodash/pickBy'
+import startsWith from 'lodash/startsWith'
 import IronmanDisplay from '../components/IronmanDisplay'
 import IronmanSettings from '../components/IronmanSettings.js'
 import challenges from '../data/challenges'
@@ -29,7 +31,6 @@ class IronmanChallengeRoot extends Component {
     this.rerolling = this.rerolling.bind(this)
     this.visibility = this.visibility.bind(this)
     this.removing = this.removing.bind(this)
-    this.openCloseForm = this.openCloseForm.bind(this)
     this.nothinging = this.nothinging.bind(this)
     this.handleRandomSearchChange = this.handleRandomSearchChange.bind(this)
   }
@@ -61,11 +62,6 @@ class IronmanChallengeRoot extends Component {
 
   }
 
-  // IronmanSettings component methods (Interacts with root and forms):
-  openCloseForm () {
-
-  }
-
   // "Modifiers" are specific to each challenge field
   // TODO: Deselect all through controlled state passing down that state through checkbox
   // like in example
@@ -84,21 +80,38 @@ class IronmanChallengeRoot extends Component {
 
         this.setState(prevState => {
           if (value === 'CLEAR_ALL') {
-            return { [name]: [] }
+            const copyingStateToFindCheckboxStates = this.state
+            // filter out based on keys with loDash, using the name from the lower function invocation
+            // as the key to filter by with keys being dynamically generated earlier.
+            const filteringStatebasedOnKeys = pickBy(copyingStateToFindCheckboxStates, function (value, key) {
+              return startsWith(key, name)
+            })
+            // switch values to 'clear all'
+            Object.keys(filteringStatebasedOnKeys).map(function (key, index) {
+              filteringStatebasedOnKeys[key] = false
+            })
+
+            // empty the array in state
+            filteringStatebasedOnKeys[name] = []
+
+            console.log(filteringStatebasedOnKeys)
+            // clear all, array holding state shown in display, and the checkboxes controlled through this switch:
+            // Don't know why warning say it isn't controlled?
+            return filteringStatebasedOnKeys
           }
           // because Object.entries(new Date()).length === 0;
           // we have to do some additional check
           if (prevState[name] === undefined) {
-            return { [name]: [value] }
+            return { [name]: [value], [name + value]: checkboxContainer[name + value] }
           }
           console.log(prevState)
           // doing prevState[name].includes caused a problem precedence
           if ((prevState[name]).includes(value)) {
             // allows to keep a replica of the checkbox state
             const differencedCheckbox = difference(prevState[name], [value])
-            return { [name]: [...differencedCheckbox] }
+            return { [name]: [...differencedCheckbox], [name + value]: checkboxContainer[name + value] }
           } else {
-            return { [name]: [...prevState[name], value] }
+            return { [name]: [...prevState[name], value], [name + value]: checkboxContainer[name + value] }
           }
         })
         break
@@ -179,6 +192,7 @@ class IronmanChallengeRoot extends Component {
           handleRandomSearchChange={this.handleRandomSearchChange}
           challenges={challenges}
           STATE_KEYS={STATE_KEYS}
+          rootState={this.state}
         />
 
         <style jsx global>

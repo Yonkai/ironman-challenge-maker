@@ -33,6 +33,7 @@ class AbstractFormMaker extends Component {
           handleChange={this.props.handleChange}
           dataset={this.props.dataset}
           keys={this.props.keys}
+          rootState={this.props.rootState}
         />
         break
       default:

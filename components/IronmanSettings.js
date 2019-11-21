@@ -143,6 +143,7 @@ class IronmanSettings extends Component {
             handleChange={this.props.handleChange}
             dataset={this.props.challenges.biomes}
             keys={this.props.STATE_KEYS.BIOMES}
+            rootState={this.props.rootState}
           />
 
           <AbstractFormMaker
@@ -151,6 +152,7 @@ class IronmanSettings extends Component {
             handleChange={this.props.handleChange}
             dataset={this.props.challenges.slots}
             keys={this.props.STATE_KEYS.SLOTS}
+            rootState={this.props.rootState}
           />
 
           <AbstractFormMaker
@@ -159,6 +161,7 @@ class IronmanSettings extends Component {
             handleChange={this.props.handleChange}
             dataset={this.props.challenges.combat}
             keys={this.props.STATE_KEYS.COMBAT}
+            rootState={this.props.rootState}
           />
 
           {/* <IronmanType handleChange={this.props.handleChange} />
