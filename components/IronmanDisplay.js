@@ -11,7 +11,7 @@ class IronmanDisplayChallenges extends Component {
       <div className='challenge-list'>
 
         <AbstractDisplayMaker
-          name={'Ironman Type'}
+          name={'Ironman Type:'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.type}
@@ -19,7 +19,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Clients'}
+          name={'Clients:'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.clients}
@@ -27,7 +27,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Zooming'}
+          name={'Zooming:'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.zoom}
@@ -35,7 +35,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Compass'}
+          name={'Compass:'}
           displayType={'radio'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.compass}
@@ -114,7 +114,7 @@ class IronmanDisplayChallenges extends Component {
           isolatedSTATE_KEYS={this.props.STATE_KEYS.POTIONS}
         />
         <AbstractDisplayMaker
-          name={'Biomes'}
+          name={'Biomes:'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.biomes}
@@ -122,7 +122,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Slots'}
+          name={'Slots:'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.slots}
@@ -130,7 +130,7 @@ class IronmanDisplayChallenges extends Component {
         />
 
         <AbstractDisplayMaker
-          name={'Combat'}
+          name={'Combat:'}
           displayType={'checkbox'}
           rootState={this.props.rootState}
           isolatedChallenges={this.props.challenges.combat}

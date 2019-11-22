@@ -10,13 +10,26 @@ class CheckboxDisplay extends Component {
       <div>
         <DisplayerLayoutHeader />
         <div>
-          <ul>{`🔺🔒🔄❌👁️${this.props.name}: `}</ul>
+          <ul>{<div className='iconGroup'>🔺🔒🔄❌👁️</div>}{this.props.name}</ul>
           {this.props.rootState[`${this.props.isolatedSTATE_KEYS}`]
             ? this.props.rootState[`${this.props.isolatedSTATE_KEYS}`].map((item, index) =>
               <ul key={index}><li>{`🔒🔄❌👁️${item}`}</li></ul>
             ) : ''
           }
         </div>
+        <style jsx>
+          {`
+         .iconGroup{
+           display:inline-block;
+         }
+         .iconGroup:hover{
+           cursor:pointer;
+         }
+         li{
+           font-size:24px;
+         }
+       `}
+        </style>
       </div>
     )
   }
