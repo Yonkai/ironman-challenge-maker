@@ -26,7 +26,9 @@ class LoadIronman extends Component {
 
             Possibily remove account gate? or at least put it on a smaller
             section of the overall layout. Review Nir book to make it nice.
-        */}
+            Can use the challenge categories to search by
+
+   */}
       </>
     )
   }
