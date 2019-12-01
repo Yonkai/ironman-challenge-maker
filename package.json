@@ -4,10 +4,10 @@
   "description": "generate ironman challenges",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,12 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest": "^24.9.0",
     "standard": "^13.1.0"
-  }
+  },
+  "standard": {
+    "env": [ "jest" ]
+  }  
 }
