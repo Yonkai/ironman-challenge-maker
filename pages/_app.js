@@ -89,6 +89,7 @@ class Layout extends React.Component {
         #internalAccountPage{
           color:aquamarine;
         }
+        //add drawer functionality
 
         //tablet
         @media only screen and (max-width: 850px) {
