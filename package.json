@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/Yonkai/ironman-challenge-maker#readme",
   "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
     "apollo-datasource": "^0.6.3",
     "apollo-datasource-rest": "^0.6.6",
     "apollo-server": "^2.9.9",
@@ -37,6 +40,7 @@
     "prisma-binding": "^2.3.16",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.12.0",
     "stripe": "^7.13.0",
     "yup": "^0.27.0"
   },
@@ -47,12 +51,8 @@
   },
   "standard": {
     "env": [
-      "jest"
+      "jest",
+      "node"
     ]
-  },
-  "jest": {
-    "transform": {
-      "\\.js$": "<rootDir>/node_modules/babel-jest"
-    }
   }
 }
