@@ -1,0 +1,13 @@
+TODO: 
+- Setup foundational Authentication/authorization/permissions
+- Setup foundational database
+- Setup foundational client connections
+- Write TTD for what I want to do?
+
+- Features TODO:
+- Accounts
+- Ironman "Portal":
+- - Create ironman via creator application and write that to the database via the client,
+with each ironman(s) being connected to a user account.
+- - Can query a second copy of the ironman via the portal (as to avoid single responsibility principle abuse of SOLID) 
+to in a sort of social area where everything can be seen and voted on, as shown in the frontend diagrams 

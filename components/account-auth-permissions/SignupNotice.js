@@ -1,3 +1,5 @@
+import React from 'react'
+
 const SignupNotice = () => {
   return (
     <div>
