@@ -20,4 +20,4 @@ with each ironman(s) being connected to a user account.
 - - - customization features
 to in a sort of social area where everything can be seen and voted on, as shown in the frontend diagrams.
 - - Permissions systems with multiple roles (roles based permission system)
-- env file.
+- Make env file(s)
