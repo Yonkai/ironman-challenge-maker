@@ -75,3 +75,5 @@ Example: If you select all tiles within 30 lengths of a church or source of wate
 2. Run `npm install` in the console
 3. Run `npm run dev` in the console
 4. Go to the localhost:3000 port
+
+# Config
