@@ -77,3 +77,5 @@ Example: If you select all tiles within 30 lengths of a church or source of wate
 4. Go to the localhost:3000 port
 
 # Config
+
+1. Requires configuration of config and environment files
