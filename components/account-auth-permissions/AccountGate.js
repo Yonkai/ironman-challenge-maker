@@ -1,4 +1,5 @@
 import SignIntoYourAccount from './SignIntoYourAccount'
+import React from 'react'
 
 // !!Unrefined component!!
 // Obviously need proper security mechanism to make this works

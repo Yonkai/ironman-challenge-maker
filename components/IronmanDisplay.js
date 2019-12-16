@@ -158,8 +158,8 @@ class IronmanDisplayChallenges extends Component {
               text-align:center;
             }
             div{
-              border:3px solid black;
-              margin:5px auto;
+              // border:3px solid black;
+              // margin:5px auto;
             }
             
             .challenge-list{

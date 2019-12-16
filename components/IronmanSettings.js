@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
-import SignupNotice from './SignupNotice'
+import SignupNotice from '../components/account-auth-permissions/SignupNotice'
 import AccountGate from '../components/account-auth-permissions/AccountGate'
 // import Area from './form-comps/Area.js'
 // import IronmanType from './form-comps/IronmanType.js'
