@@ -2,6 +2,13 @@ import React from 'react'
 import App from 'next/app'
 import Link from 'next/link'
 import Head from 'next/head'
+import { ApolloProvider } from '@apollo/react-hooks'
+import ReactDOM from 'react-dom'
+import { ApolloClient } from 'apollo-client'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { HttpLink, createHttpLink } from 'apollo-link-http'
+import fetch from 'node-fetch'
+import gql from 'graphql-tag'
 
 class Layout extends React.Component {
   render () {
@@ -123,11 +130,19 @@ class Layout extends React.Component {
 
 export default class MyApp extends App {
   render () {
+    const cache = new InMemoryCache()
+    const link = createHttpLink({ uri: '/graphql', fetch: fetch })
+    const client = new ApolloClient({
+      cache,
+      link
+    })
     const { Component, pageProps } = this.props
     return (
-      <Layout {...pageProps}>
-        <Component {...pageProps} />
-      </Layout>
+      <ApolloProvider client={client}>
+        <Layout {...pageProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </ApolloProvider>
     )
   }
 }

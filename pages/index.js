@@ -198,9 +198,9 @@ class IronmanChallengeRoot extends Component {
         <style jsx global>
           {`
                 body,html{
-                    margin:0;
+                  margin:0;
                 }
-
+                
                 .containerMain{
                   display:grid;
                   grid-template-columns: 150px 3fr 5fr;
@@ -215,7 +215,7 @@ class IronmanChallengeRoot extends Component {
                   height:100vh;
                   display:inline-block;
                 }
-
+                
                 .navMenu a{
                   display:block;
                   margin-top:20px;
@@ -223,8 +223,8 @@ class IronmanChallengeRoot extends Component {
                   font-size:18px;
                   text-decoration:n
                 }
-
-
+                
+                
                 //tablet
                 @media only screen and (max-width: 850px) {
                   .containerMain{
