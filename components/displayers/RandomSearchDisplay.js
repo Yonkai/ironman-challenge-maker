@@ -28,6 +28,7 @@ class RandomSearchDisplay extends Component {
          }
          li{
            font-size:24px;
+           color:white;
          }
        `}
         </style>

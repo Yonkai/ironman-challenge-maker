@@ -8,13 +8,13 @@ const SignupNotice = () => {
       <button>Click here to signup oauth provider</button>
       <style jsx>
         {`
-            // div{
-            //     border:2px solid blue;
-            //     background:rgba(0,0,255,.15);
-            // }
-            // p{
-            //     color:black;
-            // }
+            div{
+                border:2px solid blue;
+                background:rgba(0,0,255,.15);
+            }
+            p{
+                color:black;
+            }
         `}
       </style>
     </div>)
