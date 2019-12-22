@@ -12,7 +12,3 @@ async function main () {
 }
 
 main().catch(e => console.error(e))
-<<<<<<< HEAD
-
-=======
->>>>>>> 47d85df2081ece85e1e2ec12fc7b179274e92ae2
