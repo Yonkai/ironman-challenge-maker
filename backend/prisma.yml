@@ -1,6 +1,9 @@
-endpoint: https://us1.prisma.sh/frank-gunsch-2eb243/ironback/development
+endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
-
+# secret: ${env:PRISMA_SECRET}
 generate:
   - generator: javascript-client
     output: ./generated/prisma-client/
+hooks:
+  post-deploy:
+    - prisma generate

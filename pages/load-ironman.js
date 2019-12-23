@@ -3,12 +3,12 @@ import { useQuery } from '@apollo/react-hooks'
 import AccountGate from '../components/account-auth-permissions/AccountGate'
 import gql from 'graphql-tag'
 
-const GET_IRONMEN_SELECTION = gql`
-  query ironmanList($after: String) {
-    test(after: $after) {
-      test2
-    }
+const CREATE_USER_DEMO = gql`
+mutation {
+  createUser(name: "Bob") {
+    id
   }
+}
 `
 
 class LoadIronman extends Component {
