@@ -7,6 +7,10 @@ module.exports = {
   count: Int!
 }
 
+type AggregateSnowflakeironmen {
+  count: Int!
+}
+
 type AggregateUser {
   count: Int!
 }
@@ -24,6 +28,12 @@ type Mutation {
   upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!
   deletePost(where: PostWhereUniqueInput!): Post
   deleteManyPosts(where: PostWhereInput): BatchPayload!
+  createSnowflakeironmen(data: SnowflakeironmenCreateInput!): Snowflakeironmen!
+  updateSnowflakeironmen(data: SnowflakeironmenUpdateInput!, where: SnowflakeironmenWhereUniqueInput!): Snowflakeironmen
+  updateManySnowflakeironmens(data: SnowflakeironmenUpdateManyMutationInput!, where: SnowflakeironmenWhereInput): BatchPayload!
+  upsertSnowflakeironmen(where: SnowflakeironmenWhereUniqueInput!, create: SnowflakeironmenCreateInput!, update: SnowflakeironmenUpdateInput!): Snowflakeironmen!
+  deleteSnowflakeironmen(where: SnowflakeironmenWhereUniqueInput!): Snowflakeironmen
+  deleteManySnowflakeironmens(where: SnowflakeironmenWhereInput): BatchPayload!
   createUser(data: UserCreateInput!): User!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
@@ -248,20 +258,134 @@ type Query {
   post(where: PostWhereUniqueInput!): Post
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
   postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
+  snowflakeironmen(where: SnowflakeironmenWhereUniqueInput!): Snowflakeironmen
+  snowflakeironmens(where: SnowflakeironmenWhereInput, orderBy: SnowflakeironmenOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Snowflakeironmen]!
+  snowflakeironmensConnection(where: SnowflakeironmenWhereInput, orderBy: SnowflakeironmenOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SnowflakeironmenConnection!
   user(where: UserWhereUniqueInput!): User
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   node(id: ID!): Node
 }
 
+type Snowflakeironmen {
+  id: ID!
+  title: String!
+  public: Boolean!
+  author: User
+}
+
+type SnowflakeironmenConnection {
+  pageInfo: PageInfo!
+  edges: [SnowflakeironmenEdge]!
+  aggregate: AggregateSnowflakeironmen!
+}
+
+input SnowflakeironmenCreateInput {
+  id: ID
+  title: String!
+  public: Boolean
+  author: UserCreateOneInput
+}
+
+type SnowflakeironmenEdge {
+  node: Snowflakeironmen!
+  cursor: String!
+}
+
+enum SnowflakeironmenOrderByInput {
+  id_ASC
+  id_DESC
+  title_ASC
+  title_DESC
+  public_ASC
+  public_DESC
+}
+
+type SnowflakeironmenPreviousValues {
+  id: ID!
+  title: String!
+  public: Boolean!
+}
+
+type SnowflakeironmenSubscriptionPayload {
+  mutation: MutationType!
+  node: Snowflakeironmen
+  updatedFields: [String!]
+  previousValues: SnowflakeironmenPreviousValues
+}
+
+input SnowflakeironmenSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: SnowflakeironmenWhereInput
+  AND: [SnowflakeironmenSubscriptionWhereInput!]
+  OR: [SnowflakeironmenSubscriptionWhereInput!]
+  NOT: [SnowflakeironmenSubscriptionWhereInput!]
+}
+
+input SnowflakeironmenUpdateInput {
+  title: String
+  public: Boolean
+  author: UserUpdateOneInput
+}
+
+input SnowflakeironmenUpdateManyMutationInput {
+  title: String
+  public: Boolean
+}
+
+input SnowflakeironmenWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  public: Boolean
+  public_not: Boolean
+  author: UserWhereInput
+  AND: [SnowflakeironmenWhereInput!]
+  OR: [SnowflakeironmenWhereInput!]
+  NOT: [SnowflakeironmenWhereInput!]
+}
+
+input SnowflakeironmenWhereUniqueInput {
+  id: ID
+}
+
 type Subscription {
   post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
+  snowflakeironmen(where: SnowflakeironmenSubscriptionWhereInput): SnowflakeironmenSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
 }
 
 type User {
   id: ID!
-  email: String
+  email: String!
   name: String!
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
 }
@@ -274,9 +398,14 @@ type UserConnection {
 
 input UserCreateInput {
   id: ID
-  email: String
+  email: String!
   name: String!
   posts: PostCreateManyWithoutAuthorInput
+}
+
+input UserCreateOneInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
 }
 
 input UserCreateOneWithoutPostsInput {
@@ -286,7 +415,7 @@ input UserCreateOneWithoutPostsInput {
 
 input UserCreateWithoutPostsInput {
   id: ID
-  email: String
+  email: String!
   name: String!
 }
 
@@ -306,7 +435,7 @@ enum UserOrderByInput {
 
 type UserPreviousValues {
   id: ID!
-  email: String
+  email: String!
   name: String!
 }
 
@@ -328,6 +457,12 @@ input UserSubscriptionWhereInput {
   NOT: [UserSubscriptionWhereInput!]
 }
 
+input UserUpdateDataInput {
+  email: String
+  name: String
+  posts: PostUpdateManyWithoutAuthorInput
+}
+
 input UserUpdateInput {
   email: String
   name: String
@@ -337,6 +472,15 @@ input UserUpdateInput {
 input UserUpdateManyMutationInput {
   email: String
   name: String
+}
+
+input UserUpdateOneInput {
+  create: UserCreateInput
+  update: UserUpdateDataInput
+  upsert: UserUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: UserWhereUniqueInput
 }
 
 input UserUpdateOneWithoutPostsInput {
@@ -351,6 +495,11 @@ input UserUpdateOneWithoutPostsInput {
 input UserUpdateWithoutPostsDataInput {
   email: String
   name: String
+}
+
+input UserUpsertNestedInput {
+  update: UserUpdateDataInput!
+  create: UserCreateInput!
 }
 
 input UserUpsertWithoutPostsInput {
