@@ -1,7 +1,9 @@
+# import * from './generated/prisma-client/prisma-schema.js'
 type Query {
   publishedPosts: [Post!]!
   post(postId: ID!): Post
   postsByUser(userId: ID!): [Post!]!
+  createFake(nummmber: Int, news: String): Fake!
 }
 
 type Mutation {

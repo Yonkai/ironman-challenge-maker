@@ -18,3 +18,9 @@ type Snowflakeironmen {
   public: Boolean! @default(value: true)
   author: User @relation(link: INLINE)
 }
+
+type Fake {
+  id: ID! @id
+  news: String!
+  nummmber: Int!
+}

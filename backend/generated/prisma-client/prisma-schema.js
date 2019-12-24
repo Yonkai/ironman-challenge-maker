@@ -3,7 +3,11 @@ module.exports = {
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-/* GraphQL */ `type AggregatePost {
+/* GraphQL */ `type AggregateFake {
+  count: Int!
+}
+
+type AggregatePost {
   count: Int!
 }
 
@@ -19,9 +23,127 @@ type BatchPayload {
   count: Long!
 }
 
+type Fake {
+  id: ID!
+  news: String!
+  nummmber: Int!
+}
+
+type FakeConnection {
+  pageInfo: PageInfo!
+  edges: [FakeEdge]!
+  aggregate: AggregateFake!
+}
+
+input FakeCreateInput {
+  id: ID
+  news: String!
+  nummmber: Int!
+}
+
+type FakeEdge {
+  node: Fake!
+  cursor: String!
+}
+
+enum FakeOrderByInput {
+  id_ASC
+  id_DESC
+  news_ASC
+  news_DESC
+  nummmber_ASC
+  nummmber_DESC
+}
+
+type FakePreviousValues {
+  id: ID!
+  news: String!
+  nummmber: Int!
+}
+
+type FakeSubscriptionPayload {
+  mutation: MutationType!
+  node: Fake
+  updatedFields: [String!]
+  previousValues: FakePreviousValues
+}
+
+input FakeSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: FakeWhereInput
+  AND: [FakeSubscriptionWhereInput!]
+  OR: [FakeSubscriptionWhereInput!]
+  NOT: [FakeSubscriptionWhereInput!]
+}
+
+input FakeUpdateInput {
+  news: String
+  nummmber: Int
+}
+
+input FakeUpdateManyMutationInput {
+  news: String
+  nummmber: Int
+}
+
+input FakeWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  news: String
+  news_not: String
+  news_in: [String!]
+  news_not_in: [String!]
+  news_lt: String
+  news_lte: String
+  news_gt: String
+  news_gte: String
+  news_contains: String
+  news_not_contains: String
+  news_starts_with: String
+  news_not_starts_with: String
+  news_ends_with: String
+  news_not_ends_with: String
+  nummmber: Int
+  nummmber_not: Int
+  nummmber_in: [Int!]
+  nummmber_not_in: [Int!]
+  nummmber_lt: Int
+  nummmber_lte: Int
+  nummmber_gt: Int
+  nummmber_gte: Int
+  AND: [FakeWhereInput!]
+  OR: [FakeWhereInput!]
+  NOT: [FakeWhereInput!]
+}
+
+input FakeWhereUniqueInput {
+  id: ID
+}
+
 scalar Long
 
 type Mutation {
+  createFake(data: FakeCreateInput!): Fake!
+  updateFake(data: FakeUpdateInput!, where: FakeWhereUniqueInput!): Fake
+  updateManyFakes(data: FakeUpdateManyMutationInput!, where: FakeWhereInput): BatchPayload!
+  upsertFake(where: FakeWhereUniqueInput!, create: FakeCreateInput!, update: FakeUpdateInput!): Fake!
+  deleteFake(where: FakeWhereUniqueInput!): Fake
+  deleteManyFakes(where: FakeWhereInput): BatchPayload!
   createPost(data: PostCreateInput!): Post!
   updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post
   updateManyPosts(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!
@@ -255,6 +377,9 @@ input PostWhereUniqueInput {
 }
 
 type Query {
+  fake(where: FakeWhereUniqueInput!): Fake
+  fakes(where: FakeWhereInput, orderBy: FakeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Fake]!
+  fakesConnection(where: FakeWhereInput, orderBy: FakeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FakeConnection!
   post(where: PostWhereUniqueInput!): Post
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
   postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
@@ -378,6 +503,7 @@ input SnowflakeironmenWhereUniqueInput {
 }
 
 type Subscription {
+  fake(where: FakeSubscriptionWhereInput): FakeSubscriptionPayload
   post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
   snowflakeironmen(where: SnowflakeironmenSubscriptionWhereInput): SnowflakeironmenSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
