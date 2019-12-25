@@ -5,11 +5,12 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var helmet = require('helmet')
 
-
 var authRouter = require('./routes/auth');
 var apiRouter = require('./routes/api');
 
 var app = express();
+
+require('dotenv').config()
 
 app.use(helmet())
 
