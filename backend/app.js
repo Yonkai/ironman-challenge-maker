@@ -3,10 +3,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var helmet = require('helmet')
-var passport = require('passport')
-var session = require('express-session')
-const redis = require('redis')
+var helmet = require('helmet');
+var passport = require('passport');
+var session = require('express-session');
+const redis = require('redis');
+const uuidv4 = require('uuid/v4');
+var flash = require('connect-flash');
 var authRouter = require('./routes/auth');
 var apiRouter = require('./routes/api');
 
@@ -26,7 +28,7 @@ app.use(bodyParser.urlencoded({
   var sess = {
     secret: process.env.EXPRESS_SESSION_SECRET,
     genid: function(req) {
-        return genuuid() // use UUIDs for session IDs
+        return uuidv4() // use UUIDv4s for session IDs
       },
     name:'ephemeral.cookies.of.an.unknown.soul',
     cookie: {},
@@ -58,6 +60,7 @@ app.use(function(req, res, next) {
     }
     next() // otherwise continue
   })
+app.use(flash());
 
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);

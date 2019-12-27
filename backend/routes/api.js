@@ -2,9 +2,14 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport')
 
-router.post('/', function(req, res, next) {
+router.post('/test', function(req, res, next) {
     console.log(req.body);
-    res.send('Test route.');
+    res.send('Test route (api) POST.');
+});
+
+router.get('/test', function(req, res, next) {
+  console.log(req.body);
+  res.send('Test route (api) GET.');
 });
 
 router.get('/api/users/me',
