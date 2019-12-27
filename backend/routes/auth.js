@@ -7,6 +7,7 @@ var passportConfig = require('../config/passport')(passport);
 
 router.post('/test', function(req, res, next) {
     console.log(req.body);
+    console.log(req.user, 'user data added by passport');
     res.send('Test route (auth) POST.');
 });
 
@@ -20,14 +21,10 @@ router.post('/signup',
 passport.authenticate('local-signup', 
 // Gates redirect to protected resource
 // validation that the user is who they say they are.
+// all can get user info session info from req.user set by passport
 {successRedirect: '/auth/test', 
 failureRedirect: '/api/test', 
 failureFlash: true ,  
-successFlash: 'Welcome!'}),
-function(req, res) {
-  // If this function gets called, authentication was successful.
-  // `req.user` contains the authenticated user.
-  console.log('success')
-});
+successFlash: 'Welcome!'}));
 
 module.exports = router;

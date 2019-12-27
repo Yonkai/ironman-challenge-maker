@@ -14,8 +14,17 @@ const TextInputFormik = ({ label, ...props }) => {
       {meta.touched && meta.error ? (
         <div className='error'>{meta.error}</div>
       ) : null}
-    </div>
-  )
+    <style jsx>
+      {`
+      .error{
+        display:inline-block;
+        color:red;
+        background:yellow;
+      }
+      `}
+    </style>
+      </div>
+    )
 }
 
 export default TextInputFormik

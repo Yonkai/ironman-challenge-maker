@@ -12,10 +12,11 @@ const SignupPage = (props) => {
       <SignUpForAccount />
       <SignIntoYourAccount />
       {/* Unrefined gated component, these are just here for testing/demonstration. */}
+      {/* Shows when you are not signed in: */}
+      <hr/>
+      <AccountGate signedUp={false}><p style={{ color: 'red' }}>This tea sure is good! I hope someone with an account doesn't break into my home.</p></AccountGate>
       {/* When you are already signed in: */}
       <AccountGate signedUp><p style={{ color: 'red' }}>You got past the gate by being signed into your account! Guards, arrest this man! Quickly, before he pillages all the interesting parts of the application by being signed in!</p></AccountGate>
-      {/* Shows when you are not signed in: */}
-      <AccountGate signedUp={false}><p style={{ color: 'red' }}>This tea sure is good! I hope someone with an account doesn't break into my home.</p></AccountGate>
 
       <style jsx global>
         {

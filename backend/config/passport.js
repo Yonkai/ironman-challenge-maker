@@ -64,6 +64,7 @@ module.exports = function(passport) {
     function(req, email, password, done) {
       console.log(email,'passport email');
       console.log(password,'passport password');
+      console.log('begin',req,'end');
 
 		// find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
@@ -88,8 +89,8 @@ module.exports = function(passport) {
           // TODO: switch to ? fill in format to automatically enable validation
           // TODO: Add server side validation, client side validation is not enough, mirror 
           // formik Yup rules
-        //Create the user in the database and set role/permissions to Minimum
-				var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role ) values ('" + email +"','"+ newUserMysql.bcrypt_hash +"','"+ 'Minimum' +"')";
+        //Create the user in the database and set role/permissions to Minimum, don't user qs
+        var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role, username ) values ('" + email + "','" + newUserMysql.bcrypt_hash + "','" + 'Minimum' +"','"+ req.query.username + "')";
 				console.log(insertQuery);
 				connection.query(insertQuery,function(err,rows){
         console.log(rows,rows[0],'rows post query')
@@ -132,9 +133,6 @@ module.exports = function(passport) {
             return done(null, rows[0]);			
 		
 		});
-		
-
-
     }));
 
 };
