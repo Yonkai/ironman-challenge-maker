@@ -1,6 +1,8 @@
 import TextInputFormik from './TextInputFormik'
 import { Formik, Form } from 'formik'
+import axios from 'axios'
 import * as Yup from 'yup'
+import config from '../../data/config'
 
 const SignUpForAccount = (props) => {
   return (
@@ -21,13 +23,17 @@ const SignUpForAccount = (props) => {
             .required('Required'),
           password: Yup.string()
             .required('No password provided.')
-            .min(20, 'Password is too short - should be 20 chars minimum.')
+            .min(12, 'Password is too short - should be 12 chars minimum.')
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+            axios.post(`http://${config.backend_host}/auth/signup`, {
+              username: values.name,
+              email:values.email,
+              password:values.password
+          });
+          console.log(values)
+          }, 10)
         }}
       >
         <Form>

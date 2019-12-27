@@ -90,7 +90,7 @@ module.exports = function(passport) {
           // TODO: Add server side validation, client side validation is not enough, mirror 
           // formik Yup rules
         //Create the user in the database and set role/permissions to Minimum, don't user qs
-        var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role, username ) values ('" + email + "','" + newUserMysql.bcrypt_hash + "','" + 'Minimum' +"','"+ req.query.username + "')";
+        var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role, username ) values ('" + email + "','" + newUserMysql.bcrypt_hash + "','" + 'Minimum' +"','"+ req.body.username + "')";
 				console.log(insertQuery);
 				connection.query(insertQuery,function(err,rows){
         console.log(rows,rows[0],'rows post query')

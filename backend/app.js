@@ -11,6 +11,7 @@ const uuidv4 = require('uuid/v4');
 var flash = require('connect-flash');
 var authRouter = require('./routes/auth');
 var apiRouter = require('./routes/api');
+var cors = require('cors')
 
 var app = express();
 
@@ -20,6 +21,11 @@ let redisClient = redis.createClient()
 require('dotenv').config()
 
 app.use(helmet())
+
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -61,6 +67,7 @@ app.use(function(req, res, next) {
     next() // otherwise continue
   })
 app.use(flash());
+app.use(cors(corsOptions))
 
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);

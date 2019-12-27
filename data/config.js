@@ -1,6 +1,6 @@
-// for future configuration values
+// for configuration values
 const config = {
-  key: 'value'
+  backend_host:'localhost:3003'
 }
 
 export default config
