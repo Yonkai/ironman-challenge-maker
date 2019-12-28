@@ -5,10 +5,10 @@ import SignIntoYourAccount from '../components/account-auth-permissions/SignInto
 import SignUpForAccount from '../components/account-auth-permissions/SignUpForAccount'
 import AccountGate from '../components/account-auth-permissions/AccountGate'
 
-const SignupPage = (props) => {
+const PasswordReset = (props) => {
   return (
     <section>
-      <SignUpForAccount />
+      <RequestPasswordReset />
       {/* Unrefined gated component, these are just here for testing/demonstration. */}
       {/* Shows when you are not signed in: */}
       <hr/>
@@ -31,7 +31,7 @@ const SignupPage = (props) => {
   )
 }
 
-SignupPage.getInitialProps = async function () {
+PasswordReset.getInitialProps = async function () {
   // define a prop for external stylesheet and then pass to _app,
   // where it will dynamically redefine the _app shell for each
   // page, definitely a workaround but I can't find a better
@@ -39,4 +39,4 @@ SignupPage.getInitialProps = async function () {
   return { overwrittenLayout: signUp }
 }
 
-export default SignupPage
+export default PasswordReset

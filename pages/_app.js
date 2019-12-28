@@ -33,8 +33,10 @@ class Layout extends React.Component {
           <Link href='/runelite'><a id='internalPage'>RuneLite Plugin</a></Link>
           <Link href='/settings'><a id='internalPage'>Settings</a></Link>
           <Link href='/contributing'><a id='internalPage'>Contribute?</a></Link>
-          <Link href='/signup'><a id='internalPageSignUp'>Make Account</a></Link>
-          <Link href='/signup'><a id='internalAccountPage'>Your Account</a></Link>
+          <Link href='/signup'><a id='internalPageSignUp'>Signup</a></Link>
+          <Link href='/signin'><a id='internalAccountPage'>Signin</a></Link>
+          <Link href='/password-reset'><a id='internalAccountPage'>Password Reset</a></Link>
+          <Link href='/account-settings'><a id='internalAccountPage'>Account Settings</a></Link>
           <Link href='https://github.com/Yonkai/ironman-challenge-maker'><a>Github</a></Link>
           <Link href='https://oldschool.runescape.com/'><a>Play OSRS</a></Link>
           <iframe src='https://ghbtns.com/github-btn.html?user=Yonkai&repo=ironman-challenge-maker&type=star&count=true&size=large' frameBorder='0' scrolling='0' width='170px' height='50px' />

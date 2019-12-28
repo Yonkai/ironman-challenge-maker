@@ -8,7 +8,9 @@ import AccountGate from '../components/account-auth-permissions/AccountGate'
 const SignupPage = (props) => {
   return (
     <section>
+      <RequestPasswordReset />
       <SignUpForAccount />
+      <SignIntoYourAccount />
       {/* Unrefined gated component, these are just here for testing/demonstration. */}
       {/* Shows when you are not signed in: */}
       <hr/>

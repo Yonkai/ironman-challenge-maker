@@ -5,7 +5,6 @@ const SignupNotice = () => {
     <div>
       <p> You need to make an account to use the ironman portal.</p>
       <button>Click here to signup with email</button>
-      <button>Click here to signup oauth provider</button>
       <style jsx>
         {`
             div{
