@@ -17,7 +17,7 @@ const SignIntoYourAccount = (props) => {
             .required('Required'),
           password: Yup.string()
             .required('No password provided.')
-            .min(20, 'Password is too short - should be 20 chars minimum.')
+            .min(12, 'Password is too short - should be 12 chars minimum.')
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -26,15 +26,15 @@ const SignIntoYourAccount = (props) => {
           }, 400)
         }}
       >
-        <Form>
+        <Form method="post">
           <TextInputFormik
-            label='Email'
+            label='Email: '
             name='email'
             type='email'
             placeholder='Enter your email.'
           />
           <TextInputFormik
-            label='Passsword'
+            label='Passsword: '
             name='password'
             type='password'
             placeholder='Enter your password.'

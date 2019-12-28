@@ -22,9 +22,9 @@ const RequestPasswordReset = (props) => {
           }, 400)
         }}
       >
-        <Form>
+        <Form method="post">
           <TextInputFormik
-            label='Email'
+            label='Email: '
             name='email'
             type='email'
             placeholder='Enter your email.'

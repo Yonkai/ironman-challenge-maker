@@ -86,12 +86,8 @@ class Layout extends React.Component {
           color:yellow;
         }
 
-        #internalPageSignUp {
-          color:skyblue;
-        }
-
-        #internalAccountPage{
-          color:aquamarine;
+        #internalPageSignUp, #internalAccountPage{
+          color:turquoise;
         }
         //add drawer functionality
 
