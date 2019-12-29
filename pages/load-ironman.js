@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import AccountGate from '../components/account-auth-permissions/AccountGate'
+import RestrictedResourcesGate from '../components/account-auth-permissions/RestrictedResourcesGate'
 import gql from 'graphql-tag'
 
 const CREATE_USER_DEMO = gql`
@@ -15,13 +15,13 @@ class LoadIronman extends Component {
   render () {
     return (
       <>
-        <AccountGate signedUp>
+        <RestrictedResourcesGate signedUp>
           <div>
             <p>View other's fantasy ironmen creations</p>
             <p>Your saved fantasy ironmen</p>
             <button>load this ironman!</button>
           </div>
-        </AccountGate>
+        </RestrictedResourcesGate>
         {/*
             TODO: Use deviantart as a reference for the portal,
             break it up into abstract ui components and then

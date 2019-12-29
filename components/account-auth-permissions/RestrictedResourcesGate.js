@@ -5,7 +5,7 @@ import React from 'react'
 // Obviously need proper security mechanism to make this works
 // todo: lock behind secure authorization session cookie/jwt token
 // provided and validated by backend
-const AccountGate = (props) => {
+const RestrictedResourcesGate = (props) => {
   return (
     <>
       {props.signedUp
@@ -19,4 +19,4 @@ const AccountGate = (props) => {
   )
 }
 
-export default AccountGate
+export default RestrictedResourcesGate

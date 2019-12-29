@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AbstractFormMaker from './form-comps/AbstractFormMaker.js'
 import SignupNotice from '../components/account-auth-permissions/SignupNotice'
-import AccountGate from '../components/account-auth-permissions/AccountGate'
+import RestrictedResourcesGate from '../components/account-auth-permissions/RestrictedResourcesGate'
 // import Area from './form-comps/Area.js'
 // import IronmanType from './form-comps/IronmanType.js'
 
@@ -11,9 +11,9 @@ class IronmanSettings extends Component {
     return (
       <div className='settings-main'>
         {/* TODO: Add saving/loading functionally with access to a server that users can see/interact with */}
-        <AccountGate signedUp>
+        <RestrictedResourcesGate signedUp>
           <SignupNotice />
-        </AccountGate>
+        </RestrictedResourcesGate>
         <div className='restrictions'>
           <AbstractFormMaker
             name={'Ironman Type'}
@@ -172,9 +172,9 @@ class IronmanSettings extends Component {
           {/* <h3>TODO: Updates between date range - date</h3> */}
           {/* TODO: leagues, auto-updating */}
         </div>
-          <AccountGate signedUp>
+          <RestrictedResourcesGate signedUp>
             <SignupNotice />
-          </AccountGate>
+          </RestrictedResourcesGate>
 
         <style global jsx>
           {`

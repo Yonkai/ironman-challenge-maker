@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import ManageUserPermissions from '../components/account-auth-permissions/ManageUserPermissions'
-import AccountGate from '../components/account-auth-permissions/AccountGate'
+import RestrictedResourcesGate from '../components/account-auth-permissions/RestrictedResourcesGate'
 class Settings extends Component {
   render () {
     return (
       <div>
         <h2>Manage User Permissions</h2>
         {/* This will obviously need to gated: */}
-        <AccountGate signedUp>
+        <RestrictedResourcesGate signedUp>
           <ManageUserPermissions />
-        </AccountGate>
+        </RestrictedResourcesGate>
       </div>
     )
   }

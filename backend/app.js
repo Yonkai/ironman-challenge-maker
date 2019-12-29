@@ -29,11 +29,11 @@ var corsOptions = {
 var sess = {
   secret: process.env.EXPRESS_SESSION_SECRET,
   genid: function(req) {
-    const pkmon_end = pokemon.getName(Math.floor(Math.random() * 152));
-    const pkmon_start = pokemon.getName(Math.floor(Math.random() * 152));
+    const pkmon_end = pokemon.getName(Math.floor(Math.random() * 152)+1);
+    const pkmon_start = pokemon.getName(Math.floor(Math.random() * 152)+1);
     return  `${pkmon_start}_${uuidv4()}_${pkmon_end}` // use UUIDv4s for session IDs and pokemon names for debugging purposes
   },
-  name:'SessionID',
+  name:'SID',
   store: new RedisStore({ client: redisClient }),
   saveUninitialized:false,
   resave: false,
@@ -44,7 +44,15 @@ app.use(helmet())
 app.use(bodyParser.urlencoded({
     extended: false
   }));
+  
+app.use(cookieParser());
 
+app.use((req,res,next)=>{
+  console.log('Testing middleware')
+  const cookies = req.cookies
+  console.log(cookies,'monster');
+  next()
+})
 
   redisClient.on('error', console.error)
 
@@ -58,7 +66,6 @@ app.use(bodyParser.urlencoded({
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 app.use(function(req, res, next) {

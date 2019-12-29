@@ -27,7 +27,7 @@ function(err, user, info) {
   req.logIn(user, function(err) {
     if (err) { return next(err); }
     console.log(user)
-    console.log(req,'req')
+    // console.log(req,'req')
     return res.redirect('/');
   });
 })(req, res, next)
