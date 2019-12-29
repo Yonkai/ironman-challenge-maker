@@ -50,7 +50,7 @@ app.use(cookieParser());
 app.use((req,res,next)=>{
   console.log('Testing middleware')
   const cookies = req.cookies
-  console.log(cookies,'monster');
+  console.log(cookies, 'monster');
   next()
 })
 
