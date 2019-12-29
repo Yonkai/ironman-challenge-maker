@@ -20,28 +20,29 @@ let redisClient = redis.createClient()
 
 require('dotenv').config()
 
-app.use(helmet())
-
 var corsOptions = {
   origin: 'http://localhost:3000',
+  credentials:true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
+var sess = {
+  secret: process.env.EXPRESS_SESSION_SECRET,
+  genid: function(req) {
+    return uuidv4() // use UUIDv4s for session IDs
+  },
+  name:'A random session cookie appears...',
+  store: new RedisStore({ client: redisClient }),
+  saveUninitialized:false,
+  resave: false,
+}
+
+app.use(helmet())
+
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: false
   }));
 
-  var sess = {
-    secret: process.env.EXPRESS_SESSION_SECRET,
-    genid: function(req) {
-        return uuidv4() // use UUIDv4s for session IDs
-      },
-    name:'ephemeral.cookies.of.an.unknown.soul',
-    cookie: {},
-    store: new RedisStore({ client: redisClient }),
-    saveUninitialized:false,
-    resave: false,
-  }
 
   redisClient.on('error', console.error)
 
@@ -55,17 +56,17 @@ app.use(bodyParser.urlencoded({
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
+app.use(function(req, res, next) {
+  if (!req.session) {
+    return next(new Error('oh no')) // handle error
+  }
+  next() // otherwise continue
+})
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(function(req, res, next) {
-    if (!req.session) {
-      return next(new Error('oh no')) // handle error
-    }
-    next() // otherwise continue
-  })
 app.use(flash());
 app.use(cors(corsOptions))
 

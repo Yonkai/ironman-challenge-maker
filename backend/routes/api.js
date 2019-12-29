@@ -4,12 +4,8 @@ var passport = require('passport')
 
 router.post('/test', function(req, res, next) {
     console.log(req.body);
+    console.log(req.user, 'user data added by passport');
     res.send('Test route (api) POST.');
-});
-
-router.get('/test', function(req, res, next) {
-  console.log(req.body);
-  res.send('Test route (api) GET.');
 });
 
 router.get('/api/users/me',

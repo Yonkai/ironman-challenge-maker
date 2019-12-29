@@ -31,28 +31,30 @@ connection.query('USE ironman');
 module.exports = function(passport) {
 
 	// =========================================================================
-    // PASSPORT SESSION SETUP ==================================================
-    // =========================================================================
-    // required for persistent login sessions
-    // passport needs ability to serialize and unserialize users out of session
+  // PASSPORT SESSION SETUP ==================================================
+  // =========================================================================
+  // required for persistent login sessions
+  // passport needs ability to serialize and unserialize users out of session
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
+      console.log('called serial',user)
 		done(null, user.id);
     });
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-		connection.query("select * from user where id = "+id,function(err,rows){	
+    console.log(id,'deserial') 
+		connection.query("SELECT * FROM user WHERE id = "+ id,function(err,rows){	
 			done(err, rows[0]);
 		});
     });
 	
 
  	// =========================================================================
-    // LOCAL SIGNUP ============================================================
-    // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
+  // LOCAL SIGNUP ============================================================
+  // =========================================================================
+  // we are using named strategies since we have one for login and one for signup
 	// by default, if there was no name, it would just be called 'local'
 
     passport.use('local-signup', new LocalStrategy({
@@ -64,7 +66,7 @@ module.exports = function(passport) {
     function(req, email, password, done) {
       console.log(email,'passport email');
       console.log(password,'passport password');
-      console.log('begin',req,'end');
+      console.log('begin',req.user,'end');
 
 		// find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
@@ -75,7 +77,8 @@ module.exports = function(passport) {
 			if (err)
                 return done(err);
 			 if (rows.length) {
-                return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+         //return 'email already taken' message'
+                return done(null, false, { message: 'Email already in use.' });
             } else {
 
 				// if there is no user with that email, create the user
@@ -86,14 +89,16 @@ module.exports = function(passport) {
                 
         // Hash users password with bcrypt
         newUserMysql.bcrypt_hash = await bcrypt.hash(password, 10); 
+
+        newUserMysql.username = req.body.username;
           // TODO: switch to ? fill in format to automatically enable validation
           // TODO: Add server side validation, client side validation is not enough, mirror 
           // formik Yup rules
         //Create the user in the database and set role/permissions to Minimum, don't user qs
-        var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role, username ) values ('" + email + "','" + newUserMysql.bcrypt_hash + "','" + 'Minimum' +"','"+ req.body.username + "')";
+        var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role, username ) values ('" + email + "','" + newUserMysql.bcrypt_hash + "','" + 'Minimum' +"','"+ newUserMysql.username + "')";
 				console.log(insertQuery);
 				connection.query(insertQuery,function(err,rows){
-        console.log(rows,rows[0],'rows post query')
+        console.log(rows, rows[0],'rows post query')
         newUserMysql.id = rows.insertId;
         //----could set JWT token instead of normal session cookies if wanted.----
         

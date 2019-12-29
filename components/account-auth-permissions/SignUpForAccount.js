@@ -29,12 +29,12 @@ const SignUpForAccount = (props) => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           toggle()
-          setTimeout(() => {
+          setTimeout( async () => {
             axios.post(`http://${config.backend_host}/auth/signup`, {
               username: values.name,
               email:values.email,
               password:values.password
-            }, 10)
+            },{withCredentials:true}).then(response => {console.log(response)}).catch(err=>{console.log(err)})
             //Visual confirmation that the form is doing something, UI/UX++:
             setTimeout(()=>{toggle()},500)
             setSubmitting(false)
