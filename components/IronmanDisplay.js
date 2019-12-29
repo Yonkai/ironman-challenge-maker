@@ -151,7 +151,7 @@ class IronmanDisplayChallenges extends Component {
         {`
             p{
               color:white;
-              font-size:20px;
+              font-size:16px;
               margin:5px;
             }
             h2{

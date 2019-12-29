@@ -27,7 +27,7 @@ class RandomSearchDisplay extends Component {
            cursor:pointer;
          }
          li{
-           font-size:24px;
+           font-size:14px;
            color:white;
          }
        `}

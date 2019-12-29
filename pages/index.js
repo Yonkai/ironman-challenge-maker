@@ -218,9 +218,9 @@ class IronmanChallengeRoot extends Component {
                 
                 .navMenu a{
                   display:block;
-                  margin-top:20px;
+                  margin-top:10px;
                   color:white;
-                  font-size:18px;
+                  font-size:16px;
                   text-decoration:n
                 }
                 

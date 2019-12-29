@@ -8,11 +8,11 @@ var passport = require('passport');
 var session = require('express-session');
 const redis = require('redis');
 const uuidv4 = require('uuid/v4');
+const pokemon = require('pokemon');
 var flash = require('connect-flash');
 var authRouter = require('./routes/auth');
 var apiRouter = require('./routes/api');
 var cors = require('cors')
-
 var app = express();
 
 let RedisStore = require('connect-redis')(session)
@@ -29,9 +29,11 @@ var corsOptions = {
 var sess = {
   secret: process.env.EXPRESS_SESSION_SECRET,
   genid: function(req) {
-    return uuidv4() // use UUIDv4s for session IDs
+    const pkmon_end = pokemon.getName(Math.floor(Math.random() * 152));
+    const pkmon_start = pokemon.getName(Math.floor(Math.random() * 152));
+    return  `${pkmon_start}_${uuidv4()}_${pkmon_end}` // use UUIDv4s for session IDs and pokemon names for debugging purposes
   },
-  name:'A random session cookie appears...',
+  name:'SessionID',
   store: new RedisStore({ client: redisClient }),
   saveUninitialized:false,
   resave: false,
@@ -56,7 +58,7 @@ app.use(bodyParser.urlencoded({
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 app.use(function(req, res, next) {

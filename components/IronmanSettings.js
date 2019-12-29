@@ -169,12 +169,12 @@ class IronmanSettings extends Component {
           {/* <h3>Skill challenges - random/search</h3> */}
           <h3>TODO: Map tile restrictions - num/search/custom</h3>
           <h3>TODO: Relativity challenges - custom</h3>
-          <AccountGate signedUp>
-            <SignupNotice />
-          </AccountGate>
           {/* <h3>TODO: Updates between date range - date</h3> */}
           {/* TODO: leagues, auto-updating */}
         </div>
+          <AccountGate signedUp>
+            <SignupNotice />
+          </AccountGate>
 
         <style global jsx>
           {`
@@ -185,9 +185,9 @@ class IronmanSettings extends Component {
                   grid-area:forms;
                   box-sizing:border-box;
                 }
-                h3{
-                  font-size:24px;
-                }
+                // h3{
+                //   font-size:20px;
+                // }
                 div button{
                   margin:5px;
                   font-size:20px;

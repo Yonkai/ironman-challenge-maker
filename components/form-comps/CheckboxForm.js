@@ -44,7 +44,7 @@ const CheckboxForm = (props) => {
           display:inline-block;
         }
         label{
-          padding:10px;
+          padding:3px;
           display:inline-block;
         }
       `}

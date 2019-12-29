@@ -18,10 +18,10 @@ const SignUpForAccount = (props) => {
         }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .max(15, 'Must be 15 characters or less')
+            .max(15, 'Must be 15 characters or less.')
             .required('Required'),
           email: Yup.string()
-            .email('Invalid email addresss`')
+            .email('Invalid email address.')
             .required('Required'),
           password: Yup.string()
             .required('No password provided.')

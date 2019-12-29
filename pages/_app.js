@@ -76,10 +76,9 @@ class Layout extends React.Component {
         }
         .navMenu a{
           display:block;
-          margin-top:20px;
+          margin-top:10px;
           color:white;
-          font-size:18px;
-          text-decoration:n
+          font-size:16px;
         }
 
         #internalPage {

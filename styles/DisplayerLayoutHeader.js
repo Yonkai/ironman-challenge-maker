@@ -10,18 +10,18 @@ export default () => (
     <style jsx global>{`
             p{
               color:red;
-              font-size:20px;
+              font-size:18px;
               margin:5px;
             }
             li{
               color:white;
-              font-size:22px;
+              font-size:18px;
               margin-left:40px;
               list-style:none;
             }
             ul{
               color:lightgreen;
-              font-size:24px;
+              font-size:18px;
               margin:0;
               padding:0;
             }
