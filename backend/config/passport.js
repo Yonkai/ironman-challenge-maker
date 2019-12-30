@@ -70,7 +70,7 @@ module.exports = function(passport) {
 
 		// find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
-    // TODO: switch to ? fill in format to automatically enable validation
+    // TODO: switch to ? fill-in format to automatically enable escaping* as explained in the docs.
         connection.query("SELECT * FROM user WHERE email = '"+ email +"'",async function(err,rows){
 			console.log(rows);
 			console.log("above row object");
