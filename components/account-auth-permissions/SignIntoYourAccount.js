@@ -1,8 +1,12 @@
 import TextInputFormik from './TextInputFormik'
 import { Formik, Form } from 'formik'
+import axios from 'axios'
+import config from '../../data/config'
+import useToggle from '../form-comps/hooks/useToggle'
 import * as Yup from 'yup'
 
 const SignIntoYourAccount = (props) => {
+  const [on, toggle] = useToggle(true)
   return (
     <div className='SignIntoYourAccount'>
       <h1>Sign into your account. 😏</h1>
@@ -20,10 +24,16 @@ const SignIntoYourAccount = (props) => {
             .min(12, 'Password is too short - should be 12 chars minimum.')
         })}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
+          toggle()
+          setTimeout( async () => {
+            axios.post(`http://${config.backend_host}/auth/login`, {
+              email:values.email,
+              password:values.password
+            },{withCredentials:true}).then(response => {console.log(response)}).catch(err=>{console.log(err)})
+            // Visual confirmation that the form is doing something, UI/UX++:
+            setTimeout(()=>{toggle()},500)
             setSubmitting(false)
-          }, 400)
+          });
         }}
       >
         <Form method="post">
@@ -43,6 +53,19 @@ const SignIntoYourAccount = (props) => {
           <button type='submit'>Sign In.</button>
         </Form>
       </Formik>
+      <style jsx>{
+        `.SignUpForAccount {
+          border:${on ? '':'3px solid green'};
+        }
+        .visualConfirmationForFormSubmission{
+          display:${on ? 'none' : 'box'};
+         text-align:center;
+         margin:0;
+         padding-bottom:4px;
+        }
+        `
+      }
+      </style>
     </div>
   )
 }

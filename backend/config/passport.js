@@ -12,7 +12,8 @@ var connection = mysql.createConnection({
   password : `${process.env.DB_PASSWORD}`,
   database : `${process.env.DB_NAME}`,
   charset  : `${process.env.DB_CHARSET}`,
-  multipleStatements: process.env.DB_MULTIPLE_STATEMENTS
+  multipleStatements: process.env.DB_MULTIPLE_STATEMENTS,
+  debug    :  true
 });
 
 connection.connect(function(err) {
@@ -91,16 +92,19 @@ module.exports = function(passport) {
         newUserMysql.bcrypt_hash = await bcrypt.hash(password, 10); 
 
         newUserMysql.username = req.body.username;
-          // TODO: switch to ? fill in format to automatically enable validation
-          // TODO: Add server side validation, client side validation is not enough, mirror 
-          // formik Yup rules
-        //Create the user in the database and set role/permissions to Minimum, don't user qs
+        // TODO: Switch to ? fill in format to automatically enable validation
+        // TODO: Add server side validation, client side validation is not enough, mirror 
+        // TODO: Add formik Yup rules
+        // 1. Set/Store the user in the database.
+        // 2. Set/Store the user's email in the database.
+        // 3. Set/Store permissions level in the database. Defaults to "Minimum."
+        // 4. Set/Store pw bcrypt hash in database.
         var insertQuery = "INSERT INTO user ( email, bcrypt_hash, role, username ) values ('" + email + "','" + newUserMysql.bcrypt_hash + "','" + 'Minimum' +"','"+ newUserMysql.username + "')";
 				console.log(insertQuery);
 				connection.query(insertQuery,function(err,rows){
         console.log(rows, rows[0],'rows post query')
         newUserMysql.id = rows.insertId;
-        //----could set JWT token instead of normal session cookies if wanted.----
+        //----Could set JWT token instead of normal session cookies if wanted.----
         
         //Return the user to the browser
 				return done(null, newUserMysql);
@@ -126,18 +130,23 @@ module.exports = function(passport) {
          connection.query("SELECT * FROM user WHERE `email` = '" + email + "'",function(err,rows){
 			if (err)
                 return done(err);
-			 if (!rows.length) {
+       // if no user is found.
+           if (!rows.length) {
                 return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
-            } 
+            }
+            console.log('d4fg400',rows[0].bcrypt_hash.toString(),'333fddfs');
 			
-			// if the user is found but the password is wrong
-            if (!( rows[0].password == password))
-                return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-			
-            // all is well, return successful user
-            return done(null, rows[0]);			
-		
+            // Compare password with bcryptjs hash in database for the supplied user.
+            bcrypt.compare(password, rows[0].bcrypt_hash.toString(), function(err, res) {
+              if (err)
+              return done(err);
+              console.log('bcrypt res?', res);
+              // if the user is found but the password is wrong
+              if (!(res))
+              return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
+              // all is well, return successful user
+              return done(null, rows[0]);
+            });
 		});
     }));
-
 };

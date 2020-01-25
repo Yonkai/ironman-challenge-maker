@@ -67,7 +67,6 @@ const SignUpForAccount = (props) => {
         </Form>
       </Formik>
       <style jsx>{
-
         `.SignUpForAccount {
           border:${on ? '':'3px solid green'};
         }
