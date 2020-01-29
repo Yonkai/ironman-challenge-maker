@@ -79,3 +79,7 @@ Example: If you select all tiles within 30 lengths of a church or source of wate
 # Config
 
 1. Requires configuration of config and environment files, I use a linux server running ubuntu and a mySQL instance.
+
+# Tech
+
+React, Node
